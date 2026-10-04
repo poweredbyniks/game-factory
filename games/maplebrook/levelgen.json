@@ -1,0 +1,372 @@
+{
+  "$schema": "../../schemas/levelgen.schema.json",
+  "schemaVersion": 1,
+  "mechanic": "associations",
+  "seed": "maplebrook-v1",
+  "count": 20,
+  "defaults": {
+    "categories": [
+      3,
+      3
+    ],
+    "wordsPerCategory": [
+      3,
+      4
+    ],
+    "columns": 4,
+    "columnHeight": [
+      2,
+      3
+    ],
+    "faceDown": [
+      0,
+      1
+    ],
+    "categoryDifficulty": [
+      1,
+      2
+    ],
+    "moveSlack": {
+      "factor": 1.6,
+      "flat": 4
+    },
+    "starFractions": {
+      "two": 0.25,
+      "three": 0.55
+    },
+    "minStock": 3,
+    "maxAttempts": 60,
+    "maxSolverNodes": 80000,
+    "rules": {
+      "foundationSlots": 3,
+      "recycleLimit": null,
+      "mismatchCostsMove": true,
+      "wordOnWord": "same_category",
+      "emptyColumn": "any"
+    }
+  },
+  "curve": [
+    {
+      "from": 1,
+      "to": 1,
+      "tier": "tutorial",
+      "params": {
+        "categories": [
+          2,
+          2
+        ],
+        "wordsPerCategory": [
+          3,
+          3
+        ],
+        "columns": 3,
+        "columnHeight": [
+          2,
+          2
+        ],
+        "faceDown": [
+          0,
+          0
+        ],
+        "categoryDifficulty": [
+          1,
+          1
+        ],
+        "moveSlack": {
+          "factor": 2.0,
+          "flat": 6
+        },
+        "rules": {
+          "foundationSlots": 2
+        }
+      }
+    },
+    {
+      "from": 2,
+      "to": 3,
+      "tier": "easy",
+      "params": {
+        "categories": [
+          3,
+          3
+        ],
+        "wordsPerCategory": [
+          3,
+          4
+        ],
+        "columns": 3,
+        "columnHeight": [
+          2,
+          3
+        ],
+        "faceDown": [
+          1,
+          1
+        ],
+        "categoryDifficulty": [
+          1,
+          1
+        ],
+        "moveSlack": {
+          "factor": 1.8,
+          "flat": 5
+        }
+      },
+      "target": {
+        "profile": "average",
+        "winRate": 0.97
+      }
+    },
+    {
+      "from": 4,
+      "to": 6,
+      "tier": "easy",
+      "params": {
+        "categories": [
+          4,
+          4
+        ],
+        "wordsPerCategory": [
+          4,
+          4
+        ],
+        "columns": 4,
+        "columnHeight": [
+          3,
+          3
+        ],
+        "faceDown": [
+          1,
+          2
+        ],
+        "categoryDifficulty": [
+          1,
+          2
+        ],
+        "moveSlack": {
+          "factor": 1.6,
+          "flat": 4
+        }
+      },
+      "target": {
+        "profile": "average",
+        "winRate": 0.9
+      }
+    },
+    {
+      "from": 7,
+      "to": 9,
+      "tier": "medium",
+      "params": {
+        "categories": [
+          4,
+          4
+        ],
+        "wordsPerCategory": [
+          4,
+          5
+        ],
+        "columns": 4,
+        "columnHeight": [
+          3,
+          4
+        ],
+        "faceDown": [
+          2,
+          2
+        ],
+        "categoryDifficulty": [
+          1,
+          3
+        ],
+        "moveSlack": {
+          "factor": 1.5,
+          "flat": 3
+        }
+      },
+      "target": {
+        "profile": "average",
+        "winRate": 0.8
+      }
+    },
+    {
+      "from": 10,
+      "to": 10,
+      "tier": "medium",
+      "params": {
+        "categories": [
+          4,
+          4
+        ],
+        "wordsPerCategory": [
+          5,
+          5
+        ],
+        "columns": 4,
+        "columnHeight": [
+          4,
+          4
+        ],
+        "faceDown": [
+          2,
+          2
+        ],
+        "categoryDifficulty": [
+          2,
+          3
+        ],
+        "moveSlack": {
+          "factor": 1.45,
+          "flat": 3
+        }
+      },
+      "target": {
+        "profile": "average",
+        "winRate": 0.65
+      }
+    },
+    {
+      "from": 11,
+      "to": 15,
+      "tier": "medium",
+      "params": {
+        "categories": [
+          4,
+          5
+        ],
+        "wordsPerCategory": [
+          4,
+          5
+        ],
+        "columns": 5,
+        "columnHeight": [
+          3,
+          4
+        ],
+        "faceDown": [
+          2,
+          2
+        ],
+        "categoryDifficulty": [
+          1,
+          3
+        ],
+        "moveSlack": {
+          "factor": 1.45,
+          "flat": 3
+        }
+      },
+      "target": {
+        "profile": "average",
+        "winRate": 0.75
+      }
+    },
+    {
+      "from": 16,
+      "to": 19,
+      "tier": "hard",
+      "params": {
+        "categories": [
+          5,
+          5
+        ],
+        "wordsPerCategory": [
+          5,
+          5
+        ],
+        "columns": 5,
+        "columnHeight": [
+          4,
+          4
+        ],
+        "faceDown": [
+          2,
+          3
+        ],
+        "categoryDifficulty": [
+          2,
+          4
+        ],
+        "moveSlack": {
+          "factor": 1.35,
+          "flat": 3
+        }
+      },
+      "target": {
+        "profile": "average",
+        "winRate": 0.65
+      }
+    },
+    {
+      "from": 20,
+      "to": 20,
+      "tier": "expert",
+      "params": {
+        "categories": [
+          6,
+          6
+        ],
+        "wordsPerCategory": [
+          5,
+          5
+        ],
+        "columns": 5,
+        "columnHeight": [
+          4,
+          5
+        ],
+        "faceDown": [
+          3,
+          3
+        ],
+        "categoryDifficulty": [
+          2,
+          5
+        ],
+        "moveSlack": {
+          "factor": 1.3,
+          "flat": 2
+        }
+      },
+      "target": {
+        "profile": "average",
+        "winRate": 0.58
+      }
+    }
+  ],
+  "keystones": [
+    10,
+    20
+  ],
+  "boosters": {
+    "allowed": [
+      "hint",
+      "undo",
+      "joker"
+    ]
+  },
+  "tutorials": {
+    "1": [
+      {
+        "trigger": "start",
+        "textKey": "tutorial.l1.start"
+      },
+      {
+        "trigger": "first_category",
+        "textKey": "tutorial.l1.category"
+      }
+    ],
+    "2": [
+      {
+        "trigger": "start",
+        "textKey": "tutorial.l2.start"
+      }
+    ],
+    "3": [
+      {
+        "trigger": "first_mismatch",
+        "textKey": "tutorial.mismatch"
+      }
+    ]
+  }
+}

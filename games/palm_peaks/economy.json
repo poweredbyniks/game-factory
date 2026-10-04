@@ -1,0 +1,21 @@
+{
+  "$schema": "../../schemas/economy.schema.json",
+  "levelRewards": {
+    "byStars": {
+      "1": {
+        "coins": 25
+      },
+      "2": {
+        "coins": 40
+      },
+      "3": {
+        "coins": 60
+      }
+    }
+  },
+  "continue": {
+    "cost": {
+      "coins": 150
+    }
+  }
+}

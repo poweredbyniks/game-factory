@@ -1,0 +1,951 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schemaVersion": {
+      "type": "number",
+      "const": 1,
+      "description": "Schema version of this file"
+    },
+    "themeId": {
+      "type": "string",
+      "maxLength": 80,
+      "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+      "description": "Lowercase stable identifier"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "palette": {
+      "type": "object",
+      "properties": {
+        "primary": {
+          "type": "string",
+          "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "Hex color"
+        },
+        "primaryDark": {
+          "type": "string",
+          "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "Hex color"
+        },
+        "secondary": {
+          "type": "string",
+          "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "Hex color"
+        },
+        "accent": {
+          "type": "string",
+          "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "Hex color"
+        },
+        "background": {
+          "type": "string",
+          "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "Hex color"
+        },
+        "backgroundAlt": {
+          "type": "string",
+          "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "Hex color"
+        },
+        "surface": {
+          "type": "string",
+          "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "Hex color"
+        },
+        "surfaceAlt": {
+          "type": "string",
+          "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "Hex color"
+        },
+        "text": {
+          "type": "string",
+          "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "Hex color"
+        },
+        "textMuted": {
+          "type": "string",
+          "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "Hex color"
+        },
+        "textOnPrimary": {
+          "type": "string",
+          "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "Hex color"
+        },
+        "success": {
+          "type": "string",
+          "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "Hex color"
+        },
+        "danger": {
+          "type": "string",
+          "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "Hex color"
+        },
+        "warning": {
+          "type": "string",
+          "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "Hex color"
+        },
+        "overlay": {
+          "type": "string",
+          "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "Hex color"
+        },
+        "cardFace": {
+          "type": "string",
+          "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "Hex color"
+        },
+        "cardFaceText": {
+          "type": "string",
+          "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "Hex color"
+        },
+        "cardBack": {
+          "type": "string",
+          "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "Hex color"
+        },
+        "cardBackAlt": {
+          "type": "string",
+          "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "Hex color"
+        },
+        "cardBorder": {
+          "type": "string",
+          "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "Hex color"
+        },
+        "categoryCard": {
+          "type": "string",
+          "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "Hex color"
+        },
+        "categoryCardText": {
+          "type": "string",
+          "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "Hex color"
+        },
+        "slotEmpty": {
+          "type": "string",
+          "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "Hex color"
+        },
+        "suitRed": {
+          "type": "string",
+          "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "Hex color"
+        },
+        "suitBlack": {
+          "type": "string",
+          "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "Hex color"
+        },
+        "mapPath": {
+          "type": "string",
+          "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "Hex color"
+        },
+        "nodeLocked": {
+          "type": "string",
+          "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "Hex color"
+        },
+        "nodeAvailable": {
+          "type": "string",
+          "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "Hex color"
+        },
+        "nodeCompleted": {
+          "type": "string",
+          "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+          "description": "Hex color"
+        }
+      },
+      "required": [
+        "primary",
+        "primaryDark",
+        "secondary",
+        "accent",
+        "background",
+        "backgroundAlt",
+        "surface",
+        "surfaceAlt",
+        "text",
+        "textMuted",
+        "textOnPrimary",
+        "success",
+        "danger",
+        "warning",
+        "overlay",
+        "cardFace",
+        "cardFaceText",
+        "cardBack",
+        "cardBackAlt",
+        "cardBorder",
+        "categoryCard",
+        "categoryCardText",
+        "slotEmpty",
+        "suitRed",
+        "suitBlack",
+        "mapPath",
+        "nodeLocked",
+        "nodeAvailable",
+        "nodeCompleted"
+      ],
+      "additionalProperties": false
+    },
+    "typography": {
+      "type": "object",
+      "properties": {
+        "display": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "asset": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9][a-z0-9_.-]*$",
+                  "description": "Semantic asset key, e.g. card.back or sfx.place"
+                }
+              },
+              "required": [
+                "asset"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "system": {
+                  "type": "string",
+                  "enum": [
+                    "default",
+                    "serif",
+                    "rounded",
+                    "monospace"
+                  ]
+                }
+              },
+              "required": [
+                "system"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "body": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "asset": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9][a-z0-9_.-]*$",
+                  "description": "Semantic asset key, e.g. card.back or sfx.place"
+                }
+              },
+              "required": [
+                "asset"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "system": {
+                  "type": "string",
+                  "enum": [
+                    "default",
+                    "serif",
+                    "rounded",
+                    "monospace"
+                  ]
+                }
+              },
+              "required": [
+                "system"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "scale": {
+          "default": 1,
+          "type": "number",
+          "minimum": 0.75,
+          "maximum": 1.5
+        }
+      },
+      "required": [
+        "display",
+        "body"
+      ],
+      "additionalProperties": false
+    },
+    "shape": {
+      "type": "object",
+      "properties": {
+        "radiusSm": {
+          "type": "number",
+          "minimum": 0
+        },
+        "radiusMd": {
+          "type": "number",
+          "minimum": 0
+        },
+        "radiusLg": {
+          "type": "number",
+          "minimum": 0
+        },
+        "cardRadius": {
+          "type": "number",
+          "minimum": 0
+        },
+        "buttonRadius": {
+          "type": "number",
+          "minimum": 0
+        },
+        "borderWidth": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "radiusSm",
+        "radiusMd",
+        "radiusLg",
+        "cardRadius",
+        "buttonRadius",
+        "borderWidth"
+      ],
+      "additionalProperties": false
+    },
+    "cards": {
+      "type": "object",
+      "properties": {
+        "aspectRatio": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 2,
+          "description": "Card height divided by width"
+        },
+        "backPattern": {
+          "type": "string",
+          "enum": [
+            "stripes",
+            "dots",
+            "checker",
+            "plain"
+          ]
+        },
+        "backAsset": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9_.-]*$",
+          "description": "Semantic asset key, e.g. card.back or sfx.place"
+        },
+        "categoryStyle": {
+          "type": "string",
+          "enum": [
+            "banner",
+            "solid"
+          ]
+        },
+        "shadow": {
+          "type": "string",
+          "enum": [
+            "none",
+            "soft",
+            "hard"
+          ]
+        },
+        "wordCase": {
+          "default": "as_is",
+          "type": "string",
+          "enum": [
+            "as_is",
+            "upper"
+          ]
+        }
+      },
+      "required": [
+        "aspectRatio",
+        "backPattern",
+        "categoryStyle",
+        "shadow"
+      ],
+      "additionalProperties": false
+    },
+    "backgrounds": {
+      "type": "object",
+      "properties": {
+        "map": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "gradient",
+                "asset"
+              ]
+            },
+            "colors": {
+              "minItems": 1,
+              "maxItems": 4,
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                "description": "Hex color"
+              },
+              "description": "Gradient stops (top to bottom), or fallback color"
+            },
+            "asset": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9_.-]*$",
+              "description": "Semantic asset key, e.g. card.back or sfx.place"
+            },
+            "decor": {
+              "default": [],
+              "description": "Decorative glyphs scattered over the background",
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "emoji": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 16
+                      }
+                    },
+                    "required": [
+                      "emoji"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "asset": {
+                        "type": "string",
+                        "pattern": "^[a-z0-9][a-z0-9_.-]*$",
+                        "description": "Semantic asset key, e.g. card.back or sfx.place"
+                      }
+                    },
+                    "required": [
+                      "asset"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              }
+            },
+            "decorOpacity": {
+              "default": 0.35,
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          },
+          "required": [
+            "type",
+            "colors"
+          ],
+          "additionalProperties": false
+        },
+        "level": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "gradient",
+                "asset"
+              ]
+            },
+            "colors": {
+              "minItems": 1,
+              "maxItems": 4,
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                "description": "Hex color"
+              },
+              "description": "Gradient stops (top to bottom), or fallback color"
+            },
+            "asset": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9_.-]*$",
+              "description": "Semantic asset key, e.g. card.back or sfx.place"
+            },
+            "decor": {
+              "default": [],
+              "description": "Decorative glyphs scattered over the background",
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "emoji": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 16
+                      }
+                    },
+                    "required": [
+                      "emoji"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "asset": {
+                        "type": "string",
+                        "pattern": "^[a-z0-9][a-z0-9_.-]*$",
+                        "description": "Semantic asset key, e.g. card.back or sfx.place"
+                      }
+                    },
+                    "required": [
+                      "asset"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              }
+            },
+            "decorOpacity": {
+              "default": 0.35,
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          },
+          "required": [
+            "type",
+            "colors"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "map",
+        "level"
+      ],
+      "additionalProperties": false
+    },
+    "map": {
+      "type": "object",
+      "properties": {
+        "pathStyle": {
+          "type": "string",
+          "enum": [
+            "dotted",
+            "dashed",
+            "solid"
+          ]
+        },
+        "nodeShape": {
+          "type": "string",
+          "enum": [
+            "circle",
+            "rounded"
+          ]
+        },
+        "decor": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "emoji": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 16
+                  }
+                },
+                "required": [
+                  "emoji"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "asset": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9][a-z0-9_.-]*$",
+                    "description": "Semantic asset key, e.g. card.back or sfx.place"
+                  }
+                },
+                "required": [
+                  "asset"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          }
+        }
+      },
+      "required": [
+        "pathStyle",
+        "nodeShape"
+      ],
+      "additionalProperties": false
+    },
+    "icons": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "enum": [
+          "coin",
+          "gem",
+          "life",
+          "star",
+          "hint",
+          "undo",
+          "joker",
+          "moves",
+          "stock",
+          "lock",
+          "shop",
+          "settings",
+          "play",
+          "close",
+          "back",
+          "sound",
+          "music",
+          "haptics",
+          "chest",
+          "ad",
+          "check",
+          "info"
+        ]
+      },
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "emoji": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 16
+              }
+            },
+            "required": [
+              "emoji"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "asset": {
+                "type": "string",
+                "pattern": "^[a-z0-9][a-z0-9_.-]*$",
+                "description": "Semantic asset key, e.g. card.back or sfx.place"
+              }
+            },
+            "required": [
+              "asset"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      }
+    },
+    "animation": {
+      "type": "object",
+      "properties": {
+        "cardMoveMs": {
+          "type": "integer",
+          "minimum": 60,
+          "maximum": 1000
+        },
+        "cardFlipMs": {
+          "type": "integer",
+          "minimum": 60,
+          "maximum": 1000
+        },
+        "popupMs": {
+          "type": "integer",
+          "minimum": 60,
+          "maximum": 1000
+        },
+        "mismatchShake": {
+          "type": "boolean"
+        },
+        "celebration": {
+          "type": "string",
+          "enum": [
+            "confetti",
+            "leaves",
+            "bubbles",
+            "sparkles"
+          ]
+        }
+      },
+      "required": [
+        "cardMoveMs",
+        "cardFlipMs",
+        "popupMs",
+        "mismatchShake",
+        "celebration"
+      ],
+      "additionalProperties": false
+    },
+    "vfx": {
+      "type": "object",
+      "properties": {
+        "particleColors": {
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+            "description": "Hex color"
+          }
+        },
+        "particleGlyphs": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "particleColors"
+      ],
+      "additionalProperties": false
+    },
+    "sounds": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "enum": [
+          "tap",
+          "select",
+          "place",
+          "mismatch",
+          "draw",
+          "flip",
+          "complete",
+          "win",
+          "lose",
+          "coin",
+          "button",
+          "popup"
+        ]
+      },
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9_.-]*$",
+        "description": "Semantic asset key, e.g. card.back or sfx.place"
+      }
+    },
+    "assets": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9_.-]*$",
+        "description": "Semantic asset key, e.g. card.back or sfx.place"
+      },
+      "additionalProperties": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "const": "svg"
+              },
+              "file": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "type",
+              "file"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "const": "image"
+              },
+              "file": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "height": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "type",
+              "file"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "const": "font"
+              },
+              "file": {
+                "type": "string"
+              },
+              "family": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "type",
+              "file",
+              "family"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "const": "audio"
+              },
+              "file": {
+                "type": "string"
+              },
+              "volume": {
+                "default": 1,
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "required": [
+              "type",
+              "file"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      }
+    },
+    "artDirection": {
+      "type": "object",
+      "properties": {
+        "styleKeywords": {
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "rendering": {
+          "type": "string"
+        },
+        "lineWork": {
+          "type": "string"
+        },
+        "lighting": {
+          "type": "string"
+        },
+        "texture": {
+          "type": "string"
+        },
+        "perspective": {
+          "type": "string"
+        },
+        "mood": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "colorNotes": {
+          "type": "string"
+        },
+        "characterStyle": {
+          "type": "string"
+        },
+        "negative": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "referenceDescriptors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Descriptive references only, never existing IP"
+        }
+      },
+      "required": [
+        "styleKeywords",
+        "rendering",
+        "lineWork",
+        "lighting",
+        "texture",
+        "perspective",
+        "mood",
+        "colorNotes",
+        "characterStyle",
+        "negative",
+        "referenceDescriptors"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "themeId",
+    "name",
+    "description",
+    "palette",
+    "typography",
+    "shape",
+    "cards",
+    "backgrounds",
+    "map",
+    "icons",
+    "animation",
+    "vfx",
+    "sounds",
+    "assets",
+    "artDirection"
+  ],
+  "additionalProperties": false,
+  "title": "ThemeDefinition",
+  "description": "themes/ID/theme.json: complete visual and audio identity"
+}

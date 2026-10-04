@@ -1,0 +1,14 @@
+{
+  "name": "@gf/mechanic-tripeaks",
+  "version": "0.1.0",
+  "private": true,
+  "description": "TriPeaks solitaire rules, solver, generator, bot",
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "dependencies": {
+    "@gf/core": "0.1.0",
+    "@gf/schemas": "0.1.0",
+    "zod": "^4.6.5"
+  }
+}

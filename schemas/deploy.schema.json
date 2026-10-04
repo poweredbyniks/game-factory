@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schemaVersion": {
+      "type": "number",
+      "const": 1,
+      "description": "Schema version of this file"
+    },
+    "platform": {
+      "type": "string",
+      "enum": [
+        "ios",
+        "android"
+      ]
+    },
+    "idPrefix": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*(\\.[a-z][a-z0-9_]*)*$",
+      "description": "Prefix create-game uses when --ios-id or --android-id is omitted"
+    },
+    "release": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string"
+      },
+      "additionalProperties": {},
+      "description": "Defaults merged under every game's release.json section for this platform"
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "platform",
+    "idPrefix",
+    "release"
+  ],
+  "additionalProperties": false,
+  "title": "DeployDefaults",
+  "description": "deploy/PLATFORM/defaults.json: shared release policy for one store"
+}

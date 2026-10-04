@@ -1,0 +1,40 @@
+{
+  "name": "game-factory",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Casual Game Factory: one shared engine, many data-driven games.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "workspaces": [
+    "engine/schemas",
+    "engine/core",
+    "engine/mechanics/*",
+    "engine/app",
+    "tools"
+  ],
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc -p engine/schemas && tsc -p engine/core && tsc -p engine/mechanics/associations && tsc -p engine/mechanics/tripeaks && tsc -p tools && tsc -p tests && tsc -p engine/app",
+    "gf": "tsx tools/src/cli.ts",
+    "validate": "tsx tools/src/cli.ts validate --all",
+    "app:select": "tsx tools/src/cli.ts compile ${GAME_ID:-maplebrook} --app",
+    "dev": "npm run app:select && npm --workspace @gf/app run start",
+    "web": "npm run app:select && npm --workspace @gf/app run web",
+    "export:web": "npm run app:select && cd engine/app && npx expo export --platform web --output-dir ../../build/web/${GAME_ID:-maplebrook}",
+    "e2e": "tsx tests/e2e/smoke.ts ${GAME_ID:-maplebrook}",
+    "build:ios": "tsx tools/src/cli.ts build ${GAME_ID:?set GAME_ID} --platform ios --profile ${PROFILE:-development}",
+    "build:android": "tsx tools/src/cli.ts build ${GAME_ID:?set GAME_ID} --platform android --profile ${PROFILE:-development}",
+    "build:all": "tsx tools/src/cli.ts build ${GAME_ID:?set GAME_ID} --platform all --profile ${PROFILE:-development}",
+    "check": "npm run typecheck && npm test && tsx tools/src/cli.ts validate --all --deep"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "playwright": "^1.63.0",
+    "tsx": "^4.23.15",
+    "typescript": "~6.0.3",
+    "vitest": "^5.0.3"
+  }
+}

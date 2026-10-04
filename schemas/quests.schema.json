@@ -1,0 +1,147 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schemaVersion": {
+      "type": "number",
+      "const": 1,
+      "description": "Schema version of this file"
+    },
+    "quests": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "maxLength": 80,
+            "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+            "description": "Lowercase stable identifier"
+          },
+          "titleKey": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9_.-]*$",
+            "description": "Localization string key"
+          },
+          "descriptionKey": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9_.-]*$",
+            "description": "Localization string key"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "daily",
+              "weekly",
+              "story",
+              "achievement"
+            ]
+          },
+          "objective": {
+            "type": "object",
+            "properties": {
+              "event": {
+                "type": "string",
+                "enum": [
+                  "level_completed",
+                  "level_failed",
+                  "category_completed",
+                  "booster_used",
+                  "stars_earned",
+                  "coins_spent",
+                  "chapter_completed"
+                ]
+              },
+              "count": {
+                "type": "integer",
+                "exclusiveMinimum": 0,
+                "maximum": 9007199254740991
+              },
+              "filter": {
+                "type": "object",
+                "propertyNames": {
+                  "type": "string"
+                },
+                "additionalProperties": {
+                  "type": [
+                    "string",
+                    "number"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "event",
+              "count"
+            ],
+            "additionalProperties": false
+          },
+          "reward": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 80,
+                "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+                "description": "Lowercase stable identifier"
+              },
+              {
+                "type": "object",
+                "propertyNames": {
+                  "type": "string",
+                  "maxLength": 80,
+                  "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+                  "description": "Lowercase stable identifier"
+                },
+                "additionalProperties": {
+                  "type": "integer",
+                  "exclusiveMinimum": 0,
+                  "maximum": 9007199254740991
+                },
+                "description": "Item id to positive amount"
+              }
+            ]
+          },
+          "prerequisites": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string",
+              "maxLength": 80,
+              "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+              "description": "Lowercase stable identifier"
+            }
+          },
+          "availableFromLevel": {
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991
+          },
+          "expiresAfterHours": {
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991
+          }
+        },
+        "required": [
+          "id",
+          "titleKey",
+          "descriptionKey",
+          "type",
+          "objective",
+          "reward"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "quests"
+  ],
+  "additionalProperties": false,
+  "title": "QuestsFile",
+  "description": "games/ID/quests.json (runtime in Phase 2)"
+}

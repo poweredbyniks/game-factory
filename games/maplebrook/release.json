@@ -1,0 +1,12 @@
+{
+  "$schema": "../../schemas/release.schema.json",
+  "schemaVersion": 1,
+  "ios": {
+    "bundleId": "com.gamefactory.maplebrook",
+    "store": { "subcategories": ["GAMES_WORD", "GAMES_PUZZLE"] }
+  },
+  "android": {
+    "package": "com.gamefactory.maplebrook",
+    "store": { "category": "GAME_WORD" }
+  }
+}

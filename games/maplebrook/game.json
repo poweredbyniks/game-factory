@@ -1,0 +1,34 @@
+{
+  "$schema": "../../schemas/game.schema.json",
+  "schemaVersion": 2,
+  "gameId": "maplebrook",
+  "name": "Maplebrook Word Solitaire",
+  "version": "0.1.0",
+  "template": "solitaire_adventure",
+  "theme": "cozy_village",
+  "mechanic": {
+    "id": "associations"
+  },
+  "modules": {
+    "story": true
+  },
+  "content": {
+    "locales": [
+      "en"
+    ],
+    "defaultLocale": "en",
+    "packs": [
+      "core_en"
+    ]
+  },
+  "meta": {
+    "pitch": "Sort jumbled word cards into categories to help the woodland villagers of Maplebrook get their seasonal fairs ready.",
+    "tags": [
+      "word",
+      "solitaire",
+      "cozy",
+      "puzzle"
+    ],
+    "audience": "Casual puzzle players, 25 to 65"
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "layout": {
+      "type": "string",
+      "enum": [
+        "tri",
+        "twin",
+        "hill"
+      ]
+    },
+    "stock": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        }
+      ],
+      "items": false,
+      "minItems": 2,
+      "maxItems": 2,
+      "description": "[min, max] stock size; rebalancing picks a size in this range"
+    },
+    "wrap": {
+      "default": true,
+      "type": "boolean"
+    },
+    "reserve": {
+      "default": 15,
+      "description": "Cards available to continues",
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+    },
+    "starFractions": {
+      "type": "object",
+      "properties": {
+        "two": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "three": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      },
+      "required": [
+        "two",
+        "three"
+      ],
+      "additionalProperties": false
+    },
+    "maxAttempts": {
+      "default": 60,
+      "type": "integer",
+      "exclusiveMinimum": 0,
+      "maximum": 9007199254740991
+    },
+    "maxSolverNodes": {
+      "default": 200000,
+      "type": "integer",
+      "exclusiveMinimum": 0,
+      "maximum": 9007199254740991
+    }
+  },
+  "required": [
+    "layout",
+    "stock",
+    "starFractions"
+  ],
+  "additionalProperties": false
+}

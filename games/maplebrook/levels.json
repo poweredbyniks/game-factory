@@ -1,0 +1,1618 @@
+{
+  "$schema": "../../schemas/levels.schema.json",
+  "schemaVersion": 1,
+  "levels": [
+    {
+      "levelId": "maplebrook.l001",
+      "number": 1,
+      "mechanic": "associations",
+      "difficulty": { "tier": "tutorial", "score": 0.05 },
+      "objectives": [
+        { "type": "clear_board" }
+      ],
+      "lose": { "outOfMoves": true, "stuck": true },
+      "boosters": { "allowed": ["hint","undo","joker"] },
+      "tags": ["tutorial"],
+      "tutorial": {
+        "steps": [
+          { "trigger": "start", "textKey": "tutorial.l1.start" },
+          { "trigger": "first_category", "textKey": "tutorial.l1.category" }
+        ]
+      },
+      "data": {
+        "rules": {
+          "foundationSlots": 2,
+          "drawCount": 1,
+          "recycleLimit": null,
+          "mismatchCostsMove": true,
+          "wordOnWord": "same_category",
+          "emptyColumn": "any"
+        },
+        "categories": [
+          { "id": "vehicles", "size": 3 },
+          { "id": "breakfast", "size": 3 }
+        ],
+        "cards": [
+          { "id": "c.vehicles", "kind": "category", "category": "vehicles" },
+          { "id": "w.vehicles.scooter", "kind": "word", "category": "vehicles", "word": "vehicles.scooter" },
+          { "id": "w.vehicles.bus", "kind": "word", "category": "vehicles", "word": "vehicles.bus" },
+          { "id": "w.vehicles.bicycle", "kind": "word", "category": "vehicles", "word": "vehicles.bicycle" },
+          { "id": "c.breakfast", "kind": "category", "category": "breakfast" },
+          { "id": "w.breakfast.pancake", "kind": "word", "category": "breakfast", "word": "breakfast.pancake" },
+          { "id": "w.breakfast.granola", "kind": "word", "category": "breakfast", "word": "breakfast.granola" },
+          { "id": "w.breakfast.porridge", "kind": "word", "category": "breakfast", "word": "breakfast.porridge" }
+        ],
+        "tableau": [
+          { "cards": ["w.breakfast.porridge"], "faceDown": 0 },
+          { "cards": ["w.vehicles.bicycle","c.breakfast"], "faceDown": 0 },
+          { "cards": ["w.breakfast.pancake","c.vehicles"], "faceDown": 0 }
+        ],
+        "stock": ["w.breakfast.granola", "w.vehicles.bus", "w.vehicles.scooter"],
+        "moves": 28,
+        "stars": { "two": 4, "three": 9 }
+      },
+      "analysis": { "solutionLength": 11, "solverNodes": 26, "generator": {"id":"associations@1.0.0","seed":"maplebrook-v1:1"} }
+    },
+    {
+      "levelId": "maplebrook.l002",
+      "number": 2,
+      "mechanic": "associations",
+      "difficulty": { "tier": "easy", "score": 0.02 },
+      "objectives": [
+        { "type": "clear_board" }
+      ],
+      "lose": { "outOfMoves": true, "stuck": true },
+      "boosters": { "allowed": ["hint","undo","joker"] },
+      "tags": [],
+      "tutorial": { "steps": [{"trigger":"start","textKey":"tutorial.l2.start"}] },
+      "data": {
+        "rules": {
+          "foundationSlots": 3,
+          "drawCount": 1,
+          "recycleLimit": null,
+          "mismatchCostsMove": true,
+          "wordOnWord": "same_category",
+          "emptyColumn": "any"
+        },
+        "categories": [
+          { "id": "vegetables", "size": 4 },
+          { "id": "body_parts", "size": 3 },
+          { "id": "fruits", "size": 3 }
+        ],
+        "cards": [
+          { "id": "c.vegetables", "kind": "category", "category": "vegetables" },
+          { "id": "w.vegetables.spinach", "kind": "word", "category": "vegetables", "word": "vegetables.spinach" },
+          { "id": "w.vegetables.lettuce", "kind": "word", "category": "vegetables", "word": "vegetables.lettuce" },
+          { "id": "w.vegetables.onion", "kind": "word", "category": "vegetables", "word": "vegetables.onion" },
+          { "id": "w.vegetables.celery", "kind": "word", "category": "vegetables", "word": "vegetables.celery" },
+          { "id": "c.body_parts", "kind": "category", "category": "body_parts" },
+          { "id": "w.body_parts.elbow", "kind": "word", "category": "body_parts", "word": "body_parts.elbow" },
+          { "id": "w.body_parts.thumb", "kind": "word", "category": "body_parts", "word": "body_parts.thumb" },
+          { "id": "w.body_parts.ear", "kind": "word", "category": "body_parts", "word": "body_parts.ear" },
+          { "id": "c.fruits", "kind": "category", "category": "fruits" },
+          { "id": "w.fruits.grape", "kind": "word", "category": "fruits", "word": "fruits.grape" },
+          { "id": "w.fruits.banana", "kind": "word", "category": "fruits", "word": "fruits.banana" },
+          { "id": "w.fruits.apple", "kind": "word", "category": "fruits", "word": "fruits.apple" }
+        ],
+        "tableau": [
+          { "cards": ["w.fruits.apple","w.body_parts.elbow","c.body_parts"], "faceDown": 1 },
+          { "cards": ["w.body_parts.thumb","w.fruits.grape","w.vegetables.celery"], "faceDown": 1 },
+          { "cards": ["w.body_parts.ear","w.vegetables.spinach"], "faceDown": 1 }
+        ],
+        "stock": ["c.fruits", "w.vegetables.lettuce", "w.fruits.banana", "w.vegetables.onion", "c.vegetables"],
+        "moves": 26,
+        "stars": { "two": 2, "three": 4 }
+      },
+      "analysis": {
+        "solutionLength": 18,
+        "solverNodes": 62,
+        "generator": { "id": "associations@1.0.0", "seed": "maplebrook-v1:2" },
+        "botWinRate": { "casual": 0.82, "average": 0.98, "expert": 1 }
+      }
+    },
+    {
+      "levelId": "maplebrook.l003",
+      "number": 3,
+      "mechanic": "associations",
+      "difficulty": { "tier": "easy", "score": 0 },
+      "objectives": [
+        { "type": "clear_board" }
+      ],
+      "lose": { "outOfMoves": true, "stuck": true },
+      "boosters": { "allowed": ["hint","undo","joker"] },
+      "tags": [],
+      "tutorial": { "steps": [{"trigger":"first_mismatch","textKey":"tutorial.mismatch"}] },
+      "data": {
+        "rules": {
+          "foundationSlots": 3,
+          "drawCount": 1,
+          "recycleLimit": null,
+          "mismatchCostsMove": true,
+          "wordOnWord": "same_category",
+          "emptyColumn": "any"
+        },
+        "categories": [
+          { "id": "desserts", "size": 4 },
+          { "id": "furniture", "size": 4 },
+          { "id": "shapes", "size": 3 }
+        ],
+        "cards": [
+          { "id": "c.desserts", "kind": "category", "category": "desserts" },
+          { "id": "w.desserts.muffin", "kind": "word", "category": "desserts", "word": "desserts.muffin" },
+          { "id": "w.desserts.pudding", "kind": "word", "category": "desserts", "word": "desserts.pudding" },
+          { "id": "w.desserts.pie", "kind": "word", "category": "desserts", "word": "desserts.pie" },
+          { "id": "w.desserts.cookie", "kind": "word", "category": "desserts", "word": "desserts.cookie" },
+          { "id": "c.furniture", "kind": "category", "category": "furniture" },
+          { "id": "w.furniture.stool", "kind": "word", "category": "furniture", "word": "furniture.stool" },
+          { "id": "w.furniture.desk", "kind": "word", "category": "furniture", "word": "furniture.desk" },
+          { "id": "w.furniture.chair", "kind": "word", "category": "furniture", "word": "furniture.chair" },
+          { "id": "w.furniture.bench", "kind": "word", "category": "furniture", "word": "furniture.bench" },
+          { "id": "c.shapes", "kind": "category", "category": "shapes" },
+          { "id": "w.shapes.square", "kind": "word", "category": "shapes", "word": "shapes.square" },
+          { "id": "w.shapes.diamond", "kind": "word", "category": "shapes", "word": "shapes.diamond" },
+          { "id": "w.shapes.circle", "kind": "word", "category": "shapes", "word": "shapes.circle" }
+        ],
+        "tableau": [
+          { "cards": ["c.shapes","c.furniture","c.desserts"], "faceDown": 1 },
+          { "cards": ["w.desserts.cookie","w.furniture.bench"], "faceDown": 1 },
+          { "cards": ["w.desserts.pie","w.shapes.diamond","w.furniture.chair"], "faceDown": 1 }
+        ],
+        "stock": [
+          "w.shapes.square",
+          "w.shapes.circle",
+          "w.desserts.muffin",
+          "w.desserts.pudding",
+          "w.furniture.stool",
+          "w.furniture.desk"
+        ],
+        "moves": 25,
+        "stars": { "two": 1, "three": 3 }
+      },
+      "analysis": {
+        "solutionLength": 20,
+        "solverNodes": 66,
+        "generator": { "id": "associations@1.0.0", "seed": "maplebrook-v1:3" },
+        "botWinRate": { "casual": 0.87, "average": 1, "expert": 1 }
+      }
+    },
+    {
+      "levelId": "maplebrook.l004",
+      "number": 4,
+      "mechanic": "associations",
+      "difficulty": { "tier": "easy", "score": 0.1 },
+      "objectives": [
+        { "type": "clear_board" }
+      ],
+      "lose": { "outOfMoves": true, "stuck": true },
+      "boosters": { "allowed": ["hint","undo","joker"] },
+      "tags": [],
+      "data": {
+        "rules": {
+          "foundationSlots": 3,
+          "drawCount": 1,
+          "recycleLimit": null,
+          "mismatchCostsMove": true,
+          "wordOnWord": "same_category",
+          "emptyColumn": "any"
+        },
+        "categories": [
+          { "id": "flowers", "size": 4 },
+          { "id": "hats", "size": 4 },
+          { "id": "vehicles", "size": 4 },
+          { "id": "drinks", "size": 4 }
+        ],
+        "cards": [
+          { "id": "c.flowers", "kind": "category", "category": "flowers" },
+          { "id": "w.flowers.lavender", "kind": "word", "category": "flowers", "word": "flowers.lavender" },
+          { "id": "w.flowers.sunflower", "kind": "word", "category": "flowers", "word": "flowers.sunflower" },
+          { "id": "w.flowers.poppy", "kind": "word", "category": "flowers", "word": "flowers.poppy" },
+          { "id": "w.flowers.tulip", "kind": "word", "category": "flowers", "word": "flowers.tulip" },
+          { "id": "c.hats", "kind": "category", "category": "hats" },
+          { "id": "w.hats.sombrero", "kind": "word", "category": "hats", "word": "hats.sombrero" },
+          { "id": "w.hats.beanie", "kind": "word", "category": "hats", "word": "hats.beanie" },
+          { "id": "w.hats.bowler", "kind": "word", "category": "hats", "word": "hats.bowler" },
+          { "id": "w.hats.beret", "kind": "word", "category": "hats", "word": "hats.beret" },
+          { "id": "c.vehicles", "kind": "category", "category": "vehicles" },
+          { "id": "w.vehicles.tractor", "kind": "word", "category": "vehicles", "word": "vehicles.tractor" },
+          { "id": "w.vehicles.bus", "kind": "word", "category": "vehicles", "word": "vehicles.bus" },
+          { "id": "w.vehicles.ambulance", "kind": "word", "category": "vehicles", "word": "vehicles.ambulance" },
+          { "id": "w.vehicles.truck", "kind": "word", "category": "vehicles", "word": "vehicles.truck" },
+          { "id": "c.drinks", "kind": "category", "category": "drinks" },
+          { "id": "w.drinks.smoothie", "kind": "word", "category": "drinks", "word": "drinks.smoothie" },
+          { "id": "w.drinks.lemonade", "kind": "word", "category": "drinks", "word": "drinks.lemonade" },
+          { "id": "w.drinks.milk", "kind": "word", "category": "drinks", "word": "drinks.milk" },
+          { "id": "w.drinks.cider", "kind": "word", "category": "drinks", "word": "drinks.cider" }
+        ],
+        "tableau": [
+          { "cards": ["c.flowers","w.hats.bowler","w.hats.beret"], "faceDown": 1 },
+          { "cards": ["w.drinks.smoothie","w.hats.sombrero","w.vehicles.ambulance"], "faceDown": 1 },
+          { "cards": ["w.drinks.cider","w.drinks.lemonade","w.flowers.lavender"], "faceDown": 2 },
+          { "cards": ["w.flowers.tulip","w.flowers.poppy","c.drinks"], "faceDown": 1 }
+        ],
+        "stock": [
+          "c.vehicles",
+          "w.vehicles.truck",
+          "w.vehicles.tractor",
+          "w.vehicles.bus",
+          "c.hats",
+          "w.flowers.sunflower",
+          "w.hats.beanie",
+          "w.drinks.milk"
+        ],
+        "moves": 44,
+        "stars": { "two": 4, "three": 8 }
+      },
+      "analysis": {
+        "solutionLength": 29,
+        "solverNodes": 118,
+        "generator": { "id": "associations@1.0.0", "seed": "maplebrook-v1:4:r1" },
+        "botWinRate": { "casual": 0.78, "average": 0.9, "expert": 1 }
+      }
+    },
+    {
+      "levelId": "maplebrook.l005",
+      "number": 5,
+      "mechanic": "associations",
+      "difficulty": { "tier": "easy", "score": 0.07 },
+      "objectives": [
+        { "type": "clear_board" }
+      ],
+      "lose": { "outOfMoves": true, "stuck": true },
+      "boosters": { "allowed": ["hint","undo","joker"] },
+      "tags": [],
+      "data": {
+        "rules": {
+          "foundationSlots": 3,
+          "drawCount": 1,
+          "recycleLimit": null,
+          "mismatchCostsMove": true,
+          "wordOnWord": "same_category",
+          "emptyColumn": "any"
+        },
+        "categories": [
+          { "id": "breakfast", "size": 4 },
+          { "id": "trees", "size": 4 },
+          { "id": "vegetables", "size": 4 },
+          { "id": "art_supplies", "size": 4 }
+        ],
+        "cards": [
+          { "id": "c.breakfast", "kind": "category", "category": "breakfast" },
+          { "id": "w.breakfast.porridge", "kind": "word", "category": "breakfast", "word": "breakfast.porridge" },
+          { "id": "w.breakfast.pancake", "kind": "word", "category": "breakfast", "word": "breakfast.pancake" },
+          { "id": "w.breakfast.bacon", "kind": "word", "category": "breakfast", "word": "breakfast.bacon" },
+          { "id": "w.breakfast.granola", "kind": "word", "category": "breakfast", "word": "breakfast.granola" },
+          { "id": "c.trees", "kind": "category", "category": "trees" },
+          { "id": "w.trees.maple", "kind": "word", "category": "trees", "word": "trees.maple" },
+          { "id": "w.trees.pine", "kind": "word", "category": "trees", "word": "trees.pine" },
+          { "id": "w.trees.spruce", "kind": "word", "category": "trees", "word": "trees.spruce" },
+          { "id": "w.trees.oak", "kind": "word", "category": "trees", "word": "trees.oak" },
+          { "id": "c.vegetables", "kind": "category", "category": "vegetables" },
+          { "id": "w.vegetables.potato", "kind": "word", "category": "vegetables", "word": "vegetables.potato" },
+          { "id": "w.vegetables.spinach", "kind": "word", "category": "vegetables", "word": "vegetables.spinach" },
+          { "id": "w.vegetables.cabbage", "kind": "word", "category": "vegetables", "word": "vegetables.cabbage" },
+          { "id": "w.vegetables.onion", "kind": "word", "category": "vegetables", "word": "vegetables.onion" },
+          { "id": "c.art_supplies", "kind": "category", "category": "art_supplies" },
+          { "id": "w.art_supplies.palette", "kind": "word", "category": "art_supplies", "word": "art_supplies.palette" },
+          { "id": "w.art_supplies.brush", "kind": "word", "category": "art_supplies", "word": "art_supplies.brush" },
+          { "id": "w.art_supplies.canvas", "kind": "word", "category": "art_supplies", "word": "art_supplies.canvas" },
+          {
+            "id": "w.art_supplies.charcoal",
+            "kind": "word",
+            "category": "art_supplies",
+            "word": "art_supplies.charcoal"
+          }
+        ],
+        "tableau": [
+          { "cards": ["w.breakfast.pancake","c.trees","w.breakfast.bacon"], "faceDown": 2 },
+          { "cards": ["w.art_supplies.charcoal","w.art_supplies.brush","w.breakfast.porridge"], "faceDown": 1 },
+          { "cards": ["w.trees.pine","w.art_supplies.palette","c.breakfast"], "faceDown": 2 },
+          { "cards": ["w.vegetables.spinach","w.trees.maple","w.vegetables.cabbage"], "faceDown": 2 }
+        ],
+        "stock": [
+          "w.vegetables.potato",
+          "w.trees.spruce",
+          "w.breakfast.granola",
+          "c.art_supplies",
+          "w.vegetables.onion",
+          "w.trees.oak",
+          "c.vegetables",
+          "w.art_supplies.canvas"
+        ],
+        "moves": 35,
+        "stars": { "two": 2, "three": 3 }
+      },
+      "analysis": {
+        "solutionLength": 29,
+        "solverNodes": 1884,
+        "generator": { "id": "associations@1.0.0", "seed": "maplebrook-v1:5" },
+        "botWinRate": { "casual": 0.6, "average": 0.93, "expert": 1 }
+      }
+    },
+    {
+      "levelId": "maplebrook.l006",
+      "number": 6,
+      "mechanic": "associations",
+      "difficulty": { "tier": "easy", "score": 0.08 },
+      "objectives": [
+        { "type": "clear_board" }
+      ],
+      "lose": { "outOfMoves": true, "stuck": true },
+      "boosters": { "allowed": ["hint","undo","joker"] },
+      "tags": [],
+      "data": {
+        "rules": {
+          "foundationSlots": 3,
+          "drawCount": 1,
+          "recycleLimit": null,
+          "mismatchCostsMove": true,
+          "wordOnWord": "same_category",
+          "emptyColumn": "any"
+        },
+        "categories": [
+          { "id": "desserts", "size": 4 },
+          { "id": "sauces", "size": 4 },
+          { "id": "around_town", "size": 4 },
+          { "id": "body_parts", "size": 4 }
+        ],
+        "cards": [
+          { "id": "c.desserts", "kind": "category", "category": "desserts" },
+          { "id": "w.desserts.brownie", "kind": "word", "category": "desserts", "word": "desserts.brownie" },
+          { "id": "w.desserts.donut", "kind": "word", "category": "desserts", "word": "desserts.donut" },
+          { "id": "w.desserts.pudding", "kind": "word", "category": "desserts", "word": "desserts.pudding" },
+          { "id": "w.desserts.tart", "kind": "word", "category": "desserts", "word": "desserts.tart" },
+          { "id": "c.sauces", "kind": "category", "category": "sauces" },
+          { "id": "w.sauces.relish", "kind": "word", "category": "sauces", "word": "sauces.relish" },
+          { "id": "w.sauces.mustard", "kind": "word", "category": "sauces", "word": "sauces.mustard" },
+          { "id": "w.sauces.ketchup", "kind": "word", "category": "sauces", "word": "sauces.ketchup" },
+          { "id": "w.sauces.aioli", "kind": "word", "category": "sauces", "word": "sauces.aioli" },
+          { "id": "c.around_town", "kind": "category", "category": "around_town" },
+          { "id": "w.around_town.library", "kind": "word", "category": "around_town", "word": "around_town.library" },
+          { "id": "w.around_town.bank", "kind": "word", "category": "around_town", "word": "around_town.bank" },
+          { "id": "w.around_town.stadium", "kind": "word", "category": "around_town", "word": "around_town.stadium" },
+          { "id": "w.around_town.museum", "kind": "word", "category": "around_town", "word": "around_town.museum" },
+          { "id": "c.body_parts", "kind": "category", "category": "body_parts" },
+          { "id": "w.body_parts.wrist", "kind": "word", "category": "body_parts", "word": "body_parts.wrist" },
+          { "id": "w.body_parts.finger", "kind": "word", "category": "body_parts", "word": "body_parts.finger" },
+          { "id": "w.body_parts.shoulder", "kind": "word", "category": "body_parts", "word": "body_parts.shoulder" },
+          { "id": "w.body_parts.elbow", "kind": "word", "category": "body_parts", "word": "body_parts.elbow" }
+        ],
+        "tableau": [
+          { "cards": ["w.around_town.stadium","w.desserts.tart","w.sauces.ketchup"], "faceDown": 2 },
+          { "cards": ["w.sauces.mustard","w.around_town.library","w.around_town.bank"], "faceDown": 1 },
+          { "cards": ["w.sauces.aioli","w.sauces.relish","c.sauces"], "faceDown": 2 },
+          { "cards": ["w.desserts.donut","w.body_parts.finger","c.around_town"], "faceDown": 1 }
+        ],
+        "stock": [
+          "w.body_parts.elbow",
+          "w.desserts.pudding",
+          "w.around_town.museum",
+          "c.body_parts",
+          "w.body_parts.shoulder",
+          "w.desserts.brownie",
+          "c.desserts",
+          "w.body_parts.wrist"
+        ],
+        "moves": 35,
+        "stars": { "two": 2, "three": 4 }
+      },
+      "analysis": {
+        "solutionLength": 27,
+        "solverNodes": 531,
+        "generator": { "id": "associations@1.0.0", "seed": "maplebrook-v1:6" },
+        "botWinRate": { "casual": 0.72, "average": 0.92, "expert": 1 }
+      }
+    },
+    {
+      "levelId": "maplebrook.l007",
+      "number": 7,
+      "mechanic": "associations",
+      "difficulty": { "tier": "medium", "score": 0.2 },
+      "objectives": [
+        { "type": "clear_board" }
+      ],
+      "lose": { "outOfMoves": true, "stuck": true },
+      "boosters": { "allowed": ["hint","undo","joker"] },
+      "tags": [],
+      "data": {
+        "rules": {
+          "foundationSlots": 3,
+          "drawCount": 1,
+          "recycleLimit": null,
+          "mismatchCostsMove": true,
+          "wordOnWord": "same_category",
+          "emptyColumn": "any"
+        },
+        "categories": [
+          { "id": "clothes", "size": 5 },
+          { "id": "jobs", "size": 4 },
+          { "id": "emotions", "size": 5 },
+          { "id": "colors", "size": 5 }
+        ],
+        "cards": [
+          { "id": "c.clothes", "kind": "category", "category": "clothes" },
+          { "id": "w.clothes.skirt", "kind": "word", "category": "clothes", "word": "clothes.skirt" },
+          { "id": "w.clothes.jacket", "kind": "word", "category": "clothes", "word": "clothes.jacket" },
+          { "id": "w.clothes.sweater", "kind": "word", "category": "clothes", "word": "clothes.sweater" },
+          { "id": "w.clothes.hat", "kind": "word", "category": "clothes", "word": "clothes.hat" },
+          { "id": "w.clothes.coat", "kind": "word", "category": "clothes", "word": "clothes.coat" },
+          { "id": "c.jobs", "kind": "category", "category": "jobs" },
+          { "id": "w.jobs.baker", "kind": "word", "category": "jobs", "word": "jobs.baker" },
+          { "id": "w.jobs.chef", "kind": "word", "category": "jobs", "word": "jobs.chef" },
+          { "id": "w.jobs.farmer", "kind": "word", "category": "jobs", "word": "jobs.farmer" },
+          { "id": "w.jobs.firefighter", "kind": "word", "category": "jobs", "word": "jobs.firefighter" },
+          { "id": "c.emotions", "kind": "category", "category": "emotions" },
+          { "id": "w.emotions.calm", "kind": "word", "category": "emotions", "word": "emotions.calm" },
+          { "id": "w.emotions.pride", "kind": "word", "category": "emotions", "word": "emotions.pride" },
+          { "id": "w.emotions.shame", "kind": "word", "category": "emotions", "word": "emotions.shame" },
+          { "id": "w.emotions.grief", "kind": "word", "category": "emotions", "word": "emotions.grief" },
+          { "id": "w.emotions.envy", "kind": "word", "category": "emotions", "word": "emotions.envy" },
+          { "id": "c.colors", "kind": "category", "category": "colors" },
+          { "id": "w.colors.pink", "kind": "word", "category": "colors", "word": "colors.pink" },
+          { "id": "w.colors.gray", "kind": "word", "category": "colors", "word": "colors.gray" },
+          { "id": "w.colors.black", "kind": "word", "category": "colors", "word": "colors.black" },
+          { "id": "w.colors.red", "kind": "word", "category": "colors", "word": "colors.red" },
+          { "id": "w.colors.purple", "kind": "word", "category": "colors", "word": "colors.purple" }
+        ],
+        "tableau": [
+          { "cards": ["c.jobs","w.clothes.coat","c.colors"], "faceDown": 2 },
+          { "cards": ["w.emotions.grief","w.colors.gray","w.colors.black","w.jobs.farmer"], "faceDown": 2 },
+          { "cards": ["w.colors.purple","w.emotions.shame","w.jobs.baker","w.clothes.sweater"], "faceDown": 2 },
+          { "cards": ["w.clothes.skirt","w.clothes.hat","w.emotions.pride"], "faceDown": 2 }
+        ],
+        "stock": [
+          "w.jobs.firefighter",
+          "w.colors.pink",
+          "c.clothes",
+          "w.emotions.envy",
+          "w.jobs.chef",
+          "w.emotions.calm",
+          "w.colors.red",
+          "w.clothes.jacket",
+          "c.emotions"
+        ],
+        "moves": 42,
+        "stars": { "two": 2, "three": 5 }
+      },
+      "analysis": {
+        "solutionLength": 33,
+        "solverNodes": 13930,
+        "generator": { "id": "associations@1.0.0", "seed": "maplebrook-v1:7:r2" },
+        "botWinRate": { "casual": 0.37, "average": 0.8, "expert": 0.97 }
+      }
+    },
+    {
+      "levelId": "maplebrook.l008",
+      "number": 8,
+      "mechanic": "associations",
+      "difficulty": { "tier": "medium", "score": 0.18 },
+      "objectives": [
+        { "type": "clear_board" }
+      ],
+      "lose": { "outOfMoves": true, "stuck": true },
+      "boosters": { "allowed": ["hint","undo","joker"] },
+      "tags": [],
+      "data": {
+        "rules": {
+          "foundationSlots": 3,
+          "drawCount": 1,
+          "recycleLimit": null,
+          "mismatchCostsMove": true,
+          "wordOnWord": "same_category",
+          "emptyColumn": "any"
+        },
+        "categories": [
+          { "id": "trees", "size": 4 },
+          { "id": "in_the_sky", "size": 4 },
+          { "id": "vegetables", "size": 5 },
+          { "id": "breakfast", "size": 5 }
+        ],
+        "cards": [
+          { "id": "c.trees", "kind": "category", "category": "trees" },
+          { "id": "w.trees.oak", "kind": "word", "category": "trees", "word": "trees.oak" },
+          { "id": "w.trees.chestnut", "kind": "word", "category": "trees", "word": "trees.chestnut" },
+          { "id": "w.trees.spruce", "kind": "word", "category": "trees", "word": "trees.spruce" },
+          { "id": "w.trees.willow", "kind": "word", "category": "trees", "word": "trees.willow" },
+          { "id": "c.in_the_sky", "kind": "category", "category": "in_the_sky" },
+          { "id": "w.in_the_sky.meteor", "kind": "word", "category": "in_the_sky", "word": "in_the_sky.meteor" },
+          { "id": "w.in_the_sky.kite", "kind": "word", "category": "in_the_sky", "word": "in_the_sky.kite" },
+          { "id": "w.in_the_sky.rainbow", "kind": "word", "category": "in_the_sky", "word": "in_the_sky.rainbow" },
+          { "id": "w.in_the_sky.sun", "kind": "word", "category": "in_the_sky", "word": "in_the_sky.sun" },
+          { "id": "c.vegetables", "kind": "category", "category": "vegetables" },
+          { "id": "w.vegetables.onion", "kind": "word", "category": "vegetables", "word": "vegetables.onion" },
+          { "id": "w.vegetables.pumpkin", "kind": "word", "category": "vegetables", "word": "vegetables.pumpkin" },
+          { "id": "w.vegetables.celery", "kind": "word", "category": "vegetables", "word": "vegetables.celery" },
+          { "id": "w.vegetables.radish", "kind": "word", "category": "vegetables", "word": "vegetables.radish" },
+          { "id": "w.vegetables.spinach", "kind": "word", "category": "vegetables", "word": "vegetables.spinach" },
+          { "id": "c.breakfast", "kind": "category", "category": "breakfast" },
+          { "id": "w.breakfast.cereal", "kind": "word", "category": "breakfast", "word": "breakfast.cereal" },
+          { "id": "w.breakfast.omelet", "kind": "word", "category": "breakfast", "word": "breakfast.omelet" },
+          { "id": "w.breakfast.toast", "kind": "word", "category": "breakfast", "word": "breakfast.toast" },
+          { "id": "w.breakfast.granola", "kind": "word", "category": "breakfast", "word": "breakfast.granola" },
+          { "id": "w.breakfast.yogurt", "kind": "word", "category": "breakfast", "word": "breakfast.yogurt" }
+        ],
+        "tableau": [
+          { "cards": ["w.vegetables.radish","w.trees.oak","c.breakfast"], "faceDown": 2 },
+          { "cards": ["w.in_the_sky.kite","w.trees.willow","w.breakfast.cereal","c.vegetables"], "faceDown": 2 },
+          { "cards": ["c.in_the_sky","w.breakfast.toast","w.breakfast.omelet","w.breakfast.granola"], "faceDown": 2 },
+          { "cards": ["w.in_the_sky.meteor","w.vegetables.onion","w.trees.spruce"], "faceDown": 2 }
+        ],
+        "stock": [
+          "c.trees",
+          "w.trees.chestnut",
+          "w.vegetables.celery",
+          "w.in_the_sky.sun",
+          "w.vegetables.pumpkin",
+          "w.vegetables.spinach",
+          "w.breakfast.yogurt",
+          "w.in_the_sky.rainbow"
+        ],
+        "moves": 34,
+        "stars": { "two": 1, "three": 2 }
+      },
+      "analysis": {
+        "solutionLength": 30,
+        "solverNodes": 3826,
+        "generator": { "id": "associations@1.0.0", "seed": "maplebrook-v1:8:r4" },
+        "botWinRate": { "casual": 0.53, "average": 0.82, "expert": 0.97 }
+      }
+    },
+    {
+      "levelId": "maplebrook.l009",
+      "number": 9,
+      "mechanic": "associations",
+      "difficulty": { "tier": "medium", "score": 0.2 },
+      "objectives": [
+        { "type": "clear_board" }
+      ],
+      "lose": { "outOfMoves": true, "stuck": true },
+      "boosters": { "allowed": ["hint","undo","joker"] },
+      "tags": [],
+      "data": {
+        "rules": {
+          "foundationSlots": 3,
+          "drawCount": 1,
+          "recycleLimit": null,
+          "mismatchCostsMove": true,
+          "wordOnWord": "same_category",
+          "emptyColumn": "any"
+        },
+        "categories": [
+          { "id": "desserts", "size": 5 },
+          { "id": "dances", "size": 5 },
+          { "id": "insects", "size": 5 },
+          { "id": "sauces", "size": 4 }
+        ],
+        "cards": [
+          { "id": "c.desserts", "kind": "category", "category": "desserts" },
+          { "id": "w.desserts.donut", "kind": "word", "category": "desserts", "word": "desserts.donut" },
+          { "id": "w.desserts.cookie", "kind": "word", "category": "desserts", "word": "desserts.cookie" },
+          { "id": "w.desserts.pie", "kind": "word", "category": "desserts", "word": "desserts.pie" },
+          { "id": "w.desserts.brownie", "kind": "word", "category": "desserts", "word": "desserts.brownie" },
+          { "id": "w.desserts.cupcake", "kind": "word", "category": "desserts", "word": "desserts.cupcake" },
+          { "id": "c.dances", "kind": "category", "category": "dances" },
+          { "id": "w.dances.swing", "kind": "word", "category": "dances", "word": "dances.swing" },
+          { "id": "w.dances.polka", "kind": "word", "category": "dances", "word": "dances.polka" },
+          { "id": "w.dances.waltz", "kind": "word", "category": "dances", "word": "dances.waltz" },
+          { "id": "w.dances.rumba", "kind": "word", "category": "dances", "word": "dances.rumba" },
+          { "id": "w.dances.disco", "kind": "word", "category": "dances", "word": "dances.disco" },
+          { "id": "c.insects", "kind": "category", "category": "insects" },
+          { "id": "w.insects.beetle", "kind": "word", "category": "insects", "word": "insects.beetle" },
+          { "id": "w.insects.moth", "kind": "word", "category": "insects", "word": "insects.moth" },
+          { "id": "w.insects.mosquito", "kind": "word", "category": "insects", "word": "insects.mosquito" },
+          { "id": "w.insects.ant", "kind": "word", "category": "insects", "word": "insects.ant" },
+          { "id": "w.insects.butterfly", "kind": "word", "category": "insects", "word": "insects.butterfly" },
+          { "id": "c.sauces", "kind": "category", "category": "sauces" },
+          { "id": "w.sauces.aioli", "kind": "word", "category": "sauces", "word": "sauces.aioli" },
+          { "id": "w.sauces.pesto", "kind": "word", "category": "sauces", "word": "sauces.pesto" },
+          { "id": "w.sauces.mustard", "kind": "word", "category": "sauces", "word": "sauces.mustard" },
+          { "id": "w.sauces.ketchup", "kind": "word", "category": "sauces", "word": "sauces.ketchup" }
+        ],
+        "tableau": [
+          { "cards": ["w.desserts.pie","w.sauces.aioli","c.desserts"], "faceDown": 2 },
+          { "cards": ["w.desserts.cookie","c.sauces","w.desserts.donut"], "faceDown": 2 },
+          { "cards": ["w.desserts.cupcake","w.insects.beetle","w.dances.waltz"], "faceDown": 2 },
+          { "cards": ["c.insects","w.insects.ant","w.dances.polka","w.desserts.brownie"], "faceDown": 2 }
+        ],
+        "stock": [
+          "w.dances.swing",
+          "w.sauces.pesto",
+          "w.dances.rumba",
+          "w.insects.mosquito",
+          "w.sauces.ketchup",
+          "c.dances",
+          "w.insects.moth",
+          "w.sauces.mustard",
+          "w.insects.butterfly",
+          "w.dances.disco"
+        ],
+        "moves": 43,
+        "stars": { "two": 2, "three": 5 }
+      },
+      "analysis": {
+        "solutionLength": 34,
+        "solverNodes": 7913,
+        "generator": { "id": "associations@1.0.0", "seed": "maplebrook-v1:9:r1" },
+        "botWinRate": { "casual": 0.3, "average": 0.8, "expert": 0.9 }
+      }
+    },
+    {
+      "levelId": "maplebrook.l010",
+      "number": 10,
+      "mechanic": "associations",
+      "difficulty": { "tier": "medium", "score": 0.3 },
+      "objectives": [
+        { "type": "clear_board" }
+      ],
+      "lose": { "outOfMoves": true, "stuck": true },
+      "boosters": { "allowed": ["hint","undo","joker"] },
+      "tags": ["keystone"],
+      "data": {
+        "rules": {
+          "foundationSlots": 3,
+          "drawCount": 1,
+          "recycleLimit": null,
+          "mismatchCostsMove": true,
+          "wordOnWord": "same_category",
+          "emptyColumn": "any"
+        },
+        "categories": [
+          { "id": "flowers", "size": 5 },
+          { "id": "kitchen_tools", "size": 5 },
+          { "id": "beach", "size": 5 },
+          { "id": "hats", "size": 5 }
+        ],
+        "cards": [
+          { "id": "c.flowers", "kind": "category", "category": "flowers" },
+          { "id": "w.flowers.poppy", "kind": "word", "category": "flowers", "word": "flowers.poppy" },
+          { "id": "w.flowers.sunflower", "kind": "word", "category": "flowers", "word": "flowers.sunflower" },
+          { "id": "w.flowers.lily", "kind": "word", "category": "flowers", "word": "flowers.lily" },
+          { "id": "w.flowers.orchid", "kind": "word", "category": "flowers", "word": "flowers.orchid" },
+          { "id": "w.flowers.daffodil", "kind": "word", "category": "flowers", "word": "flowers.daffodil" },
+          { "id": "c.kitchen_tools", "kind": "category", "category": "kitchen_tools" },
+          {
+            "id": "w.kitchen_tools.toaster",
+            "kind": "word",
+            "category": "kitchen_tools",
+            "word": "kitchen_tools.toaster"
+          },
+          {
+            "id": "w.kitchen_tools.rolling_pin",
+            "kind": "word",
+            "category": "kitchen_tools",
+            "word": "kitchen_tools.rolling_pin"
+          },
+          {
+            "id": "w.kitchen_tools.grater",
+            "kind": "word",
+            "category": "kitchen_tools",
+            "word": "kitchen_tools.grater"
+          },
+          { "id": "w.kitchen_tools.tongs", "kind": "word", "category": "kitchen_tools", "word": "kitchen_tools.tongs" },
+          { "id": "w.kitchen_tools.ladle", "kind": "word", "category": "kitchen_tools", "word": "kitchen_tools.ladle" },
+          { "id": "c.beach", "kind": "category", "category": "beach" },
+          { "id": "w.beach.sandcastle", "kind": "word", "category": "beach", "word": "beach.sandcastle" },
+          { "id": "w.beach.surfboard", "kind": "word", "category": "beach", "word": "beach.surfboard" },
+          { "id": "w.beach.umbrella", "kind": "word", "category": "beach", "word": "beach.umbrella" },
+          { "id": "w.beach.sand", "kind": "word", "category": "beach", "word": "beach.sand" },
+          { "id": "w.beach.wave", "kind": "word", "category": "beach", "word": "beach.wave" },
+          { "id": "c.hats", "kind": "category", "category": "hats" },
+          { "id": "w.hats.bonnet", "kind": "word", "category": "hats", "word": "hats.bonnet" },
+          { "id": "w.hats.cap", "kind": "word", "category": "hats", "word": "hats.cap" },
+          { "id": "w.hats.beret", "kind": "word", "category": "hats", "word": "hats.beret" },
+          { "id": "w.hats.turban", "kind": "word", "category": "hats", "word": "hats.turban" },
+          { "id": "w.hats.fedora", "kind": "word", "category": "hats", "word": "hats.fedora" }
+        ],
+        "tableau": [
+          { "cards": ["w.flowers.poppy","w.kitchen_tools.tongs","c.beach","w.flowers.daffodil"], "faceDown": 2 },
+          { "cards": ["w.beach.surfboard","w.kitchen_tools.ladle","w.hats.bonnet","w.flowers.orchid"], "faceDown": 2 },
+          { "cards": ["w.beach.sandcastle","w.hats.beret","w.flowers.sunflower","c.flowers"], "faceDown": 2 },
+          { "cards": ["w.kitchen_tools.toaster","w.hats.turban","c.hats","w.kitchen_tools.rolling_pin"], "faceDown": 2 }
+        ],
+        "stock": [
+          "w.hats.cap",
+          "w.hats.fedora",
+          "w.beach.wave",
+          "c.kitchen_tools",
+          "w.beach.sand",
+          "w.kitchen_tools.grater",
+          "w.flowers.lily",
+          "w.beach.umbrella"
+        ],
+        "moves": 37,
+        "stars": { "two": 1, "three": 3 }
+      },
+      "analysis": {
+        "solutionLength": 32,
+        "solverNodes": 2318,
+        "generator": { "id": "associations@1.0.0", "seed": "maplebrook-v1:10:r2" },
+        "botWinRate": { "casual": 0.37, "average": 0.7, "expert": 0.98 }
+      }
+    },
+    {
+      "levelId": "maplebrook.l011",
+      "number": 11,
+      "mechanic": "associations",
+      "difficulty": { "tier": "medium", "score": 0.22 },
+      "objectives": [
+        { "type": "clear_board" }
+      ],
+      "lose": { "outOfMoves": true, "stuck": true },
+      "boosters": { "allowed": ["hint","undo","joker"] },
+      "tags": [],
+      "data": {
+        "rules": {
+          "foundationSlots": 3,
+          "drawCount": 1,
+          "recycleLimit": null,
+          "mismatchCostsMove": true,
+          "wordOnWord": "same_category",
+          "emptyColumn": "any"
+        },
+        "categories": [
+          { "id": "shapes", "size": 4 },
+          { "id": "drinks", "size": 4 },
+          { "id": "garden", "size": 5 },
+          { "id": "birds", "size": 5 },
+          { "id": "weather", "size": 4 }
+        ],
+        "cards": [
+          { "id": "c.shapes", "kind": "category", "category": "shapes" },
+          { "id": "w.shapes.sphere", "kind": "word", "category": "shapes", "word": "shapes.sphere" },
+          { "id": "w.shapes.cone", "kind": "word", "category": "shapes", "word": "shapes.cone" },
+          { "id": "w.shapes.circle", "kind": "word", "category": "shapes", "word": "shapes.circle" },
+          { "id": "w.shapes.square", "kind": "word", "category": "shapes", "word": "shapes.square" },
+          { "id": "c.drinks", "kind": "category", "category": "drinks" },
+          { "id": "w.drinks.coffee", "kind": "word", "category": "drinks", "word": "drinks.coffee" },
+          { "id": "w.drinks.lemonade", "kind": "word", "category": "drinks", "word": "drinks.lemonade" },
+          { "id": "w.drinks.water", "kind": "word", "category": "drinks", "word": "drinks.water" },
+          { "id": "w.drinks.tea", "kind": "word", "category": "drinks", "word": "drinks.tea" },
+          { "id": "c.garden", "kind": "category", "category": "garden" },
+          { "id": "w.garden.compost", "kind": "word", "category": "garden", "word": "garden.compost" },
+          { "id": "w.garden.rake", "kind": "word", "category": "garden", "word": "garden.rake" },
+          { "id": "w.garden.watering_can", "kind": "word", "category": "garden", "word": "garden.watering_can" },
+          { "id": "w.garden.hose", "kind": "word", "category": "garden", "word": "garden.hose" },
+          { "id": "w.garden.wheelbarrow", "kind": "word", "category": "garden", "word": "garden.wheelbarrow" },
+          { "id": "c.birds", "kind": "category", "category": "birds" },
+          { "id": "w.birds.flamingo", "kind": "word", "category": "birds", "word": "birds.flamingo" },
+          { "id": "w.birds.parrot", "kind": "word", "category": "birds", "word": "birds.parrot" },
+          { "id": "w.birds.robin", "kind": "word", "category": "birds", "word": "birds.robin" },
+          { "id": "w.birds.crow", "kind": "word", "category": "birds", "word": "birds.crow" },
+          { "id": "w.birds.penguin", "kind": "word", "category": "birds", "word": "birds.penguin" },
+          { "id": "c.weather", "kind": "category", "category": "weather" },
+          { "id": "w.weather.sleet", "kind": "word", "category": "weather", "word": "weather.sleet" },
+          { "id": "w.weather.thunder", "kind": "word", "category": "weather", "word": "weather.thunder" },
+          { "id": "w.weather.breeze", "kind": "word", "category": "weather", "word": "weather.breeze" },
+          { "id": "w.weather.frost", "kind": "word", "category": "weather", "word": "weather.frost" }
+        ],
+        "tableau": [
+          { "cards": ["c.shapes","w.weather.sleet","w.drinks.tea"], "faceDown": 2 },
+          { "cards": ["w.birds.crow","w.weather.thunder","w.birds.flamingo"], "faceDown": 2 },
+          { "cards": ["c.birds","w.garden.compost","c.garden"], "faceDown": 2 },
+          { "cards": ["w.drinks.coffee","c.drinks","w.weather.breeze","w.weather.frost"], "faceDown": 2 },
+          { "cards": ["c.weather","w.garden.wheelbarrow","w.drinks.lemonade"], "faceDown": 2 }
+        ],
+        "stock": [
+          "w.shapes.cone",
+          "w.birds.penguin",
+          "w.shapes.square",
+          "w.birds.parrot",
+          "w.shapes.circle",
+          "w.garden.hose",
+          "w.birds.robin",
+          "w.drinks.water",
+          "w.garden.rake",
+          "w.garden.watering_can",
+          "w.shapes.sphere"
+        ],
+        "moves": 45,
+        "stars": { "two": 2, "three": 4 }
+      },
+      "analysis": {
+        "solutionLength": 37,
+        "solverNodes": 4261,
+        "generator": { "id": "associations@1.0.0", "seed": "maplebrook-v1:11:r1" },
+        "botWinRate": { "casual": 0.38, "average": 0.78, "expert": 0.97 }
+      }
+    },
+    {
+      "levelId": "maplebrook.l012",
+      "number": 12,
+      "mechanic": "associations",
+      "difficulty": { "tier": "medium", "score": 0.22 },
+      "objectives": [
+        { "type": "clear_board" }
+      ],
+      "lose": { "outOfMoves": true, "stuck": true },
+      "boosters": { "allowed": ["hint","undo","joker"] },
+      "tags": [],
+      "data": {
+        "rules": {
+          "foundationSlots": 3,
+          "drawCount": 1,
+          "recycleLimit": null,
+          "mismatchCostsMove": true,
+          "wordOnWord": "same_category",
+          "emptyColumn": "any"
+        },
+        "categories": [
+          { "id": "fruits", "size": 4 },
+          { "id": "vegetables", "size": 5 },
+          { "id": "colors", "size": 5 },
+          { "id": "art_supplies", "size": 5 }
+        ],
+        "cards": [
+          { "id": "c.fruits", "kind": "category", "category": "fruits" },
+          { "id": "w.fruits.apple", "kind": "word", "category": "fruits", "word": "fruits.apple" },
+          { "id": "w.fruits.pear", "kind": "word", "category": "fruits", "word": "fruits.pear" },
+          { "id": "w.fruits.kiwi", "kind": "word", "category": "fruits", "word": "fruits.kiwi" },
+          { "id": "w.fruits.mango", "kind": "word", "category": "fruits", "word": "fruits.mango" },
+          { "id": "c.vegetables", "kind": "category", "category": "vegetables" },
+          { "id": "w.vegetables.celery", "kind": "word", "category": "vegetables", "word": "vegetables.celery" },
+          { "id": "w.vegetables.pepper", "kind": "word", "category": "vegetables", "word": "vegetables.pepper" },
+          { "id": "w.vegetables.pumpkin", "kind": "word", "category": "vegetables", "word": "vegetables.pumpkin" },
+          { "id": "w.vegetables.cabbage", "kind": "word", "category": "vegetables", "word": "vegetables.cabbage" },
+          { "id": "w.vegetables.potato", "kind": "word", "category": "vegetables", "word": "vegetables.potato" },
+          { "id": "c.colors", "kind": "category", "category": "colors" },
+          { "id": "w.colors.pink", "kind": "word", "category": "colors", "word": "colors.pink" },
+          { "id": "w.colors.blue", "kind": "word", "category": "colors", "word": "colors.blue" },
+          { "id": "w.colors.brown", "kind": "word", "category": "colors", "word": "colors.brown" },
+          { "id": "w.colors.gray", "kind": "word", "category": "colors", "word": "colors.gray" },
+          { "id": "w.colors.black", "kind": "word", "category": "colors", "word": "colors.black" },
+          { "id": "c.art_supplies", "kind": "category", "category": "art_supplies" },
+          { "id": "w.art_supplies.palette", "kind": "word", "category": "art_supplies", "word": "art_supplies.palette" },
+          { "id": "w.art_supplies.pastel", "kind": "word", "category": "art_supplies", "word": "art_supplies.pastel" },
+          {
+            "id": "w.art_supplies.charcoal",
+            "kind": "word",
+            "category": "art_supplies",
+            "word": "art_supplies.charcoal"
+          },
+          { "id": "w.art_supplies.paint", "kind": "word", "category": "art_supplies", "word": "art_supplies.paint" },
+          { "id": "w.art_supplies.brush", "kind": "word", "category": "art_supplies", "word": "art_supplies.brush" }
+        ],
+        "tableau": [
+          { "cards": ["w.art_supplies.charcoal","w.fruits.pear","c.vegetables"], "faceDown": 2 },
+          { "cards": ["w.colors.brown","w.colors.black","w.vegetables.cabbage"], "faceDown": 2 },
+          { "cards": ["w.colors.pink","w.fruits.apple","w.art_supplies.brush"], "faceDown": 2 },
+          { "cards": ["c.fruits","c.colors","w.art_supplies.palette","w.vegetables.pepper"], "faceDown": 2 },
+          { "cards": ["w.art_supplies.paint","w.colors.gray","c.art_supplies"], "faceDown": 2 }
+        ],
+        "stock": [
+          "w.fruits.kiwi",
+          "w.vegetables.pumpkin",
+          "w.fruits.mango",
+          "w.vegetables.celery",
+          "w.colors.blue",
+          "w.art_supplies.pastel",
+          "w.vegetables.potato"
+        ],
+        "moves": 35,
+        "stars": { "two": 1, "three": 3 }
+      },
+      "analysis": {
+        "solutionLength": 30,
+        "solverNodes": 341,
+        "generator": { "id": "associations@1.0.0", "seed": "maplebrook-v1:12" },
+        "botWinRate": { "casual": 0.23, "average": 0.78, "expert": 0.98 }
+      }
+    },
+    {
+      "levelId": "maplebrook.l013",
+      "number": 13,
+      "mechanic": "associations",
+      "difficulty": { "tier": "medium", "score": 0.25 },
+      "objectives": [
+        { "type": "clear_board" }
+      ],
+      "lose": { "outOfMoves": true, "stuck": true },
+      "boosters": { "allowed": ["hint","undo","joker"] },
+      "tags": [],
+      "data": {
+        "rules": {
+          "foundationSlots": 3,
+          "drawCount": 1,
+          "recycleLimit": null,
+          "mismatchCostsMove": true,
+          "wordOnWord": "same_category",
+          "emptyColumn": "any"
+        },
+        "categories": [
+          { "id": "emotions", "size": 4 },
+          { "id": "rooms", "size": 5 },
+          { "id": "furniture", "size": 4 },
+          { "id": "flowers", "size": 4 },
+          { "id": "jobs", "size": 5 }
+        ],
+        "cards": [
+          { "id": "c.emotions", "kind": "category", "category": "emotions" },
+          { "id": "w.emotions.grief", "kind": "word", "category": "emotions", "word": "emotions.grief" },
+          { "id": "w.emotions.joy", "kind": "word", "category": "emotions", "word": "emotions.joy" },
+          { "id": "w.emotions.surprise", "kind": "word", "category": "emotions", "word": "emotions.surprise" },
+          { "id": "w.emotions.anger", "kind": "word", "category": "emotions", "word": "emotions.anger" },
+          { "id": "c.rooms", "kind": "category", "category": "rooms" },
+          { "id": "w.rooms.cellar", "kind": "word", "category": "rooms", "word": "rooms.cellar" },
+          { "id": "w.rooms.bathroom", "kind": "word", "category": "rooms", "word": "rooms.bathroom" },
+          { "id": "w.rooms.nursery", "kind": "word", "category": "rooms", "word": "rooms.nursery" },
+          { "id": "w.rooms.hallway", "kind": "word", "category": "rooms", "word": "rooms.hallway" },
+          { "id": "w.rooms.kitchen", "kind": "word", "category": "rooms", "word": "rooms.kitchen" },
+          { "id": "c.furniture", "kind": "category", "category": "furniture" },
+          { "id": "w.furniture.shelf", "kind": "word", "category": "furniture", "word": "furniture.shelf" },
+          { "id": "w.furniture.sofa", "kind": "word", "category": "furniture", "word": "furniture.sofa" },
+          { "id": "w.furniture.chair", "kind": "word", "category": "furniture", "word": "furniture.chair" },
+          { "id": "w.furniture.dresser", "kind": "word", "category": "furniture", "word": "furniture.dresser" },
+          { "id": "c.flowers", "kind": "category", "category": "flowers" },
+          { "id": "w.flowers.daffodil", "kind": "word", "category": "flowers", "word": "flowers.daffodil" },
+          { "id": "w.flowers.sunflower", "kind": "word", "category": "flowers", "word": "flowers.sunflower" },
+          { "id": "w.flowers.lily", "kind": "word", "category": "flowers", "word": "flowers.lily" },
+          { "id": "w.flowers.daisy", "kind": "word", "category": "flowers", "word": "flowers.daisy" },
+          { "id": "c.jobs", "kind": "category", "category": "jobs" },
+          { "id": "w.jobs.chef", "kind": "word", "category": "jobs", "word": "jobs.chef" },
+          { "id": "w.jobs.dentist", "kind": "word", "category": "jobs", "word": "jobs.dentist" },
+          { "id": "w.jobs.firefighter", "kind": "word", "category": "jobs", "word": "jobs.firefighter" },
+          { "id": "w.jobs.nurse", "kind": "word", "category": "jobs", "word": "jobs.nurse" },
+          { "id": "w.jobs.baker", "kind": "word", "category": "jobs", "word": "jobs.baker" }
+        ],
+        "tableau": [
+          { "cards": ["w.jobs.firefighter","w.jobs.nurse","w.jobs.dentist"], "faceDown": 2 },
+          { "cards": ["w.rooms.cellar","w.flowers.daffodil","w.flowers.daisy","w.rooms.bathroom"], "faceDown": 2 },
+          { "cards": ["w.emotions.joy","w.jobs.baker","w.furniture.dresser","c.flowers"], "faceDown": 2 },
+          { "cards": ["w.emotions.anger","w.rooms.hallway","w.flowers.lily"], "faceDown": 2 },
+          { "cards": ["c.furniture","w.jobs.chef","c.jobs","w.rooms.nursery"], "faceDown": 2 }
+        ],
+        "stock": [
+          "w.furniture.shelf",
+          "w.furniture.chair",
+          "w.flowers.sunflower",
+          "w.rooms.kitchen",
+          "c.rooms",
+          "w.furniture.sofa",
+          "w.emotions.grief",
+          "c.emotions",
+          "w.emotions.surprise"
+        ],
+        "moves": 44,
+        "stars": { "two": 2, "three": 4 }
+      },
+      "analysis": {
+        "solutionLength": 37,
+        "solverNodes": 364,
+        "generator": { "id": "associations@1.0.0", "seed": "maplebrook-v1:13:r1" },
+        "botWinRate": { "casual": 0.3, "average": 0.75, "expert": 0.97 }
+      }
+    },
+    {
+      "levelId": "maplebrook.l014",
+      "number": 14,
+      "mechanic": "associations",
+      "difficulty": { "tier": "medium", "score": 0.15 },
+      "objectives": [
+        { "type": "clear_board" }
+      ],
+      "lose": { "outOfMoves": true, "stuck": true },
+      "boosters": { "allowed": ["hint","undo","joker"] },
+      "tags": [],
+      "data": {
+        "rules": {
+          "foundationSlots": 3,
+          "drawCount": 1,
+          "recycleLimit": null,
+          "mismatchCostsMove": true,
+          "wordOnWord": "same_category",
+          "emptyColumn": "any"
+        },
+        "categories": [
+          { "id": "weather", "size": 5 },
+          { "id": "royalty", "size": 4 },
+          { "id": "desserts", "size": 4 },
+          { "id": "winter", "size": 4 }
+        ],
+        "cards": [
+          { "id": "c.weather", "kind": "category", "category": "weather" },
+          { "id": "w.weather.drizzle", "kind": "word", "category": "weather", "word": "weather.drizzle" },
+          { "id": "w.weather.rain", "kind": "word", "category": "weather", "word": "weather.rain" },
+          { "id": "w.weather.storm", "kind": "word", "category": "weather", "word": "weather.storm" },
+          { "id": "w.weather.thunder", "kind": "word", "category": "weather", "word": "weather.thunder" },
+          { "id": "w.weather.hail", "kind": "word", "category": "weather", "word": "weather.hail" },
+          { "id": "c.royalty", "kind": "category", "category": "royalty" },
+          { "id": "w.royalty.duchess", "kind": "word", "category": "royalty", "word": "royalty.duchess" },
+          { "id": "w.royalty.empress", "kind": "word", "category": "royalty", "word": "royalty.empress" },
+          { "id": "w.royalty.countess", "kind": "word", "category": "royalty", "word": "royalty.countess" },
+          { "id": "w.royalty.queen", "kind": "word", "category": "royalty", "word": "royalty.queen" },
+          { "id": "c.desserts", "kind": "category", "category": "desserts" },
+          { "id": "w.desserts.cupcake", "kind": "word", "category": "desserts", "word": "desserts.cupcake" },
+          { "id": "w.desserts.donut", "kind": "word", "category": "desserts", "word": "desserts.donut" },
+          { "id": "w.desserts.brownie", "kind": "word", "category": "desserts", "word": "desserts.brownie" },
+          { "id": "w.desserts.pudding", "kind": "word", "category": "desserts", "word": "desserts.pudding" },
+          { "id": "c.winter", "kind": "category", "category": "winter" },
+          { "id": "w.winter.snowflake", "kind": "word", "category": "winter", "word": "winter.snowflake" },
+          { "id": "w.winter.toboggan", "kind": "word", "category": "winter", "word": "winter.toboggan" },
+          { "id": "w.winter.earmuffs", "kind": "word", "category": "winter", "word": "winter.earmuffs" },
+          { "id": "w.winter.mittens", "kind": "word", "category": "winter", "word": "winter.mittens" }
+        ],
+        "tableau": [
+          { "cards": ["w.winter.toboggan","w.royalty.queen","w.weather.storm"], "faceDown": 2 },
+          { "cards": ["c.winter","w.desserts.pudding","w.royalty.duchess"], "faceDown": 2 },
+          { "cards": ["w.weather.hail","w.desserts.brownie","w.royalty.empress"], "faceDown": 2 },
+          { "cards": ["c.weather","w.royalty.countess","c.royalty"], "faceDown": 2 },
+          { "cards": ["w.desserts.cupcake","w.weather.drizzle","w.winter.snowflake","w.desserts.donut"], "faceDown": 2 }
+        ],
+        "stock": ["w.winter.earmuffs", "c.desserts", "w.weather.thunder", "w.weather.rain", "w.winter.mittens"],
+        "moves": 31,
+        "stars": { "two": 1, "three": 3 }
+      },
+      "analysis": {
+        "solutionLength": 26,
+        "solverNodes": 3849,
+        "generator": { "id": "associations@1.0.0", "seed": "maplebrook-v1:14" },
+        "botWinRate": { "casual": 0.45, "average": 0.85, "expert": 1 }
+      }
+    },
+    {
+      "levelId": "maplebrook.l015",
+      "number": 15,
+      "mechanic": "associations",
+      "difficulty": { "tier": "medium", "score": 0.25 },
+      "objectives": [
+        { "type": "clear_board" }
+      ],
+      "lose": { "outOfMoves": true, "stuck": true },
+      "boosters": { "allowed": ["hint","undo","joker"] },
+      "tags": [],
+      "data": {
+        "rules": {
+          "foundationSlots": 3,
+          "drawCount": 1,
+          "recycleLimit": null,
+          "mismatchCostsMove": true,
+          "wordOnWord": "same_category",
+          "emptyColumn": "any"
+        },
+        "categories": [
+          { "id": "metals", "size": 5 },
+          { "id": "vegetables", "size": 4 },
+          { "id": "colors", "size": 5 },
+          { "id": "around_town", "size": 4 }
+        ],
+        "cards": [
+          { "id": "c.metals", "kind": "category", "category": "metals" },
+          { "id": "w.metals.silver", "kind": "word", "category": "metals", "word": "metals.silver" },
+          { "id": "w.metals.copper", "kind": "word", "category": "metals", "word": "metals.copper" },
+          { "id": "w.metals.bronze", "kind": "word", "category": "metals", "word": "metals.bronze" },
+          { "id": "w.metals.platinum", "kind": "word", "category": "metals", "word": "metals.platinum" },
+          { "id": "w.metals.iron", "kind": "word", "category": "metals", "word": "metals.iron" },
+          { "id": "c.vegetables", "kind": "category", "category": "vegetables" },
+          { "id": "w.vegetables.onion", "kind": "word", "category": "vegetables", "word": "vegetables.onion" },
+          { "id": "w.vegetables.spinach", "kind": "word", "category": "vegetables", "word": "vegetables.spinach" },
+          { "id": "w.vegetables.celery", "kind": "word", "category": "vegetables", "word": "vegetables.celery" },
+          { "id": "w.vegetables.lettuce", "kind": "word", "category": "vegetables", "word": "vegetables.lettuce" },
+          { "id": "c.colors", "kind": "category", "category": "colors" },
+          { "id": "w.colors.black", "kind": "word", "category": "colors", "word": "colors.black" },
+          { "id": "w.colors.white", "kind": "word", "category": "colors", "word": "colors.white" },
+          { "id": "w.colors.gray", "kind": "word", "category": "colors", "word": "colors.gray" },
+          { "id": "w.colors.pink", "kind": "word", "category": "colors", "word": "colors.pink" },
+          { "id": "w.colors.brown", "kind": "word", "category": "colors", "word": "colors.brown" },
+          { "id": "c.around_town", "kind": "category", "category": "around_town" },
+          { "id": "w.around_town.museum", "kind": "word", "category": "around_town", "word": "around_town.museum" },
+          { "id": "w.around_town.bank", "kind": "word", "category": "around_town", "word": "around_town.bank" },
+          { "id": "w.around_town.park", "kind": "word", "category": "around_town", "word": "around_town.park" },
+          { "id": "w.around_town.theater", "kind": "word", "category": "around_town", "word": "around_town.theater" }
+        ],
+        "tableau": [
+          { "cards": ["c.colors","w.metals.bronze","w.metals.platinum","w.vegetables.onion"], "faceDown": 2 },
+          { "cards": ["w.metals.silver","w.vegetables.lettuce","w.colors.brown"], "faceDown": 2 },
+          {
+            "cards": ["w.colors.black", "w.vegetables.spinach", "w.around_town.museum", "w.around_town.park"],
+            "faceDown": 2
+          },
+          { "cards": ["w.colors.gray","w.colors.white","c.metals","c.around_town"], "faceDown": 2 },
+          { "cards": ["c.vegetables","w.metals.copper","w.around_town.bank"], "faceDown": 2 }
+        ],
+        "stock": ["w.around_town.theater", "w.metals.iron", "w.colors.pink", "w.vegetables.celery"],
+        "moves": 30,
+        "stars": { "two": 1, "three": 3 }
+      },
+      "analysis": {
+        "solutionLength": 25,
+        "solverNodes": 70,
+        "generator": { "id": "associations@1.0.0", "seed": "maplebrook-v1:15" },
+        "botWinRate": { "casual": 0.4, "average": 0.75, "expert": 1 }
+      }
+    },
+    {
+      "levelId": "maplebrook.l016",
+      "number": 16,
+      "mechanic": "associations",
+      "difficulty": { "tier": "hard", "score": 0.32 },
+      "objectives": [
+        { "type": "clear_board" }
+      ],
+      "lose": { "outOfMoves": true, "stuck": true },
+      "boosters": { "allowed": ["hint","undo","joker"] },
+      "tags": [],
+      "data": {
+        "rules": {
+          "foundationSlots": 3,
+          "drawCount": 1,
+          "recycleLimit": null,
+          "mismatchCostsMove": true,
+          "wordOnWord": "same_category",
+          "emptyColumn": "any"
+        },
+        "categories": [
+          { "id": "dances", "size": 5 },
+          { "id": "insects", "size": 5 },
+          { "id": "pirate_gear", "size": 5 },
+          { "id": "sauces", "size": 5 },
+          { "id": "fabrics", "size": 5 }
+        ],
+        "cards": [
+          { "id": "c.dances", "kind": "category", "category": "dances" },
+          { "id": "w.dances.waltz", "kind": "word", "category": "dances", "word": "dances.waltz" },
+          { "id": "w.dances.salsa", "kind": "word", "category": "dances", "word": "dances.salsa" },
+          { "id": "w.dances.disco", "kind": "word", "category": "dances", "word": "dances.disco" },
+          { "id": "w.dances.tango", "kind": "word", "category": "dances", "word": "dances.tango" },
+          { "id": "w.dances.rumba", "kind": "word", "category": "dances", "word": "dances.rumba" },
+          { "id": "c.insects", "kind": "category", "category": "insects" },
+          { "id": "w.insects.beetle", "kind": "word", "category": "insects", "word": "insects.beetle" },
+          { "id": "w.insects.wasp", "kind": "word", "category": "insects", "word": "insects.wasp" },
+          { "id": "w.insects.moth", "kind": "word", "category": "insects", "word": "insects.moth" },
+          { "id": "w.insects.ladybug", "kind": "word", "category": "insects", "word": "insects.ladybug" },
+          { "id": "w.insects.dragonfly", "kind": "word", "category": "insects", "word": "insects.dragonfly" },
+          { "id": "c.pirate_gear", "kind": "category", "category": "pirate_gear" },
+          { "id": "w.pirate_gear.cannon", "kind": "word", "category": "pirate_gear", "word": "pirate_gear.cannon" },
+          { "id": "w.pirate_gear.galleon", "kind": "word", "category": "pirate_gear", "word": "pirate_gear.galleon" },
+          { "id": "w.pirate_gear.cutlass", "kind": "word", "category": "pirate_gear", "word": "pirate_gear.cutlass" },
+          { "id": "w.pirate_gear.anchor", "kind": "word", "category": "pirate_gear", "word": "pirate_gear.anchor" },
+          { "id": "w.pirate_gear.doubloon", "kind": "word", "category": "pirate_gear", "word": "pirate_gear.doubloon" },
+          { "id": "c.sauces", "kind": "category", "category": "sauces" },
+          { "id": "w.sauces.barbecue", "kind": "word", "category": "sauces", "word": "sauces.barbecue" },
+          { "id": "w.sauces.hummus", "kind": "word", "category": "sauces", "word": "sauces.hummus" },
+          { "id": "w.sauces.gravy", "kind": "word", "category": "sauces", "word": "sauces.gravy" },
+          { "id": "w.sauces.aioli", "kind": "word", "category": "sauces", "word": "sauces.aioli" },
+          { "id": "w.sauces.pesto", "kind": "word", "category": "sauces", "word": "sauces.pesto" },
+          { "id": "c.fabrics", "kind": "category", "category": "fabrics" },
+          { "id": "w.fabrics.lace", "kind": "word", "category": "fabrics", "word": "fabrics.lace" },
+          { "id": "w.fabrics.velvet", "kind": "word", "category": "fabrics", "word": "fabrics.velvet" },
+          { "id": "w.fabrics.linen", "kind": "word", "category": "fabrics", "word": "fabrics.linen" },
+          { "id": "w.fabrics.silk", "kind": "word", "category": "fabrics", "word": "fabrics.silk" },
+          { "id": "w.fabrics.wool", "kind": "word", "category": "fabrics", "word": "fabrics.wool" }
+        ],
+        "tableau": [
+          { "cards": ["w.fabrics.silk","c.pirate_gear","w.sauces.hummus","w.insects.moth"], "faceDown": 2 },
+          { "cards": ["w.fabrics.linen","w.fabrics.velvet","w.insects.wasp","c.fabrics"], "faceDown": 2 },
+          { "cards": ["w.dances.rumba","w.dances.disco","w.insects.beetle","c.insects"], "faceDown": 2 },
+          { "cards": ["w.sauces.gravy","w.sauces.barbecue","w.sauces.pesto","w.pirate_gear.galleon"], "faceDown": 2 },
+          { "cards": ["w.dances.waltz","w.sauces.aioli","c.sauces","w.pirate_gear.anchor"], "faceDown": 2 }
+        ],
+        "stock": [
+          "w.pirate_gear.cannon",
+          "w.fabrics.lace",
+          "c.dances",
+          "w.dances.tango",
+          "w.pirate_gear.doubloon",
+          "w.pirate_gear.cutlass",
+          "w.insects.ladybug",
+          "w.insects.dragonfly",
+          "w.dances.salsa",
+          "w.fabrics.wool"
+        ],
+        "moves": 49,
+        "stars": { "two": 2, "three": 5 }
+      },
+      "analysis": {
+        "solutionLength": 40,
+        "solverNodes": 3655,
+        "generator": { "id": "associations@1.0.0", "seed": "maplebrook-v1:16" },
+        "botWinRate": { "casual": 0.33, "average": 0.68, "expert": 1 }
+      }
+    },
+    {
+      "levelId": "maplebrook.l017",
+      "number": 17,
+      "mechanic": "associations",
+      "difficulty": { "tier": "hard", "score": 0.32 },
+      "objectives": [
+        { "type": "clear_board" }
+      ],
+      "lose": { "outOfMoves": true, "stuck": true },
+      "boosters": { "allowed": ["hint","undo","joker"] },
+      "tags": [],
+      "data": {
+        "rules": {
+          "foundationSlots": 3,
+          "drawCount": 1,
+          "recycleLimit": null,
+          "mismatchCostsMove": true,
+          "wordOnWord": "same_category",
+          "emptyColumn": "any"
+        },
+        "categories": [
+          { "id": "camping", "size": 5 },
+          { "id": "with_wings", "size": 5 },
+          { "id": "fairy_folk", "size": 5 },
+          { "id": "weather", "size": 5 },
+          { "id": "gemstones", "size": 5 }
+        ],
+        "cards": [
+          { "id": "c.camping", "kind": "category", "category": "camping" },
+          { "id": "w.camping.map", "kind": "word", "category": "camping", "word": "camping.map" },
+          { "id": "w.camping.flashlight", "kind": "word", "category": "camping", "word": "camping.flashlight" },
+          { "id": "w.camping.kayak", "kind": "word", "category": "camping", "word": "camping.kayak" },
+          { "id": "w.camping.canteen", "kind": "word", "category": "camping", "word": "camping.canteen" },
+          { "id": "w.camping.compass", "kind": "word", "category": "camping", "word": "camping.compass" },
+          { "id": "c.with_wings", "kind": "category", "category": "with_wings" },
+          { "id": "w.with_wings.bat", "kind": "word", "category": "with_wings", "word": "with_wings.bat" },
+          { "id": "w.with_wings.fairy", "kind": "word", "category": "with_wings", "word": "with_wings.fairy" },
+          { "id": "w.with_wings.dragon", "kind": "word", "category": "with_wings", "word": "with_wings.dragon" },
+          { "id": "w.with_wings.griffin", "kind": "word", "category": "with_wings", "word": "with_wings.griffin" },
+          { "id": "w.with_wings.glider", "kind": "word", "category": "with_wings", "word": "with_wings.glider" },
+          { "id": "c.fairy_folk", "kind": "category", "category": "fairy_folk" },
+          { "id": "w.fairy_folk.gnome", "kind": "word", "category": "fairy_folk", "word": "fairy_folk.gnome" },
+          { "id": "w.fairy_folk.giant", "kind": "word", "category": "fairy_folk", "word": "fairy_folk.giant" },
+          { "id": "w.fairy_folk.wizard", "kind": "word", "category": "fairy_folk", "word": "fairy_folk.wizard" },
+          { "id": "w.fairy_folk.unicorn", "kind": "word", "category": "fairy_folk", "word": "fairy_folk.unicorn" },
+          { "id": "w.fairy_folk.goblin", "kind": "word", "category": "fairy_folk", "word": "fairy_folk.goblin" },
+          { "id": "c.weather", "kind": "category", "category": "weather" },
+          { "id": "w.weather.drizzle", "kind": "word", "category": "weather", "word": "weather.drizzle" },
+          { "id": "w.weather.snow", "kind": "word", "category": "weather", "word": "weather.snow" },
+          { "id": "w.weather.storm", "kind": "word", "category": "weather", "word": "weather.storm" },
+          { "id": "w.weather.thunder", "kind": "word", "category": "weather", "word": "weather.thunder" },
+          { "id": "w.weather.sleet", "kind": "word", "category": "weather", "word": "weather.sleet" },
+          { "id": "c.gemstones", "kind": "category", "category": "gemstones" },
+          { "id": "w.gemstones.emerald", "kind": "word", "category": "gemstones", "word": "gemstones.emerald" },
+          { "id": "w.gemstones.ruby", "kind": "word", "category": "gemstones", "word": "gemstones.ruby" },
+          { "id": "w.gemstones.amber", "kind": "word", "category": "gemstones", "word": "gemstones.amber" },
+          { "id": "w.gemstones.sapphire", "kind": "word", "category": "gemstones", "word": "gemstones.sapphire" },
+          { "id": "w.gemstones.amethyst", "kind": "word", "category": "gemstones", "word": "gemstones.amethyst" }
+        ],
+        "tableau": [
+          {
+            "cards": ["w.gemstones.emerald", "w.fairy_folk.gnome", "w.camping.flashlight", "w.gemstones.amethyst"],
+            "faceDown": 2
+          },
+          { "cards": ["w.weather.snow","c.with_wings","c.weather","w.fairy_folk.giant"], "faceDown": 3 },
+          { "cards": ["w.camping.kayak","w.gemstones.sapphire","w.gemstones.amber","w.weather.drizzle"], "faceDown": 3 },
+          { "cards": ["w.camping.compass","w.camping.map","w.with_wings.glider","c.camping"], "faceDown": 2 },
+          { "cards": ["w.with_wings.fairy","w.with_wings.griffin","c.fairy_folk","w.with_wings.bat"], "faceDown": 2 }
+        ],
+        "stock": [
+          "w.camping.canteen",
+          "c.gemstones",
+          "w.weather.storm",
+          "w.weather.sleet",
+          "w.with_wings.dragon",
+          "w.fairy_folk.unicorn",
+          "w.fairy_folk.wizard",
+          "w.fairy_folk.goblin",
+          "w.gemstones.ruby",
+          "w.weather.thunder"
+        ],
+        "moves": 57,
+        "stars": { "two": 4, "three": 9 }
+      },
+      "analysis": {
+        "solutionLength": 41,
+        "solverNodes": 15946,
+        "generator": { "id": "associations@1.0.0", "seed": "maplebrook-v1:17" },
+        "botWinRate": { "casual": 0.22, "average": 0.68, "expert": 1 }
+      }
+    },
+    {
+      "levelId": "maplebrook.l018",
+      "number": 18,
+      "mechanic": "associations",
+      "difficulty": { "tier": "hard", "score": 0.35 },
+      "objectives": [
+        { "type": "clear_board" }
+      ],
+      "lose": { "outOfMoves": true, "stuck": true },
+      "boosters": { "allowed": ["hint","undo","joker"] },
+      "tags": [],
+      "data": {
+        "rules": {
+          "foundationSlots": 3,
+          "drawCount": 1,
+          "recycleLimit": null,
+          "mismatchCostsMove": true,
+          "wordOnWord": "same_category",
+          "emptyColumn": "any"
+        },
+        "categories": [
+          { "id": "games", "size": 5 },
+          { "id": "trees", "size": 5 },
+          { "id": "flowers", "size": 5 },
+          { "id": "prickly", "size": 5 },
+          { "id": "in_the_sky", "size": 5 }
+        ],
+        "cards": [
+          { "id": "c.games", "kind": "category", "category": "games" },
+          { "id": "w.games.bingo", "kind": "word", "category": "games", "word": "games.bingo" },
+          { "id": "w.games.dominoes", "kind": "word", "category": "games", "word": "games.dominoes" },
+          { "id": "w.games.darts", "kind": "word", "category": "games", "word": "games.darts" },
+          { "id": "w.games.mahjong", "kind": "word", "category": "games", "word": "games.mahjong" },
+          { "id": "w.games.marbles", "kind": "word", "category": "games", "word": "games.marbles" },
+          { "id": "c.trees", "kind": "category", "category": "trees" },
+          { "id": "w.trees.elm", "kind": "word", "category": "trees", "word": "trees.elm" },
+          { "id": "w.trees.birch", "kind": "word", "category": "trees", "word": "trees.birch" },
+          { "id": "w.trees.oak", "kind": "word", "category": "trees", "word": "trees.oak" },
+          { "id": "w.trees.chestnut", "kind": "word", "category": "trees", "word": "trees.chestnut" },
+          { "id": "w.trees.maple", "kind": "word", "category": "trees", "word": "trees.maple" },
+          { "id": "c.flowers", "kind": "category", "category": "flowers" },
+          { "id": "w.flowers.orchid", "kind": "word", "category": "flowers", "word": "flowers.orchid" },
+          { "id": "w.flowers.sunflower", "kind": "word", "category": "flowers", "word": "flowers.sunflower" },
+          { "id": "w.flowers.poppy", "kind": "word", "category": "flowers", "word": "flowers.poppy" },
+          { "id": "w.flowers.daffodil", "kind": "word", "category": "flowers", "word": "flowers.daffodil" },
+          { "id": "w.flowers.tulip", "kind": "word", "category": "flowers", "word": "flowers.tulip" },
+          { "id": "c.prickly", "kind": "category", "category": "prickly" },
+          { "id": "w.prickly.hedgehog", "kind": "word", "category": "prickly", "word": "prickly.hedgehog" },
+          { "id": "w.prickly.cactus", "kind": "word", "category": "prickly", "word": "prickly.cactus" },
+          { "id": "w.prickly.bramble", "kind": "word", "category": "prickly", "word": "prickly.bramble" },
+          { "id": "w.prickly.sea_urchin", "kind": "word", "category": "prickly", "word": "prickly.sea_urchin" },
+          { "id": "w.prickly.holly", "kind": "word", "category": "prickly", "word": "prickly.holly" },
+          { "id": "c.in_the_sky", "kind": "category", "category": "in_the_sky" },
+          { "id": "w.in_the_sky.balloon", "kind": "word", "category": "in_the_sky", "word": "in_the_sky.balloon" },
+          { "id": "w.in_the_sky.kite", "kind": "word", "category": "in_the_sky", "word": "in_the_sky.kite" },
+          { "id": "w.in_the_sky.comet", "kind": "word", "category": "in_the_sky", "word": "in_the_sky.comet" },
+          { "id": "w.in_the_sky.moon", "kind": "word", "category": "in_the_sky", "word": "in_the_sky.moon" },
+          { "id": "w.in_the_sky.aurora", "kind": "word", "category": "in_the_sky", "word": "in_the_sky.aurora" }
+        ],
+        "tableau": [
+          { "cards": ["w.trees.maple","w.flowers.poppy","w.prickly.holly","w.in_the_sky.kite"], "faceDown": 3 },
+          { "cards": ["w.flowers.orchid","w.trees.birch","w.trees.oak","c.flowers"], "faceDown": 2 },
+          { "cards": ["w.trees.elm","w.in_the_sky.aurora","w.in_the_sky.balloon","w.flowers.sunflower"], "faceDown": 3 },
+          { "cards": ["w.prickly.bramble","w.games.bingo","w.in_the_sky.moon","w.flowers.tulip"], "faceDown": 3 },
+          { "cards": ["w.games.marbles","w.games.dominoes","c.in_the_sky","w.in_the_sky.comet"], "faceDown": 2 }
+        ],
+        "stock": [
+          "c.trees",
+          "w.trees.chestnut",
+          "w.prickly.cactus",
+          "w.prickly.sea_urchin",
+          "w.flowers.daffodil",
+          "c.prickly",
+          "w.games.mahjong",
+          "c.games",
+          "w.prickly.hedgehog",
+          "w.games.darts"
+        ],
+        "moves": 51,
+        "stars": { "two": 3, "three": 6 }
+      },
+      "analysis": {
+        "solutionLength": 41,
+        "solverNodes": 2069,
+        "generator": { "id": "associations@1.0.0", "seed": "maplebrook-v1:18" },
+        "botWinRate": { "casual": 0.2, "average": 0.65, "expert": 0.93 }
+      }
+    },
+    {
+      "levelId": "maplebrook.l019",
+      "number": 19,
+      "mechanic": "associations",
+      "difficulty": { "tier": "hard", "score": 0.35 },
+      "objectives": [
+        { "type": "clear_board" }
+      ],
+      "lose": { "outOfMoves": true, "stuck": true },
+      "boosters": { "allowed": ["hint","undo","joker"] },
+      "tags": [],
+      "data": {
+        "rules": {
+          "foundationSlots": 3,
+          "drawCount": 1,
+          "recycleLimit": null,
+          "mismatchCostsMove": true,
+          "wordOnWord": "same_category",
+          "emptyColumn": "any"
+        },
+        "categories": [
+          { "id": "sports", "size": 5 },
+          { "id": "garden", "size": 5 },
+          { "id": "emotions", "size": 5 },
+          { "id": "jobs", "size": 5 },
+          { "id": "school_supplies", "size": 5 }
+        ],
+        "cards": [
+          { "id": "c.sports", "kind": "category", "category": "sports" },
+          { "id": "w.sports.golf", "kind": "word", "category": "sports", "word": "sports.golf" },
+          { "id": "w.sports.rugby", "kind": "word", "category": "sports", "word": "sports.rugby" },
+          { "id": "w.sports.hockey", "kind": "word", "category": "sports", "word": "sports.hockey" },
+          { "id": "w.sports.archery", "kind": "word", "category": "sports", "word": "sports.archery" },
+          { "id": "w.sports.cricket", "kind": "word", "category": "sports", "word": "sports.cricket" },
+          { "id": "c.garden", "kind": "category", "category": "garden" },
+          { "id": "w.garden.fence", "kind": "word", "category": "garden", "word": "garden.fence" },
+          { "id": "w.garden.rake", "kind": "word", "category": "garden", "word": "garden.rake" },
+          { "id": "w.garden.trowel", "kind": "word", "category": "garden", "word": "garden.trowel" },
+          { "id": "w.garden.shed", "kind": "word", "category": "garden", "word": "garden.shed" },
+          { "id": "w.garden.wheelbarrow", "kind": "word", "category": "garden", "word": "garden.wheelbarrow" },
+          { "id": "c.emotions", "kind": "category", "category": "emotions" },
+          { "id": "w.emotions.joy", "kind": "word", "category": "emotions", "word": "emotions.joy" },
+          { "id": "w.emotions.calm", "kind": "word", "category": "emotions", "word": "emotions.calm" },
+          { "id": "w.emotions.envy", "kind": "word", "category": "emotions", "word": "emotions.envy" },
+          { "id": "w.emotions.shame", "kind": "word", "category": "emotions", "word": "emotions.shame" },
+          { "id": "w.emotions.surprise", "kind": "word", "category": "emotions", "word": "emotions.surprise" },
+          { "id": "c.jobs", "kind": "category", "category": "jobs" },
+          { "id": "w.jobs.pilot", "kind": "word", "category": "jobs", "word": "jobs.pilot" },
+          { "id": "w.jobs.farmer", "kind": "word", "category": "jobs", "word": "jobs.farmer" },
+          { "id": "w.jobs.firefighter", "kind": "word", "category": "jobs", "word": "jobs.firefighter" },
+          { "id": "w.jobs.judge", "kind": "word", "category": "jobs", "word": "jobs.judge" },
+          { "id": "w.jobs.tailor", "kind": "word", "category": "jobs", "word": "jobs.tailor" },
+          { "id": "c.school_supplies", "kind": "category", "category": "school_supplies" },
+          {
+            "id": "w.school_supplies.ruler",
+            "kind": "word",
+            "category": "school_supplies",
+            "word": "school_supplies.ruler"
+          },
+          {
+            "id": "w.school_supplies.backpack",
+            "kind": "word",
+            "category": "school_supplies",
+            "word": "school_supplies.backpack"
+          },
+          {
+            "id": "w.school_supplies.crayon",
+            "kind": "word",
+            "category": "school_supplies",
+            "word": "school_supplies.crayon"
+          },
+          {
+            "id": "w.school_supplies.marker",
+            "kind": "word",
+            "category": "school_supplies",
+            "word": "school_supplies.marker"
+          },
+          {
+            "id": "w.school_supplies.notebook",
+            "kind": "word",
+            "category": "school_supplies",
+            "word": "school_supplies.notebook"
+          }
+        ],
+        "tableau": [
+          { "cards": ["w.jobs.firefighter","w.sports.golf","w.jobs.tailor","w.emotions.joy"], "faceDown": 2 },
+          { "cards": ["w.emotions.envy","w.school_supplies.notebook","c.sports","c.garden"], "faceDown": 3 },
+          {
+            "cards": ["w.garden.wheelbarrow", "w.school_supplies.backpack", "c.jobs", "w.school_supplies.marker"],
+            "faceDown": 3
+          },
+          { "cards": ["w.garden.shed","w.school_supplies.ruler","w.emotions.shame","w.emotions.calm"], "faceDown": 2 },
+          { "cards": ["w.sports.archery","w.sports.rugby","w.garden.rake","w.garden.trowel"], "faceDown": 2 }
+        ],
+        "stock": [
+          "w.jobs.judge",
+          "w.garden.fence",
+          "w.emotions.surprise",
+          "c.emotions",
+          "w.school_supplies.crayon",
+          "w.jobs.farmer",
+          "w.sports.cricket",
+          "c.school_supplies",
+          "w.sports.hockey",
+          "w.jobs.pilot"
+        ],
+        "moves": 53,
+        "stars": { "two": 4, "three": 8 }
+      },
+      "analysis": {
+        "solutionLength": 38,
+        "solverNodes": 23471,
+        "generator": { "id": "associations@1.0.0", "seed": "maplebrook-v1:19" },
+        "botWinRate": { "casual": 0.25, "average": 0.65, "expert": 0.9 }
+      }
+    },
+    {
+      "levelId": "maplebrook.l020",
+      "number": 20,
+      "mechanic": "associations",
+      "difficulty": { "tier": "expert", "score": 0.4 },
+      "objectives": [
+        { "type": "clear_board" }
+      ],
+      "lose": { "outOfMoves": true, "stuck": true },
+      "boosters": { "allowed": ["hint","undo","joker"] },
+      "tags": ["keystone"],
+      "data": {
+        "rules": {
+          "foundationSlots": 3,
+          "drawCount": 1,
+          "recycleLimit": null,
+          "mismatchCostsMove": true,
+          "wordOnWord": "same_category",
+          "emptyColumn": "any"
+        },
+        "categories": [
+          { "id": "instruments", "size": 5 },
+          { "id": "planets", "size": 5 },
+          { "id": "hats", "size": 5 },
+          { "id": "ends_ball", "size": 5 },
+          { "id": "with_keys", "size": 5 },
+          { "id": "gemstones", "size": 5 }
+        ],
+        "cards": [
+          { "id": "c.instruments", "kind": "category", "category": "instruments" },
+          { "id": "w.instruments.harp", "kind": "word", "category": "instruments", "word": "instruments.harp" },
+          { "id": "w.instruments.guitar", "kind": "word", "category": "instruments", "word": "instruments.guitar" },
+          { "id": "w.instruments.flute", "kind": "word", "category": "instruments", "word": "instruments.flute" },
+          { "id": "w.instruments.tuba", "kind": "word", "category": "instruments", "word": "instruments.tuba" },
+          { "id": "w.instruments.violin", "kind": "word", "category": "instruments", "word": "instruments.violin" },
+          { "id": "c.planets", "kind": "category", "category": "planets" },
+          { "id": "w.planets.mercury", "kind": "word", "category": "planets", "word": "planets.mercury" },
+          { "id": "w.planets.saturn", "kind": "word", "category": "planets", "word": "planets.saturn" },
+          { "id": "w.planets.jupiter", "kind": "word", "category": "planets", "word": "planets.jupiter" },
+          { "id": "w.planets.venus", "kind": "word", "category": "planets", "word": "planets.venus" },
+          { "id": "w.planets.uranus", "kind": "word", "category": "planets", "word": "planets.uranus" },
+          { "id": "c.hats", "kind": "category", "category": "hats" },
+          { "id": "w.hats.helmet", "kind": "word", "category": "hats", "word": "hats.helmet" },
+          { "id": "w.hats.top_hat", "kind": "word", "category": "hats", "word": "hats.top_hat" },
+          { "id": "w.hats.beanie", "kind": "word", "category": "hats", "word": "hats.beanie" },
+          { "id": "w.hats.bowler", "kind": "word", "category": "hats", "word": "hats.bowler" },
+          { "id": "w.hats.cap", "kind": "word", "category": "hats", "word": "hats.cap" },
+          { "id": "c.ends_ball", "kind": "category", "category": "ends_ball" },
+          { "id": "w.ends_ball.fireball", "kind": "word", "category": "ends_ball", "word": "ends_ball.fireball" },
+          { "id": "w.ends_ball.meatball", "kind": "word", "category": "ends_ball", "word": "ends_ball.meatball" },
+          { "id": "w.ends_ball.baseball", "kind": "word", "category": "ends_ball", "word": "ends_ball.baseball" },
+          { "id": "w.ends_ball.gumball", "kind": "word", "category": "ends_ball", "word": "ends_ball.gumball" },
+          { "id": "w.ends_ball.handball", "kind": "word", "category": "ends_ball", "word": "ends_ball.handball" },
+          { "id": "c.with_keys", "kind": "category", "category": "with_keys" },
+          { "id": "w.with_keys.door", "kind": "word", "category": "with_keys", "word": "with_keys.door" },
+          { "id": "w.with_keys.typewriter", "kind": "word", "category": "with_keys", "word": "with_keys.typewriter" },
+          { "id": "w.with_keys.safe", "kind": "word", "category": "with_keys", "word": "with_keys.safe" },
+          { "id": "w.with_keys.calculator", "kind": "word", "category": "with_keys", "word": "with_keys.calculator" },
+          { "id": "w.with_keys.accordion", "kind": "word", "category": "with_keys", "word": "with_keys.accordion" },
+          { "id": "c.gemstones", "kind": "category", "category": "gemstones" },
+          { "id": "w.gemstones.garnet", "kind": "word", "category": "gemstones", "word": "gemstones.garnet" },
+          { "id": "w.gemstones.amber", "kind": "word", "category": "gemstones", "word": "gemstones.amber" },
+          { "id": "w.gemstones.emerald", "kind": "word", "category": "gemstones", "word": "gemstones.emerald" },
+          { "id": "w.gemstones.ruby", "kind": "word", "category": "gemstones", "word": "gemstones.ruby" },
+          { "id": "w.gemstones.pearl", "kind": "word", "category": "gemstones", "word": "gemstones.pearl" }
+        ],
+        "tableau": [
+          {
+            "cards": ["w.ends_ball.fireball", "w.hats.beanie", "w.instruments.tuba", "c.hats", "w.gemstones.emerald"],
+            "faceDown": 3
+          },
+          {
+            "cards": [
+              "w.ends_ball.handball",
+              "w.ends_ball.meatball",
+              "w.with_keys.typewriter",
+              "w.planets.mercury",
+              "w.hats.top_hat"
+            ],
+            "faceDown": 3
+          },
+          { "cards": ["c.with_keys","w.instruments.violin","w.gemstones.pearl","w.planets.uranus"], "faceDown": 3 },
+          { "cards": ["w.gemstones.garnet","w.with_keys.door","w.with_keys.accordion","w.hats.helmet"], "faceDown": 3 },
+          {
+            "cards": ["w.hats.bowler", "w.instruments.guitar", "w.with_keys.safe", "w.gemstones.amber", "c.ends_ball"],
+            "faceDown": 3
+          }
+        ],
+        "stock": [
+          "c.instruments",
+          "w.ends_ball.gumball",
+          "w.planets.venus",
+          "w.gemstones.ruby",
+          "w.ends_ball.baseball",
+          "c.gemstones",
+          "w.planets.saturn",
+          "c.planets",
+          "w.planets.jupiter",
+          "w.instruments.harp",
+          "w.hats.cap",
+          "w.instruments.flute",
+          "w.with_keys.calculator"
+        ],
+        "moves": 67,
+        "stars": { "two": 4, "three": 9 }
+      },
+      "analysis": {
+        "solutionLength": 51,
+        "solverNodes": 76141,
+        "generator": { "id": "associations@1.0.0", "seed": "maplebrook-v1:20:r5" },
+        "botWinRate": { "casual": 0.15, "average": 0.6, "expert": 0.92 }
+      }
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "../../schemas/deploy.schema.json",
+  "schemaVersion": 1,
+  "platform": "ios",
+  "idPrefix": "com.gamefactory",
+  "release": {
+    "supportsTablet": false,
+    "usesNonExemptEncryption": false,
+    "store": { "primaryCategory": "GAMES", "subcategories": ["GAMES_CARD", "GAMES_CASUAL"] }
+  }
+}

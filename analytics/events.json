@@ -1,0 +1,125 @@
+{
+  "$schema": "../schemas/analytics.schema.json",
+  "schemaVersion": 1,
+  "commonParams": {
+    "game_id": { "type": "string", "description": "Game package id" },
+    "player_id": { "type": "string" },
+    "session_id": { "type": "string" },
+    "app_version": { "type": "string" },
+    "platform": { "type": "string", "description": "ios, android, web or node" },
+    "content_hash": { "type": "string", "description": "Hash of the compiled game bundle" },
+    "frontier": { "type": "int", "description": "Next level number the player can play" },
+    "experiments": { "type": "string", "description": "experiment:variant pairs joined by |, empty when none" }
+  },
+  "events": {
+    "game_started": {
+      "description": "The runtime booted.",
+      "params": {
+        "first_launch": { "type": "boolean" },
+        "load_status": { "type": "string", "description": "new, loaded, migrated or reset" }
+      }
+    },
+    "session_started": { "description": "App session began (boot or foreground).", "params": { "session_number": { "type": "int" } } },
+    "session_finished": { "description": "App session ended (background).", "params": { "duration_s": { "type": "int" } } },
+    "tutorial_completed": { "description": "First win of level 1.", "params": { "level_id": { "type": "string" } } },
+    "level_started": {
+      "description": "A level attempt began.",
+      "params": {
+        "level_id": { "type": "string" },
+        "level_number": { "type": "int" },
+        "attempt": { "type": "int" },
+        "move_bonus": { "type": "int", "description": "Remote difficulty tuning applied to this attempt" }
+      }
+    },
+    "level_resumed": {
+      "description": "An interrupted attempt was restored by replaying its move log.",
+      "params": { "level_id": { "type": "string" }, "actions": { "type": "int" } }
+    },
+    "level_completed": {
+      "description": "A level attempt was won.",
+      "params": {
+        "level_id": { "type": "string" },
+        "level_number": { "type": "int" },
+        "attempt": { "type": "int" },
+        "stars": { "type": "int" },
+        "moves_left": { "type": "int" },
+        "moves_used": { "type": "int" },
+        "mismatches": { "type": "int" },
+        "continues": { "type": "int" },
+        "boosters_used": { "type": "int" },
+        "duration_s": { "type": "int" },
+        "first_win": { "type": "boolean" }
+      }
+    },
+    "level_failed": {
+      "description": "A level attempt was lost or abandoned.",
+      "params": {
+        "level_id": { "type": "string" },
+        "level_number": { "type": "int" },
+        "attempt": { "type": "int" },
+        "reason": { "type": "string", "description": "out_of_moves, stuck or abandoned" },
+        "moves_used": { "type": "int" },
+        "mismatches": { "type": "int" },
+        "continues": { "type": "int" },
+        "duration_s": { "type": "int" }
+      }
+    },
+    "level_continued": {
+      "description": "Extra moves bought after running out.",
+      "params": { "level_id": { "type": "string" }, "method": { "type": "string" }, "continue_index": { "type": "int" } }
+    },
+    "category_completed": {
+      "description": "Associations mechanic: a category was completed.",
+      "params": { "level_id": { "type": "string" }, "category_id": { "type": "string" } }
+    },
+    "chapter_completed": { "description": "Last level of a chapter won.", "params": { "chapter_id": { "type": "string" } } },
+    "booster_used": {
+      "description": "A booster was consumed.",
+      "params": { "booster_id": { "type": "string" }, "level_id": { "type": "string" }, "paid_with": { "type": "string" } }
+    },
+    "reward_claimed": {
+      "description": "A reward bundle was granted.",
+      "params": { "source": { "type": "string" }, "items": { "type": "string", "description": "item:amount pairs" } }
+    },
+    "currency_earned": {
+      "description": "Any item entered the wallet.",
+      "params": { "item_id": { "type": "string" }, "amount": { "type": "int" }, "source": { "type": "string" } }
+    },
+    "currency_spent": {
+      "description": "Any item left the wallet.",
+      "params": { "item_id": { "type": "string" }, "amount": { "type": "int" }, "sink": { "type": "string" } }
+    },
+    "shop_opened": { "description": "The shop was shown.", "params": { "placement": { "type": "string" } } },
+    "offer_purchased": { "description": "A soft-currency offer was bought.", "params": { "offer_id": { "type": "string" } } },
+    "purchase_started": { "description": "IAP flow started.", "params": { "product_id": { "type": "string" } } },
+    "purchase_completed": {
+      "description": "A store transaction was verified, granted and saved.",
+      "params": {
+        "product_id": { "type": "string" },
+        "price_usd_ref": { "type": "number", "description": "Reference price; revenue comes from the store" },
+        "transaction_id": { "type": "string" },
+        "source": { "type": "string", "description": "purchase, or recovered for transactions delivered after an interruption" }
+      }
+    },
+    "purchase_failed": {
+      "description": "IAP cancelled, failed, or not granted after verification.",
+      "params": {
+        "product_id": { "type": "string" },
+        "reason": { "type": "string", "description": "cancelled, a store error, verification_unavailable, verification_invalid, unknown_product" }
+      }
+    },
+    "purchase_pending": { "description": "The store accepted a purchase that awaits approval or payment.", "params": { "product_id": { "type": "string" } } },
+    "purchase_restored": { "description": "The player restored purchases.", "params": { "count": { "type": "int", "description": "Products whose entitlements came back" } } },
+    "ad_started": { "description": "An ad was requested to show.", "params": { "format": { "type": "string" }, "placement": { "type": "string" } } },
+    "ad_completed": { "description": "An ad finished (rewarded: reward earned).", "params": { "format": { "type": "string" }, "placement": { "type": "string" } } },
+    "ad_failed": {
+      "description": "An ad was skipped or failed.",
+      "params": { "format": { "type": "string" }, "placement": { "type": "string" }, "outcome": { "type": "string" } }
+    },
+    "lives_refilled": { "description": "Lives refilled.", "params": { "method": { "type": "string" } } },
+    "lives_depleted": { "description": "The last life was lost.", "params": {} },
+    "story_viewed": { "description": "A story beat was shown and dismissed.", "params": { "beat_id": { "type": "string" } } },
+    "collection_completed": { "description": "Phase 2: a collection set was completed.", "params": { "collection_id": { "type": "string" } } },
+    "quest_completed": { "description": "Phase 2: a quest was completed.", "params": { "quest_id": { "type": "string" } } }
+  }
+}

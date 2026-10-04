@@ -1,0 +1,202 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "rules": {
+      "type": "object",
+      "properties": {
+        "foundationSlots": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 6,
+          "description": "Category slots available at once"
+        },
+        "drawCount": {
+          "type": "number",
+          "const": 1
+        },
+        "recycleLimit": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Stock recycles allowed; null = unlimited"
+        },
+        "mismatchCostsMove": {
+          "type": "boolean"
+        },
+        "wordOnWord": {
+          "type": "string",
+          "enum": [
+            "same_category",
+            "never"
+          ]
+        },
+        "emptyColumn": {
+          "type": "string",
+          "enum": [
+            "any",
+            "category_only",
+            "none"
+          ]
+        }
+      },
+      "required": [
+        "foundationSlots",
+        "drawCount",
+        "recycleLimit",
+        "mismatchCostsMove",
+        "wordOnWord",
+        "emptyColumn"
+      ],
+      "additionalProperties": false
+    },
+    "categories": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "maxLength": 80,
+            "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+            "description": "Lowercase stable identifier"
+          },
+          "size": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 9007199254740991
+          }
+        },
+        "required": [
+          "id",
+          "size"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "cards": {
+      "minItems": 2,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "maxLength": 80,
+            "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+            "description": "Lowercase stable identifier"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "category",
+              "word"
+            ]
+          },
+          "category": {
+            "type": "string",
+            "maxLength": 80,
+            "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+            "description": "Lowercase stable identifier"
+          },
+          "word": {
+            "type": "string",
+            "maxLength": 80,
+            "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+            "description": "Lowercase stable identifier"
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "category"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "tableau": {
+      "minItems": 1,
+      "maxItems": 7,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "cards": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "maxLength": 80,
+              "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+              "description": "Lowercase stable identifier"
+            }
+          },
+          "faceDown": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          }
+        },
+        "required": [
+          "cards",
+          "faceDown"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "stock": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 80,
+        "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+        "description": "Lowercase stable identifier"
+      },
+      "description": "Last element is drawn first"
+    },
+    "moves": {
+      "type": "integer",
+      "exclusiveMinimum": 0,
+      "maximum": 9007199254740991
+    },
+    "stars": {
+      "type": "object",
+      "properties": {
+        "two": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "three": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        }
+      },
+      "required": [
+        "two",
+        "three"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "rules",
+    "categories",
+    "cards",
+    "tableau",
+    "stock",
+    "moves",
+    "stars"
+  ],
+  "additionalProperties": false,
+  "title": "AssociationLevelData",
+  "description": "Level payload for mechanic 'associations'"
+}

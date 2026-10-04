@@ -1,0 +1,13 @@
+{
+  "name": "@gf/core",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Headless game runtime (pure TypeScript, no React, no assets)",
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "dependencies": {
+    "@gf/schemas": "0.1.0",
+    "zod": "^4.6.5"
+  }
+}

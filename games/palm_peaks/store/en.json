@@ -1,0 +1,12 @@
+{
+  "$schema": "../../../schemas/store-listing.schema.json",
+  "schemaVersion": 1,
+  "locale": "en",
+  "title": "Palm Peaks Solitaire",
+  "subtitle": "TriPeaks on a sunny island",
+  "shortDescription": "Clear sunny card peaks and reopen an island resort, one beach at a time.",
+  "description": "Play TriPeaks solitaire on a tropical island: clear cards one rank up or down, chain long runs, and reopen the abandoned Palm Peaks resort beach by beach.\n\nTODO: final store copy, reviewed against the shipped features.",
+  "keywords": ["solitaire", "tripeaks", "cards", "tropical", "relaxing"],
+  "promotionalText": "",
+  "releaseNotes": ""
+}

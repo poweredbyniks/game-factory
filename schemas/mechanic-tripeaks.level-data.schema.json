@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "rules": {
+      "type": "object",
+      "properties": {
+        "wrap": {
+          "type": "boolean",
+          "description": "King and Ace are adjacent"
+        }
+      },
+      "required": [
+        "wrap"
+      ],
+      "additionalProperties": false
+    },
+    "layout": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "slots": {
+          "minItems": 3,
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "x": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "y": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "x",
+              "y"
+            ],
+            "additionalProperties": false
+          },
+          "description": "Half-card grid; y = row"
+        }
+      },
+      "required": [
+        "name",
+        "slots"
+      ],
+      "additionalProperties": false
+    },
+    "tableau": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^(A|[2-9]|10|J|Q|K)[shdc](:2)?$"
+      },
+      "description": "One card per layout slot"
+    },
+    "waste": {
+      "type": "string",
+      "pattern": "^(A|[2-9]|10|J|Q|K)[shdc](:2)?$",
+      "description": "Initial face-up waste card"
+    },
+    "stock": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^(A|[2-9]|10|J|Q|K)[shdc](:2)?$"
+      },
+      "description": "Last element is drawn first"
+    },
+    "reserve": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^(A|[2-9]|10|J|Q|K)[shdc](:2)?$"
+      },
+      "description": "Cards added to the stock by continues, in order"
+    },
+    "stars": {
+      "type": "object",
+      "properties": {
+        "two": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "three": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        }
+      },
+      "required": [
+        "two",
+        "three"
+      ],
+      "additionalProperties": false,
+      "description": "Stock cards left at the win"
+    }
+  },
+  "required": [
+    "rules",
+    "layout",
+    "tableau",
+    "waste",
+    "stock",
+    "reserve",
+    "stars"
+  ],
+  "additionalProperties": false,
+  "title": "TriPeaksLevelData",
+  "description": "Level payload for mechanic 'tripeaks'"
+}

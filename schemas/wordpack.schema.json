@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schemaVersion": {
+      "type": "number",
+      "const": 1,
+      "description": "Schema version of this file"
+    },
+    "packId": {
+      "type": "string",
+      "maxLength": 80,
+      "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+      "description": "Lowercase stable identifier"
+    },
+    "locale": {
+      "type": "string",
+      "minLength": 2
+    },
+    "title": {
+      "type": "string"
+    },
+    "categories": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "maxLength": 80,
+            "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+            "description": "Lowercase stable identifier"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 18,
+            "description": "Shown on the category card"
+          },
+          "difficulty": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 5,
+            "description": "1 concrete and everyday ... 5 lateral thinking"
+          },
+          "tags": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "words": {
+            "minItems": 4,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 12
+            },
+            "description": "Each word belongs to this category only"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "difficulty",
+          "words"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "packId",
+    "locale",
+    "title",
+    "categories"
+  ],
+  "additionalProperties": false,
+  "title": "WordPack",
+  "description": "content/word-packs/LOCALE/ID.json: categories and words"
+}

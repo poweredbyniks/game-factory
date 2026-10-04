@@ -1,0 +1,66 @@
+{
+  "$schema": "../../schemas/characters.schema.json",
+  "schemaVersion": 1,
+  "characters": [
+    {
+      "id": "wren",
+      "nameKey": "character.wren.name",
+      "role": "guide",
+      "personality": [
+        "cheerful",
+        "handy",
+        "a little scatterbrained"
+      ],
+      "portrait": {
+        "emoji": "🦊"
+      },
+      "color": "#C8553D",
+      "appearance": "young red fox in a patched canvas apron, a carpenter's pencil behind one ear",
+      "voice": "warm and quick, short sentences, loves woodworking puns",
+      "relationships": [
+        {
+          "characterId": "odette",
+          "kind": "mentor",
+          "note": "Odette taught Wren to bake bread before Wren took up carpentry"
+        },
+        {
+          "characterId": "pim",
+          "kind": "friend",
+          "note": "Best friends since the acorn-race days"
+        }
+      ]
+    },
+    {
+      "id": "odette",
+      "nameKey": "character.odette.name",
+      "role": "mentor",
+      "personality": [
+        "kind",
+        "organized",
+        "proud of her pies"
+      ],
+      "portrait": {
+        "emoji": "🦡"
+      },
+      "color": "#588B8B",
+      "appearance": "plump grey badger in a flour-dusted blue apron and round spectacles",
+      "voice": "gentle and motherly, a touch formal, always encouraging"
+    },
+    {
+      "id": "pim",
+      "nameKey": "character.pim.name",
+      "role": "comic relief",
+      "personality": [
+        "curious",
+        "chatty",
+        "forgetful"
+      ],
+      "portrait": {
+        "emoji": "🦔"
+      },
+      "color": "#E9A23B",
+      "appearance": "small hedgehog with an oversized mail satchel and a red cap",
+      "voice": "excited run-on sentences and lots of exclamation marks"
+    }
+  ]
+}

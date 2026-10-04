@@ -1,0 +1,40 @@
+{
+  "$schema": "../../schemas/progression.schema.json",
+  "schemaVersion": 1,
+  "unlockRule": "linear",
+  "replayCompleted": false,
+  "chapters": [
+    {
+      "id": "spring_fair",
+      "titleKey": "chapter.spring_fair.title",
+      "subtitleKey": "chapter.spring_fair.subtitle",
+      "levels": {
+        "from": 1,
+        "to": 10
+      },
+      "accent": "#5B8C5A",
+      "unlock": {
+        "type": "previous_chapter"
+      },
+      "completionReward": "chest_medium",
+      "storyIntro": "spring_fair_intro",
+      "storyOutro": "spring_fair_outro"
+    },
+    {
+      "id": "harvest_market",
+      "titleKey": "chapter.harvest_market.title",
+      "subtitleKey": "chapter.harvest_market.subtitle",
+      "levels": {
+        "from": 11,
+        "to": 20
+      },
+      "accent": "#C8553D",
+      "unlock": {
+        "type": "previous_chapter"
+      },
+      "completionReward": "chest_large",
+      "storyIntro": "harvest_market_intro",
+      "storyOutro": "harvest_market_outro"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "../../schemas/remote.schema.json",
+  "schemaVersion": 1,
+  "gameId": "maplebrook",
+  "payloadVersion": "2026-10-03.1",
+  "overrides": {
+    "tuning": {
+      "features": {
+        "show_hints_in_tutorial": true
+      }
+    }
+  },
+  "experiments": [
+    {
+      "id": "continue_price",
+      "status": "running",
+      "variants": [
+        {
+          "id": "control",
+          "weight": 50,
+          "overrides": {}
+        },
+        {
+          "id": "cheaper",
+          "weight": 50,
+          "overrides": {
+            "economy": {
+              "continue": {
+                "cost": {
+                  "coins": 150
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

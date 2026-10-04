@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schemaVersion": {
+      "type": "number",
+      "const": 1,
+      "description": "Schema version of this file"
+    },
+    "beats": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "maxLength": 80,
+            "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+            "description": "Lowercase stable identifier"
+          },
+          "trigger": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "const": "chapter_start"
+                  },
+                  "chapter": {
+                    "type": "string",
+                    "maxLength": 80,
+                    "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+                    "description": "Lowercase stable identifier"
+                  }
+                },
+                "required": [
+                  "type",
+                  "chapter"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "const": "chapter_complete"
+                  },
+                  "chapter": {
+                    "type": "string",
+                    "maxLength": 80,
+                    "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+                    "description": "Lowercase stable identifier"
+                  }
+                },
+                "required": [
+                  "type",
+                  "chapter"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "const": "level_complete"
+                  },
+                  "level": {
+                    "type": "integer",
+                    "exclusiveMinimum": 0,
+                    "maximum": 9007199254740991
+                  }
+                },
+                "required": [
+                  "type",
+                  "level"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          },
+          "lines": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "speaker": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "maxLength": 80,
+                      "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+                      "description": "Lowercase stable identifier"
+                    },
+                    {
+                      "type": "string",
+                      "const": "narrator"
+                    }
+                  ]
+                },
+                "textKey": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9][a-z0-9_.-]*$",
+                  "description": "Localization string key"
+                },
+                "emotion": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "speaker",
+                "textKey"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "id",
+          "trigger",
+          "lines"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "beats"
+  ],
+  "additionalProperties": false,
+  "title": "StoryFile",
+  "description": "games/ID/story.json: dialogue beats triggered by progression"
+}

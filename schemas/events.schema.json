@@ -1,0 +1,340 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schemaVersion": {
+      "type": "number",
+      "const": 1,
+      "description": "Schema version of this file"
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "maxLength": 80,
+            "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+            "description": "Lowercase stable identifier"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "race",
+              "collection",
+              "milestone",
+              "double_rewards"
+            ]
+          },
+          "titleKey": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9_.-]*$",
+            "description": "Localization string key"
+          },
+          "descriptionKey": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9_.-]*$",
+            "description": "Localization string key"
+          },
+          "schedule": {
+            "type": "object",
+            "properties": {
+              "start": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+              },
+              "end": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+              },
+              "recurrence": {
+                "type": "string",
+                "enum": [
+                  "none",
+                  "weekly"
+                ]
+              }
+            },
+            "required": [
+              "start",
+              "end",
+              "recurrence"
+            ],
+            "additionalProperties": false
+          },
+          "eligibility": {
+            "type": "object",
+            "properties": {
+              "minLevel": {
+                "type": "integer",
+                "exclusiveMinimum": 0,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "minLevel"
+            ],
+            "additionalProperties": false
+          },
+          "points": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "enum": [
+                "level_completed",
+                "level_failed",
+                "category_completed",
+                "booster_used",
+                "stars_earned",
+                "coins_spent",
+                "chapter_completed"
+              ]
+            },
+            "additionalProperties": {
+              "type": "integer",
+              "exclusiveMinimum": 0,
+              "maximum": 9007199254740991
+            }
+          },
+          "milestones": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "points": {
+                  "type": "integer",
+                  "exclusiveMinimum": 0,
+                  "maximum": 9007199254740991
+                },
+                "reward": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "maxLength": 80,
+                      "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+                      "description": "Lowercase stable identifier"
+                    },
+                    {
+                      "type": "object",
+                      "propertyNames": {
+                        "type": "string",
+                        "maxLength": 80,
+                        "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+                        "description": "Lowercase stable identifier"
+                      },
+                      "additionalProperties": {
+                        "type": "integer",
+                        "exclusiveMinimum": 0,
+                        "maximum": 9007199254740991
+                      },
+                      "description": "Item id to positive amount"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "points",
+                "reward"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "themeOverlay": {
+            "type": "object",
+            "properties": {
+              "palette": {
+                "type": "object",
+                "properties": {
+                  "primary": {
+                    "type": "string",
+                    "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                    "description": "Hex color"
+                  },
+                  "primaryDark": {
+                    "type": "string",
+                    "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                    "description": "Hex color"
+                  },
+                  "secondary": {
+                    "type": "string",
+                    "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                    "description": "Hex color"
+                  },
+                  "accent": {
+                    "type": "string",
+                    "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                    "description": "Hex color"
+                  },
+                  "background": {
+                    "type": "string",
+                    "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                    "description": "Hex color"
+                  },
+                  "backgroundAlt": {
+                    "type": "string",
+                    "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                    "description": "Hex color"
+                  },
+                  "surface": {
+                    "type": "string",
+                    "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                    "description": "Hex color"
+                  },
+                  "surfaceAlt": {
+                    "type": "string",
+                    "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                    "description": "Hex color"
+                  },
+                  "text": {
+                    "type": "string",
+                    "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                    "description": "Hex color"
+                  },
+                  "textMuted": {
+                    "type": "string",
+                    "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                    "description": "Hex color"
+                  },
+                  "textOnPrimary": {
+                    "type": "string",
+                    "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                    "description": "Hex color"
+                  },
+                  "success": {
+                    "type": "string",
+                    "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                    "description": "Hex color"
+                  },
+                  "danger": {
+                    "type": "string",
+                    "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                    "description": "Hex color"
+                  },
+                  "warning": {
+                    "type": "string",
+                    "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                    "description": "Hex color"
+                  },
+                  "overlay": {
+                    "type": "string",
+                    "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                    "description": "Hex color"
+                  },
+                  "cardFace": {
+                    "type": "string",
+                    "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                    "description": "Hex color"
+                  },
+                  "cardFaceText": {
+                    "type": "string",
+                    "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                    "description": "Hex color"
+                  },
+                  "cardBack": {
+                    "type": "string",
+                    "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                    "description": "Hex color"
+                  },
+                  "cardBackAlt": {
+                    "type": "string",
+                    "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                    "description": "Hex color"
+                  },
+                  "cardBorder": {
+                    "type": "string",
+                    "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                    "description": "Hex color"
+                  },
+                  "categoryCard": {
+                    "type": "string",
+                    "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                    "description": "Hex color"
+                  },
+                  "categoryCardText": {
+                    "type": "string",
+                    "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                    "description": "Hex color"
+                  },
+                  "slotEmpty": {
+                    "type": "string",
+                    "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                    "description": "Hex color"
+                  },
+                  "suitRed": {
+                    "type": "string",
+                    "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                    "description": "Hex color"
+                  },
+                  "suitBlack": {
+                    "type": "string",
+                    "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                    "description": "Hex color"
+                  },
+                  "mapPath": {
+                    "type": "string",
+                    "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                    "description": "Hex color"
+                  },
+                  "nodeLocked": {
+                    "type": "string",
+                    "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                    "description": "Hex color"
+                  },
+                  "nodeAvailable": {
+                    "type": "string",
+                    "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                    "description": "Hex color"
+                  },
+                  "nodeCompleted": {
+                    "type": "string",
+                    "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                    "description": "Hex color"
+                  }
+                },
+                "additionalProperties": false
+              },
+              "bannerAsset": {
+                "type": "string",
+                "pattern": "^[a-z0-9][a-z0-9_.-]*$",
+                "description": "Semantic asset key, e.g. card.back or sfx.place"
+              }
+            },
+            "additionalProperties": false
+          },
+          "offers": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string",
+              "maxLength": 80,
+              "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+              "description": "Lowercase stable identifier"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "type",
+          "titleKey",
+          "descriptionKey",
+          "schedule",
+          "eligibility"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "events"
+  ],
+  "additionalProperties": false,
+  "title": "EventsFile",
+  "description": "games/ID/events.json: LiveOps events (runtime in Phase 2)"
+}

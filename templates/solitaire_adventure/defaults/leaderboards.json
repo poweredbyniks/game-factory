@@ -1,0 +1,8 @@
+{
+  "$schema": "../../../schemas/leaderboards.schema.json",
+  "schemaVersion": 1,
+  "boards": [
+    { "id": "journey", "titleKey": "leaderboard.journey", "metric": "stars_total", "period": "all_time", "size": 100, "minLevel": 3 },
+    { "id": "weekly_stars", "titleKey": "leaderboard.weekly_stars", "metric": "stars_earned", "period": "weekly", "size": 50, "minLevel": 3 }
+  ]
+}

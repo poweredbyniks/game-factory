@@ -1,0 +1,221 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schemaVersion": {
+      "type": "number",
+      "const": 2
+    },
+    "gameId": {
+      "type": "string",
+      "maxLength": 80,
+      "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+      "description": "Lowercase stable identifier"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 30,
+      "description": "Store and display name (30 chars max for stores)"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "Marketing version (semver)"
+    },
+    "template": {
+      "type": "string",
+      "maxLength": 80,
+      "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+      "description": "Lowercase stable identifier"
+    },
+    "theme": {
+      "type": "string",
+      "maxLength": 80,
+      "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+      "description": "Lowercase stable identifier"
+    },
+    "mechanic": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "maxLength": 80,
+          "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+          "description": "Lowercase stable identifier"
+        },
+        "rules": {
+          "description": "Default rule overrides passed to the level generator",
+          "type": "object",
+          "propertyNames": {
+            "type": "string"
+          },
+          "additionalProperties": {}
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "additionalProperties": false
+    },
+    "modules": {
+      "type": "object",
+      "properties": {
+        "map": {
+          "type": "boolean"
+        },
+        "story": {
+          "type": "boolean"
+        },
+        "lives": {
+          "type": "boolean"
+        },
+        "boosters": {
+          "type": "boolean"
+        },
+        "shop": {
+          "type": "boolean"
+        },
+        "ads": {
+          "type": "boolean"
+        },
+        "iap": {
+          "type": "boolean"
+        },
+        "quests": {
+          "type": "boolean"
+        },
+        "collections": {
+          "type": "boolean"
+        },
+        "buildings": {
+          "type": "boolean"
+        },
+        "dailyReward": {
+          "type": "boolean"
+        },
+        "events": {
+          "type": "boolean"
+        },
+        "notifications": {
+          "type": "boolean"
+        },
+        "leaderboards": {
+          "type": "boolean",
+          "description": "Server-side leaderboards from verified attempts (needs a backend)"
+        }
+      },
+      "additionalProperties": false
+    },
+    "content": {
+      "type": "object",
+      "properties": {
+        "locales": {
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 2
+          }
+        },
+        "defaultLocale": {
+          "type": "string",
+          "minLength": 2
+        },
+        "packs": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 80,
+            "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+            "description": "Lowercase stable identifier"
+          }
+        }
+      },
+      "required": [
+        "locales",
+        "defaultLocale"
+      ],
+      "additionalProperties": false
+    },
+    "remoteConfig": {
+      "description": "Payload URLs are per environment, in release.json",
+      "type": "object",
+      "properties": {
+        "refreshHours": {
+          "default": 12,
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "meta": {
+      "type": "object",
+      "properties": {
+        "pitch": {
+          "type": "string",
+          "maxLength": 300
+        },
+        "tags": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "audience": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "pitch"
+      ],
+      "additionalProperties": false
+    },
+    "overrides": {
+      "type": "object",
+      "properties": {
+        "economy": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string"
+          },
+          "additionalProperties": {}
+        },
+        "monetization": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string"
+          },
+          "additionalProperties": {}
+        },
+        "store": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string"
+          },
+          "additionalProperties": {}
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "gameId",
+    "name",
+    "version",
+    "template",
+    "theme",
+    "mechanic",
+    "content"
+  ],
+  "additionalProperties": false,
+  "title": "GameDefinition",
+  "description": "games/ID/game.json: the root of one game package"
+}

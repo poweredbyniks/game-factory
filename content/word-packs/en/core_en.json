@@ -1,0 +1,1021 @@
+{
+  "$schema": "../../../schemas/wordpack.schema.json",
+  "schemaVersion": 1,
+  "packId": "core_en",
+  "locale": "en",
+  "title": "Core English associations",
+  "categories": [
+    {
+      "id": "fruits",
+      "name": "Fruits",
+      "difficulty": 1,
+      "tags": [
+        "food"
+      ],
+      "words": [
+        "Apple",
+        "Banana",
+        "Cherry",
+        "Mango",
+        "Pear",
+        "Grape",
+        "Peach",
+        "Lemon",
+        "Kiwi",
+        "Melon"
+      ]
+    },
+    {
+      "id": "colors",
+      "name": "Colors",
+      "difficulty": 1,
+      "tags": [],
+      "words": [
+        "Red",
+        "Blue",
+        "Green",
+        "Yellow",
+        "Purple",
+        "Pink",
+        "Brown",
+        "Gray",
+        "Black",
+        "White"
+      ]
+    },
+    {
+      "id": "farm_animals",
+      "name": "Farm animals",
+      "difficulty": 1,
+      "tags": [
+        "animals"
+      ],
+      "words": [
+        "Cow",
+        "Pig",
+        "Sheep",
+        "Goat",
+        "Horse",
+        "Chicken",
+        "Duck",
+        "Donkey",
+        "Goose",
+        "Llama"
+      ]
+    },
+    {
+      "id": "vegetables",
+      "name": "Vegetables",
+      "difficulty": 1,
+      "tags": [
+        "food"
+      ],
+      "words": [
+        "Carrot",
+        "Potato",
+        "Onion",
+        "Pepper",
+        "Cabbage",
+        "Spinach",
+        "Pumpkin",
+        "Radish",
+        "Celery",
+        "Lettuce"
+      ]
+    },
+    {
+      "id": "clothes",
+      "name": "Clothes",
+      "difficulty": 1,
+      "tags": [],
+      "words": [
+        "Shirt",
+        "Jacket",
+        "Scarf",
+        "Sweater",
+        "Skirt",
+        "Dress",
+        "Coat",
+        "Sock",
+        "Glove",
+        "Hat"
+      ]
+    },
+    {
+      "id": "body_parts",
+      "name": "Body parts",
+      "difficulty": 1,
+      "tags": [],
+      "words": [
+        "Elbow",
+        "Knee",
+        "Shoulder",
+        "Ankle",
+        "Wrist",
+        "Finger",
+        "Nose",
+        "Chin",
+        "Ear",
+        "Thumb"
+      ]
+    },
+    {
+      "id": "furniture",
+      "name": "Furniture",
+      "difficulty": 1,
+      "tags": [
+        "home"
+      ],
+      "words": [
+        "Sofa",
+        "Table",
+        "Chair",
+        "Wardrobe",
+        "Bed",
+        "Shelf",
+        "Desk",
+        "Stool",
+        "Bench",
+        "Dresser"
+      ]
+    },
+    {
+      "id": "rooms",
+      "name": "Rooms",
+      "difficulty": 1,
+      "tags": [
+        "home"
+      ],
+      "words": [
+        "Kitchen",
+        "Bedroom",
+        "Bathroom",
+        "Attic",
+        "Cellar",
+        "Garage",
+        "Hallway",
+        "Pantry",
+        "Study",
+        "Nursery"
+      ]
+    },
+    {
+      "id": "shapes",
+      "name": "Shapes",
+      "difficulty": 1,
+      "tags": [],
+      "words": [
+        "Circle",
+        "Square",
+        "Triangle",
+        "Oval",
+        "Cube",
+        "Sphere",
+        "Cone",
+        "Pyramid",
+        "Hexagon",
+        "Diamond"
+      ]
+    },
+    {
+      "id": "drinks",
+      "name": "Drinks",
+      "difficulty": 1,
+      "tags": [
+        "food"
+      ],
+      "words": [
+        "Tea",
+        "Coffee",
+        "Juice",
+        "Milk",
+        "Cocoa",
+        "Lemonade",
+        "Water",
+        "Smoothie",
+        "Soda",
+        "Cider"
+      ]
+    },
+    {
+      "id": "breakfast",
+      "name": "Breakfast",
+      "difficulty": 1,
+      "tags": [
+        "food"
+      ],
+      "words": [
+        "Cereal",
+        "Pancake",
+        "Omelet",
+        "Toast",
+        "Bacon",
+        "Yogurt",
+        "Porridge",
+        "Granola",
+        "Hash brown"
+      ]
+    },
+    {
+      "id": "vehicles",
+      "name": "Vehicles",
+      "difficulty": 1,
+      "tags": [],
+      "words": [
+        "Bus",
+        "Train",
+        "Truck",
+        "Bicycle",
+        "Tractor",
+        "Scooter",
+        "Taxi",
+        "Tram",
+        "Van",
+        "Ambulance"
+      ]
+    },
+    {
+      "id": "weather",
+      "name": "Weather",
+      "difficulty": 2,
+      "tags": [
+        "nature"
+      ],
+      "words": [
+        "Rain",
+        "Snow",
+        "Fog",
+        "Hail",
+        "Storm",
+        "Breeze",
+        "Thunder",
+        "Drizzle",
+        "Sleet",
+        "Frost"
+      ]
+    },
+    {
+      "id": "kitchen_tools",
+      "name": "Kitchen tools",
+      "difficulty": 2,
+      "tags": [
+        "home"
+      ],
+      "words": [
+        "Whisk",
+        "Ladle",
+        "Spatula",
+        "Grater",
+        "Kettle",
+        "Colander",
+        "Tongs",
+        "Peeler",
+        "Rolling pin",
+        "Toaster"
+      ]
+    },
+    {
+      "id": "sea_creatures",
+      "name": "Sea creatures",
+      "difficulty": 2,
+      "tags": [
+        "animals"
+      ],
+      "words": [
+        "Shark",
+        "Whale",
+        "Dolphin",
+        "Octopus",
+        "Squid",
+        "Crab",
+        "Lobster",
+        "Starfish",
+        "Jellyfish",
+        "Seal"
+      ]
+    },
+    {
+      "id": "birds",
+      "name": "Birds",
+      "difficulty": 2,
+      "tags": [
+        "animals"
+      ],
+      "words": [
+        "Robin",
+        "Eagle",
+        "Owl",
+        "Parrot",
+        "Sparrow",
+        "Pigeon",
+        "Swan",
+        "Penguin",
+        "Flamingo",
+        "Crow"
+      ]
+    },
+    {
+      "id": "insects",
+      "name": "Insects",
+      "difficulty": 2,
+      "tags": [
+        "animals"
+      ],
+      "words": [
+        "Ant",
+        "Bee",
+        "Beetle",
+        "Butterfly",
+        "Moth",
+        "Wasp",
+        "Ladybug",
+        "Firefly",
+        "Mosquito",
+        "Dragonfly"
+      ]
+    },
+    {
+      "id": "sports",
+      "name": "Sports",
+      "difficulty": 2,
+      "tags": [],
+      "words": [
+        "Tennis",
+        "Soccer",
+        "Hockey",
+        "Golf",
+        "Rugby",
+        "Boxing",
+        "Cricket",
+        "Rowing",
+        "Skiing",
+        "Archery"
+      ]
+    },
+    {
+      "id": "instruments",
+      "name": "Instruments",
+      "difficulty": 2,
+      "tags": [
+        "music"
+      ],
+      "words": [
+        "Piano",
+        "Guitar",
+        "Violin",
+        "Drums",
+        "Flute",
+        "Harp",
+        "Cello",
+        "Trumpet",
+        "Banjo",
+        "Tuba"
+      ]
+    },
+    {
+      "id": "jobs",
+      "name": "Jobs",
+      "difficulty": 2,
+      "tags": [],
+      "words": [
+        "Baker",
+        "Pilot",
+        "Nurse",
+        "Farmer",
+        "Tailor",
+        "Judge",
+        "Plumber",
+        "Chef",
+        "Dentist",
+        "Firefighter"
+      ]
+    },
+    {
+      "id": "planets",
+      "name": "Planets",
+      "difficulty": 2,
+      "tags": [
+        "space"
+      ],
+      "words": [
+        "Mercury",
+        "Venus",
+        "Earth",
+        "Mars",
+        "Jupiter",
+        "Saturn",
+        "Uranus",
+        "Neptune"
+      ]
+    },
+    {
+      "id": "flowers",
+      "name": "Flowers",
+      "difficulty": 2,
+      "tags": [
+        "nature"
+      ],
+      "words": [
+        "Rose",
+        "Tulip",
+        "Daisy",
+        "Lily",
+        "Orchid",
+        "Sunflower",
+        "Poppy",
+        "Lavender",
+        "Daffodil",
+        "Iris"
+      ]
+    },
+    {
+      "id": "trees",
+      "name": "Trees",
+      "difficulty": 2,
+      "tags": [
+        "nature"
+      ],
+      "words": [
+        "Oak",
+        "Maple",
+        "Birch",
+        "Willow",
+        "Cedar",
+        "Pine",
+        "Elm",
+        "Aspen",
+        "Spruce",
+        "Chestnut"
+      ]
+    },
+    {
+      "id": "desserts",
+      "name": "Desserts",
+      "difficulty": 1,
+      "tags": [
+        "food"
+      ],
+      "words": [
+        "Cake",
+        "Pie",
+        "Cookie",
+        "Pudding",
+        "Brownie",
+        "Muffin",
+        "Cupcake",
+        "Tart",
+        "Donut",
+        "Waffle"
+      ]
+    },
+    {
+      "id": "school_supplies",
+      "name": "School supplies",
+      "difficulty": 2,
+      "tags": [],
+      "words": [
+        "Pencil",
+        "Eraser",
+        "Ruler",
+        "Notebook",
+        "Backpack",
+        "Crayon",
+        "Marker",
+        "Glue",
+        "Scissors",
+        "Stapler"
+      ]
+    },
+    {
+      "id": "tools",
+      "name": "Tools",
+      "difficulty": 2,
+      "tags": [],
+      "words": [
+        "Hammer",
+        "Wrench",
+        "Saw",
+        "Drill",
+        "Pliers",
+        "Chisel",
+        "Shovel",
+        "Screwdriver",
+        "Axe",
+        "Mallet"
+      ]
+    },
+    {
+      "id": "countries",
+      "name": "Countries",
+      "difficulty": 2,
+      "tags": [
+        "places"
+      ],
+      "words": [
+        "France",
+        "Japan",
+        "Brazil",
+        "Canada",
+        "Egypt",
+        "India",
+        "Mexico",
+        "Kenya",
+        "Norway",
+        "Peru"
+      ]
+    },
+    {
+      "id": "sauces",
+      "name": "Sauces",
+      "difficulty": 2,
+      "tags": [
+        "food"
+      ],
+      "words": [
+        "Ketchup",
+        "Mustard",
+        "Mayo",
+        "Pesto",
+        "Gravy",
+        "Soy sauce",
+        "Barbecue",
+        "Aioli",
+        "Relish",
+        "Hummus"
+      ]
+    },
+    {
+      "id": "games",
+      "name": "Games",
+      "difficulty": 2,
+      "tags": [],
+      "words": [
+        "Chess",
+        "Checkers",
+        "Dominoes",
+        "Bingo",
+        "Charades",
+        "Mahjong",
+        "Backgammon",
+        "Jigsaw",
+        "Darts",
+        "Marbles"
+      ]
+    },
+    {
+      "id": "bakery",
+      "name": "Bakery",
+      "difficulty": 2,
+      "tags": [
+        "food"
+      ],
+      "words": [
+        "Bread",
+        "Bagel",
+        "Croissant",
+        "Baguette",
+        "Pretzel",
+        "Scone",
+        "Bun",
+        "Brioche",
+        "Sourdough",
+        "Focaccia"
+      ]
+    },
+    {
+      "id": "hats",
+      "name": "Hats",
+      "difficulty": 2,
+      "tags": [],
+      "words": [
+        "Beret",
+        "Beanie",
+        "Fedora",
+        "Bonnet",
+        "Helmet",
+        "Turban",
+        "Sombrero",
+        "Top hat",
+        "Bowler",
+        "Cap"
+      ]
+    },
+    {
+      "id": "art_supplies",
+      "name": "Art supplies",
+      "difficulty": 2,
+      "tags": [],
+      "words": [
+        "Brush",
+        "Easel",
+        "Canvas",
+        "Palette",
+        "Charcoal",
+        "Paint",
+        "Chalk",
+        "Clay",
+        "Pastel",
+        "Sketchbook"
+      ]
+    },
+    {
+      "id": "around_town",
+      "name": "Around town",
+      "difficulty": 2,
+      "tags": [
+        "places"
+      ],
+      "words": [
+        "Library",
+        "Museum",
+        "Park",
+        "Station",
+        "Hospital",
+        "Market",
+        "Stadium",
+        "Theater",
+        "Bank",
+        "Post office"
+      ]
+    },
+    {
+      "id": "dances",
+      "name": "Dances",
+      "difficulty": 3,
+      "tags": [
+        "music"
+      ],
+      "words": [
+        "Salsa",
+        "Tango",
+        "Waltz",
+        "Ballet",
+        "Polka",
+        "Samba",
+        "Disco",
+        "Tap",
+        "Swing",
+        "Rumba"
+      ]
+    },
+    {
+      "id": "camping",
+      "name": "Camping",
+      "difficulty": 3,
+      "tags": [
+        "outdoors"
+      ],
+      "words": [
+        "Tent",
+        "Lantern",
+        "Compass",
+        "Sleeping bag",
+        "Canteen",
+        "Campfire",
+        "Hammock",
+        "Flashlight",
+        "Map",
+        "Kayak"
+      ]
+    },
+    {
+      "id": "beach",
+      "name": "At the beach",
+      "difficulty": 2,
+      "tags": [
+        "outdoors"
+      ],
+      "words": [
+        "Sand",
+        "Shell",
+        "Towel",
+        "Sunscreen",
+        "Bucket",
+        "Umbrella",
+        "Surfboard",
+        "Sandcastle",
+        "Wave",
+        "Flip-flops"
+      ]
+    },
+    {
+      "id": "winter",
+      "name": "Winter fun",
+      "difficulty": 3,
+      "tags": [
+        "outdoors"
+      ],
+      "words": [
+        "Sled",
+        "Snowman",
+        "Mittens",
+        "Igloo",
+        "Icicle",
+        "Snowflake",
+        "Skates",
+        "Earmuffs",
+        "Fireplace",
+        "Toboggan"
+      ]
+    },
+    {
+      "id": "garden",
+      "name": "In the garden",
+      "difficulty": 3,
+      "tags": [
+        "outdoors"
+      ],
+      "words": [
+        "Rake",
+        "Hose",
+        "Wheelbarrow",
+        "Watering can",
+        "Seeds",
+        "Trowel",
+        "Shed",
+        "Compost",
+        "Fence",
+        "Greenhouse"
+      ]
+    },
+    {
+      "id": "gemstones",
+      "name": "Gemstones",
+      "difficulty": 3,
+      "tags": [],
+      "words": [
+        "Ruby",
+        "Emerald",
+        "Sapphire",
+        "Pearl",
+        "Opal",
+        "Topaz",
+        "Amber",
+        "Jade",
+        "Garnet",
+        "Amethyst"
+      ]
+    },
+    {
+      "id": "metals",
+      "name": "Metals",
+      "difficulty": 3,
+      "tags": [],
+      "words": [
+        "Gold",
+        "Silver",
+        "Copper",
+        "Iron",
+        "Tin",
+        "Zinc",
+        "Nickel",
+        "Bronze",
+        "Steel",
+        "Platinum"
+      ]
+    },
+    {
+      "id": "fabrics",
+      "name": "Fabrics",
+      "difficulty": 3,
+      "tags": [],
+      "words": [
+        "Cotton",
+        "Silk",
+        "Wool",
+        "Linen",
+        "Denim",
+        "Velvet",
+        "Satin",
+        "Fleece",
+        "Tweed",
+        "Lace"
+      ]
+    },
+    {
+      "id": "herbs_spices",
+      "name": "Herbs & spices",
+      "difficulty": 3,
+      "tags": [
+        "food"
+      ],
+      "words": [
+        "Basil",
+        "Mint",
+        "Thyme",
+        "Oregano",
+        "Parsley",
+        "Cinnamon",
+        "Ginger",
+        "Nutmeg",
+        "Rosemary",
+        "Saffron"
+      ]
+    },
+    {
+      "id": "emotions",
+      "name": "Feelings",
+      "difficulty": 3,
+      "tags": [],
+      "words": [
+        "Joy",
+        "Anger",
+        "Fear",
+        "Pride",
+        "Envy",
+        "Grief",
+        "Hope",
+        "Shame",
+        "Calm",
+        "Surprise"
+      ]
+    },
+    {
+      "id": "fairy_folk",
+      "name": "Fairy-tale folk",
+      "difficulty": 3,
+      "tags": [
+        "fantasy"
+      ],
+      "words": [
+        "Unicorn",
+        "Troll",
+        "Giant",
+        "Goblin",
+        "Mermaid",
+        "Ogre",
+        "Elf",
+        "Wizard",
+        "Witch",
+        "Gnome"
+      ]
+    },
+    {
+      "id": "in_the_sky",
+      "name": "In the sky",
+      "difficulty": 3,
+      "tags": [
+        "nature"
+      ],
+      "words": [
+        "Cloud",
+        "Rainbow",
+        "Moon",
+        "Sun",
+        "Comet",
+        "Kite",
+        "Balloon",
+        "Star",
+        "Meteor",
+        "Aurora"
+      ]
+    },
+    {
+      "id": "royalty",
+      "name": "Royalty",
+      "difficulty": 3,
+      "tags": [],
+      "words": [
+        "King",
+        "Queen",
+        "Prince",
+        "Princess",
+        "Duke",
+        "Duchess",
+        "Baron",
+        "Countess",
+        "Emperor",
+        "Empress"
+      ]
+    },
+    {
+      "id": "pirate_gear",
+      "name": "Pirate gear",
+      "difficulty": 4,
+      "tags": [
+        "fantasy"
+      ],
+      "words": [
+        "Treasure",
+        "Anchor",
+        "Cannon",
+        "Plank",
+        "Eyepatch",
+        "Hook",
+        "Galleon",
+        "Cutlass",
+        "Doubloon"
+      ]
+    },
+    {
+      "id": "outer_space",
+      "name": "Outer space",
+      "difficulty": 3,
+      "tags": [
+        "space"
+      ],
+      "words": [
+        "Rocket",
+        "Astronaut",
+        "Satellite",
+        "Galaxy",
+        "Asteroid",
+        "Orbit",
+        "Telescope",
+        "Nebula",
+        "Alien",
+        "Spaceship"
+      ]
+    },
+    {
+      "id": "prickly",
+      "name": "Prickly things",
+      "difficulty": 4,
+      "tags": [],
+      "words": [
+        "Cactus",
+        "Porcupine",
+        "Hedgehog",
+        "Pincushion",
+        "Sea urchin",
+        "Thistle",
+        "Holly",
+        "Bramble"
+      ]
+    },
+    {
+      "id": "sticky",
+      "name": "Sticky things",
+      "difficulty": 4,
+      "tags": [],
+      "words": [
+        "Honey",
+        "Tape",
+        "Gum",
+        "Syrup",
+        "Jam",
+        "Sap",
+        "Slime",
+        "Caramel",
+        "Toffee",
+        "Marshmallow"
+      ]
+    },
+    {
+      "id": "with_keys",
+      "name": "Things with keys",
+      "difficulty": 5,
+      "tags": [
+        "lateral"
+      ],
+      "words": [
+        "Keyboard",
+        "Typewriter",
+        "Padlock",
+        "Accordion",
+        "Laptop",
+        "Calculator",
+        "Door",
+        "Safe"
+      ]
+    },
+    {
+      "id": "with_wings",
+      "name": "Things with wings",
+      "difficulty": 4,
+      "tags": [
+        "lateral"
+      ],
+      "words": [
+        "Airplane",
+        "Angel",
+        "Bat",
+        "Dragon",
+        "Fairy",
+        "Glider",
+        "Griffin",
+        "Cupid"
+      ]
+    },
+    {
+      "id": "ends_ball",
+      "name": "Ends with -ball",
+      "difficulty": 5,
+      "tags": [
+        "lateral"
+      ],
+      "words": [
+        "Snowball",
+        "Meatball",
+        "Eyeball",
+        "Fireball",
+        "Paintball",
+        "Pinball",
+        "Softball",
+        "Handball",
+        "Gumball",
+        "Baseball"
+      ]
+    }
+  ]
+}

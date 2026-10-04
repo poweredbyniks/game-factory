@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schemaVersion": {
+      "type": "number",
+      "const": 1,
+      "description": "Schema version of this file"
+    },
+    "characters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "maxLength": 80,
+            "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+            "description": "Lowercase stable identifier"
+          },
+          "nameKey": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9_.-]*$",
+            "description": "Localization string key"
+          },
+          "role": {
+            "type": "string"
+          },
+          "personality": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "portrait": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "emoji": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 16
+                  }
+                },
+                "required": [
+                  "emoji"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "asset": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9][a-z0-9_.-]*$",
+                    "description": "Semantic asset key, e.g. card.back or sfx.place"
+                  }
+                },
+                "required": [
+                  "asset"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          },
+          "color": {
+            "type": "string",
+            "pattern": "^#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+            "description": "Hex color"
+          },
+          "appearance": {
+            "type": "string",
+            "description": "Art brief for the asset pipeline"
+          },
+          "voice": {
+            "type": "string",
+            "description": "Writing brief for dialogue generation"
+          },
+          "relationships": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "characterId": {
+                  "type": "string",
+                  "maxLength": 80,
+                  "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+                  "description": "Lowercase stable identifier"
+                },
+                "kind": {
+                  "type": "string",
+                  "enum": [
+                    "friend",
+                    "family",
+                    "rival",
+                    "mentor"
+                  ]
+                },
+                "note": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "characterId",
+                "kind",
+                "note"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "id",
+          "nameKey",
+          "role",
+          "personality",
+          "portrait",
+          "color",
+          "appearance",
+          "voice"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "characters"
+  ],
+  "additionalProperties": false,
+  "title": "CharactersFile",
+  "description": "games/ID/characters.json"
+}

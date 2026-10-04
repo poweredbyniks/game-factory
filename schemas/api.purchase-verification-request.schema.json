@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "gameId": {
+      "type": "string",
+      "maxLength": 80,
+      "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+      "description": "Lowercase stable identifier"
+    },
+    "playerId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80
+    },
+    "productId": {
+      "type": "string",
+      "maxLength": 80,
+      "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+      "description": "Lowercase stable identifier"
+    },
+    "platform": {
+      "type": "string",
+      "enum": [
+        "ios",
+        "android",
+        "mock"
+      ]
+    },
+    "transactionId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "verificationData": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 20000,
+      "description": "StoreKit 2 signed transaction (JWS) on iOS, purchase token on Android"
+    }
+  },
+  "required": [
+    "gameId",
+    "playerId",
+    "productId",
+    "platform",
+    "transactionId",
+    "verificationData"
+  ],
+  "additionalProperties": false,
+  "title": "PurchaseVerificationRequest",
+  "description": "POST /v1/purchases/verify"
+}

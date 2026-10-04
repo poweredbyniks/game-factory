@@ -1,0 +1,17 @@
+{
+  "$schema": "../../schemas/deploy.schema.json",
+  "schemaVersion": 1,
+  "platform": "android",
+  "idPrefix": "com.gamefactory",
+  "release": {
+    "blockedPermissions": [
+      "android.permission.RECORD_AUDIO",
+      "android.permission.FOREGROUND_SERVICE",
+      "android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK",
+      "android.permission.READ_EXTERNAL_STORAGE",
+      "android.permission.WRITE_EXTERNAL_STORAGE",
+      "android.permission.SYSTEM_ALERT_WINDOW"
+    ],
+    "store": { "category": "GAME_CARD", "defaultTrack": "internal" }
+  }
+}

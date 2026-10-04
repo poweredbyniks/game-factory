@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "boardId": {
+      "type": "string",
+      "maxLength": 80,
+      "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+      "description": "Lowercase stable identifier"
+    },
+    "period": {
+      "type": "string",
+      "description": "all, 2026-W40, 2026-10-03 or an event id"
+    },
+    "generatedAt": {
+      "type": "number"
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "rank": {
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991
+          },
+          "playerId": {
+            "type": "string"
+          },
+          "displayName": {
+            "type": "string"
+          },
+          "value": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          }
+        },
+        "required": [
+          "rank",
+          "playerId",
+          "displayName",
+          "value"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "me": {
+      "type": "object",
+      "properties": {
+        "rank": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "exclusiveMinimum": 0,
+              "maximum": 9007199254740991
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "value": {
+          "type": "integer",
+          "minimum": -9007199254740991,
+          "maximum": 9007199254740991
+        }
+      },
+      "required": [
+        "rank",
+        "value"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "boardId",
+    "period",
+    "generatedAt",
+    "entries"
+  ],
+  "additionalProperties": false,
+  "title": "LeaderboardPage",
+  "description": "GET /v1/leaderboards/{boardId}"
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "../../../schemas/store-listing.schema.json",
+  "schemaVersion": 1,
+  "locale": "en",
+  "title": "Maplebrook Word Solitaire",
+  "subtitle": "Sort words, ready the fairs",
+  "shortDescription": "A cozy solitaire where you sort word cards into categories.",
+  "description": "Help the woodland villagers of Maplebrook get their seasonal fairs ready. Every level is a solitaire deal of word cards: find the category each word belongs to, clear the columns before your moves run out, and meet the villagers along the journey map.\n\nTODO: final store copy, reviewed against the shipped features.",
+  "keywords": ["word", "solitaire", "cozy", "puzzle", "categories", "cards"],
+  "promotionalText": "",
+  "releaseNotes": ""
+}

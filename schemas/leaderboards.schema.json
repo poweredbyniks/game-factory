@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schemaVersion": {
+      "type": "number",
+      "const": 1,
+      "description": "Schema version of this file"
+    },
+    "boards": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "maxLength": 80,
+            "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+            "description": "Lowercase stable identifier"
+          },
+          "titleKey": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9_.-]*$",
+            "description": "Localization string key"
+          },
+          "metric": {
+            "type": "string",
+            "enum": [
+              "stars_total",
+              "stars_earned",
+              "levels_completed",
+              "event_points"
+            ],
+            "description": "stars_total and levels_completed are all-time progress; stars_earned counts new stars in the period"
+          },
+          "period": {
+            "type": "string",
+            "enum": [
+              "all_time",
+              "weekly",
+              "daily",
+              "event"
+            ]
+          },
+          "size": {
+            "default": 100,
+            "description": "Entries shown",
+            "type": "integer",
+            "minimum": 10,
+            "maximum": 1000
+          },
+          "minLevel": {
+            "default": 1,
+            "description": "Players appear once they completed this level",
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991
+          },
+          "event": {
+            "description": "LiveOps event id, for event_points boards",
+            "type": "string",
+            "maxLength": 80,
+            "pattern": "^[a-z0-9][a-z0-9_.:-]*$"
+          }
+        },
+        "required": [
+          "id",
+          "titleKey",
+          "metric",
+          "period"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "boards"
+  ],
+  "additionalProperties": false,
+  "title": "LeaderboardsFile",
+  "description": "leaderboards.json: template defaults, overridden per game"
+}

@@ -1,0 +1,6 @@
+{
+  "$schema": "../../schemas/release.schema.json",
+  "schemaVersion": 1,
+  "ios": { "bundleId": "com.gamefactory.palmpeaks" },
+  "android": { "package": "com.gamefactory.palmpeaks" }
+}

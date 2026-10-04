@@ -1,0 +1,28 @@
+node_modules/
+.DS_Store
+*.log
+.env
+.env.*
+# generated
+build/bundles/
+build/reports/
+build/screenshots/
+build/web/
+engine/app/src/generated/
+engine/app/dist/
+engine/app/.expo/
+engine/app/ios/
+engine/app/android/
+engine/app/web-build/
+ai/out/
+test-results/
+playwright-report/
+coverage/
+*.tsbuildinfo
+build/artifacts/
+build/artifact-web/
+build/artifact-preview/
+# compiled output never sits next to sources (tsconfig sets noEmit)
+engine/**/src/**/*.js
+tools/src/**/*.js
+build/server-engine/

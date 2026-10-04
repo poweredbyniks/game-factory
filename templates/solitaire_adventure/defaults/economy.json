@@ -1,0 +1,131 @@
+{
+  "$schema": "../../../schemas/economy.schema.json",
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "coins",
+      "kind": "soft_currency",
+      "nameKey": "item.coins",
+      "icon": "coin",
+      "initial": 400
+    },
+    {
+      "id": "gems",
+      "kind": "premium_currency",
+      "nameKey": "item.gems",
+      "icon": "gem",
+      "initial": 10
+    },
+    {
+      "id": "lives",
+      "kind": "energy",
+      "nameKey": "item.lives",
+      "icon": "life",
+      "initial": 5
+    },
+    {
+      "id": "hint",
+      "kind": "booster",
+      "nameKey": "item.hint",
+      "icon": "hint",
+      "initial": 3
+    },
+    {
+      "id": "undo",
+      "kind": "booster",
+      "nameKey": "item.undo",
+      "icon": "undo",
+      "initial": 3
+    },
+    {
+      "id": "joker",
+      "kind": "booster",
+      "nameKey": "item.joker",
+      "icon": "joker",
+      "initial": 2
+    }
+  ],
+  "energy": {
+    "item": "lives",
+    "max": 5,
+    "regenSeconds": 1200,
+    "chargeOn": "loss",
+    "refillCost": {
+      "gems": 12
+    }
+  },
+  "boosters": [
+    {
+      "id": "hint",
+      "effect": "hint",
+      "price": {
+        "coins": 150
+      }
+    },
+    {
+      "id": "undo",
+      "effect": "undo",
+      "price": {
+        "coins": 100
+      }
+    },
+    {
+      "id": "joker",
+      "effect": "auto_place",
+      "price": {
+        "coins": 250
+      },
+      "maxPerLevel": 3
+    }
+  ],
+  "levelRewards": {
+    "byStars": {
+      "1": {
+        "coins": 20
+      },
+      "2": {
+        "coins": 35
+      },
+      "3": {
+        "coins": 50
+      }
+    },
+    "tierMultiplier": {
+      "tutorial": 0.5,
+      "easy": 1,
+      "medium": 1.2,
+      "hard": 1.5,
+      "expert": 2
+    },
+    "keystoneMultiplier": 2
+  },
+  "continue": {
+    "extraMoves": 5,
+    "cost": {
+      "coins": 200
+    },
+    "costEscalation": [
+      1,
+      1.5,
+      2.5
+    ],
+    "maxContinues": 3,
+    "rewardedAd": true
+  },
+  "rewardTables": {
+    "chest_small": {
+      "coins": 150,
+      "hint": 1
+    },
+    "chest_medium": {
+      "coins": 150,
+      "hint": 2,
+      "joker": 1
+    },
+    "chest_large": {
+      "coins": 300,
+      "gems": 10,
+      "joker": 2
+    }
+  }
+}

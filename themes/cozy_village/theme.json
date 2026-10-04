@@ -1,0 +1,346 @@
+{
+  "$schema": "../../schemas/theme.schema.json",
+  "schemaVersion": 1,
+  "themeId": "cozy_village",
+  "name": "Cozy Village",
+  "description": "Warm autumn village: cream paper, terracotta roofs, sage shutters, honey light.",
+  "palette": {
+    "primary": "#C8553D",
+    "primaryDark": "#9E3F2C",
+    "secondary": "#588B8B",
+    "accent": "#F2A541",
+    "background": "#FBF1E3",
+    "backgroundAlt": "#F3DFC1",
+    "surface": "#FFFDF8",
+    "surfaceAlt": "#F6EBDA",
+    "text": "#3D2C29",
+    "textMuted": "#8A7461",
+    "textOnPrimary": "#FFFFFF",
+    "success": "#5B8C5A",
+    "danger": "#C0392B",
+    "warning": "#E9A23B",
+    "overlay": "#2B1D1A99",
+    "cardFace": "#FFFDF7",
+    "cardFaceText": "#3D2C29",
+    "cardBack": "#9E3F2C",
+    "cardBackAlt": "#C8553D",
+    "cardBorder": "#E2CDB0",
+    "categoryCard": "#588B8B",
+    "categoryCardText": "#FFFFFF",
+    "slotEmpty": "#EAD9BF",
+    "suitRed": "#C0392B",
+    "suitBlack": "#2E2A28",
+    "mapPath": "#E3C29B",
+    "nodeLocked": "#C9BBAA",
+    "nodeAvailable": "#F2A541",
+    "nodeCompleted": "#5B8C5A"
+  },
+  "typography": {
+    "display": {
+      "asset": "font.display"
+    },
+    "body": {
+      "asset": "font.body"
+    },
+    "scale": 1
+  },
+  "shape": {
+    "radiusSm": 8,
+    "radiusMd": 14,
+    "radiusLg": 22,
+    "cardRadius": 10,
+    "buttonRadius": 24,
+    "borderWidth": 2
+  },
+  "cards": {
+    "aspectRatio": 1.32,
+    "backPattern": "stripes",
+    "backAsset": "card.back",
+    "categoryStyle": "banner",
+    "shadow": "soft",
+    "wordCase": "as_is"
+  },
+  "backgrounds": {
+    "map": {
+      "type": "gradient",
+      "colors": [
+        "#FBEFD9",
+        "#F6DFC0",
+        "#EFCFA6"
+      ],
+      "decor": [
+        {
+          "emoji": "🍂"
+        },
+        {
+          "emoji": "🌳"
+        },
+        {
+          "emoji": "🍁"
+        },
+        {
+          "emoji": "🌻"
+        }
+      ],
+      "decorOpacity": 0.3
+    },
+    "level": {
+      "type": "gradient",
+      "colors": [
+        "#F8ECD8",
+        "#EFD9B8"
+      ],
+      "decor": [
+        {
+          "emoji": "🍂"
+        },
+        {
+          "emoji": "🍁"
+        }
+      ],
+      "decorOpacity": 0.12
+    }
+  },
+  "map": {
+    "pathStyle": "dotted",
+    "nodeShape": "circle",
+    "decor": [
+      {
+        "emoji": "🌳"
+      },
+      {
+        "emoji": "🏡"
+      },
+      {
+        "emoji": "🍄"
+      },
+      {
+        "emoji": "🌻"
+      },
+      {
+        "emoji": "🧺"
+      },
+      {
+        "emoji": "🍁"
+      },
+      {
+        "emoji": "🐝"
+      },
+      {
+        "emoji": "🌲"
+      }
+    ]
+  },
+  "icons": {
+    "coin": {
+      "emoji": "💰"
+    },
+    "gem": {
+      "emoji": "💎"
+    },
+    "undo": {
+      "emoji": "↩️"
+    },
+    "joker": {
+      "emoji": "🃏"
+    },
+    "moves": {
+      "emoji": "👣"
+    },
+    "stock": {
+      "emoji": "🗂️"
+    },
+    "lock": {
+      "emoji": "🔒"
+    },
+    "shop": {
+      "emoji": "🛍️"
+    },
+    "settings": {
+      "emoji": "⚙️"
+    },
+    "play": {
+      "emoji": "▶️"
+    },
+    "close": {
+      "emoji": "✖️"
+    },
+    "back": {
+      "emoji": "◀️"
+    },
+    "sound": {
+      "emoji": "🔊"
+    },
+    "music": {
+      "emoji": "🎵"
+    },
+    "haptics": {
+      "emoji": "📳"
+    },
+    "ad": {
+      "emoji": "📺"
+    },
+    "check": {
+      "emoji": "✔️"
+    },
+    "info": {
+      "emoji": "ℹ️"
+    },
+    "life": {
+      "emoji": "❤️"
+    },
+    "star": {
+      "emoji": "⭐"
+    },
+    "hint": {
+      "emoji": "💡"
+    },
+    "chest": {
+      "emoji": "🎁"
+    }
+  },
+  "animation": {
+    "cardMoveMs": 230,
+    "cardFlipMs": 200,
+    "popupMs": 240,
+    "mismatchShake": true,
+    "celebration": "leaves"
+  },
+  "vfx": {
+    "particleColors": [
+      "#F2A541",
+      "#C8553D",
+      "#5B8C5A",
+      "#E9A23B"
+    ],
+    "particleGlyphs": [
+      "🍂",
+      "🍁",
+      "✨"
+    ]
+  },
+  "sounds": {
+    "tap": "sfx.tap",
+    "select": "sfx.select",
+    "place": "sfx.place",
+    "mismatch": "sfx.mismatch",
+    "draw": "sfx.draw",
+    "flip": "sfx.flip",
+    "complete": "sfx.complete",
+    "win": "sfx.win",
+    "lose": "sfx.lose",
+    "coin": "sfx.coin",
+    "button": "sfx.button",
+    "popup": "sfx.popup"
+  },
+  "assets": {
+    "font.display": {
+      "type": "font",
+      "file": "fonts/Fredoka_600SemiBold.ttf",
+      "family": "CozyDisplay"
+    },
+    "font.body": {
+      "type": "font",
+      "file": "fonts/Nunito_800ExtraBold.ttf",
+      "family": "CozyBody"
+    },
+    "card.back": {
+      "type": "svg",
+      "file": "assets/card-back.svg"
+    },
+    "sfx.tap": {
+      "type": "audio",
+      "file": "sfx/tap.wav",
+      "volume": 0.6
+    },
+    "sfx.select": {
+      "type": "audio",
+      "file": "sfx/select.wav",
+      "volume": 0.6
+    },
+    "sfx.place": {
+      "type": "audio",
+      "file": "sfx/place.wav",
+      "volume": 0.6
+    },
+    "sfx.mismatch": {
+      "type": "audio",
+      "file": "sfx/mismatch.wav",
+      "volume": 0.6
+    },
+    "sfx.draw": {
+      "type": "audio",
+      "file": "sfx/draw.wav",
+      "volume": 0.6
+    },
+    "sfx.flip": {
+      "type": "audio",
+      "file": "sfx/flip.wav",
+      "volume": 0.6
+    },
+    "sfx.complete": {
+      "type": "audio",
+      "file": "sfx/complete.wav",
+      "volume": 0.8
+    },
+    "sfx.win": {
+      "type": "audio",
+      "file": "sfx/win.wav",
+      "volume": 0.8
+    },
+    "sfx.lose": {
+      "type": "audio",
+      "file": "sfx/lose.wav",
+      "volume": 0.8
+    },
+    "sfx.coin": {
+      "type": "audio",
+      "file": "sfx/coin.wav",
+      "volume": 0.6
+    },
+    "sfx.button": {
+      "type": "audio",
+      "file": "sfx/button.wav",
+      "volume": 0.6
+    },
+    "sfx.popup": {
+      "type": "audio",
+      "file": "sfx/popup.wav",
+      "volume": 0.6
+    }
+  },
+  "artDirection": {
+    "styleKeywords": [
+      "storybook gouache",
+      "cozy autumn village",
+      "hand-painted",
+      "soft rounded shapes"
+    ],
+    "rendering": "painterly 2D with flat color blocks and soft gradients",
+    "lineWork": "warm brown 2px outlines with rounded joins",
+    "lighting": "late-afternoon honey light from the upper left, soft long shadows",
+    "texture": "subtle watercolor paper grain",
+    "perspective": "3/4 top-down for the map, front-facing for UI and portraits",
+    "mood": [
+      "warm",
+      "homely",
+      "gentle",
+      "nostalgic"
+    ],
+    "colorNotes": "terracotta for action and roofs, sage for categories and shutters, honey for highlights, cream for paper and card faces",
+    "characterStyle": "anthropomorphic woodland animals, chunky proportions, big friendly eyes, knitted and linen outfits",
+    "negative": [
+      "photorealism",
+      "text",
+      "logos",
+      "watermarks",
+      "harsh neon colors",
+      "existing franchises or characters"
+    ],
+    "referenceDescriptors": [
+      "vintage children's picture books",
+      "autumn harvest fairs",
+      "quilted textiles"
+    ]
+  }
+}

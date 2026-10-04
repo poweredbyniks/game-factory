@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../schemas/strings.schema.json",
+  "schemaVersion": 1,
+  "locale": "en",
+  "strings": {
+    "chapter.chapter_1.title": "Coral Cove",
+    "chapter.chapter_1.subtitle": "Reopen the beach bar and the boat dock",
+    "chapter.chapter_2.title": "Sunset Lagoon",
+    "chapter.chapter_2.subtitle": "Light the lanterns along the lagoon",
+    "item.coins": "Shells",
+    "store.product.coins_small": "Bucket of shells",
+    "store.product.coins_medium": "Chest of shells",
+    "store.product.coins_large": "Shell treasure",
+    "store.offer.gems_to_coins": "600 shells"
+  }
+}

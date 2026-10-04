@@ -1,0 +1,33 @@
+{
+  "$schema": "../../../../schemas/strings.schema.json",
+  "schemaVersion": 1,
+  "locale": "en",
+  "strings": {
+    "leaderboard.journey": "Journey stars",
+    "leaderboard.weekly_stars": "Stars this week",
+    "item.coins": "Coins",
+    "item.gems": "Gems",
+    "item.lives": "Lives",
+    "item.hint": "Hint",
+    "item.undo": "Undo",
+    "item.joker": "Joker",
+    "store.section.special": "Special offers",
+    "store.section.boosters": "Boosters",
+    "store.section.coins": "Coins",
+    "store.product.coins_small": "Pouch of coins",
+    "store.product.coins_medium": "Chest of coins",
+    "store.product.coins_large": "Treasure trove",
+    "store.product.starter_pack": "Starter pack",
+    "store.product.no_ads": "Remove ads",
+    "store.offer.hint_pack": "3 Hints",
+    "store.offer.undo_pack": "3 Undos",
+    "store.offer.joker_pack": "3 Jokers",
+    "store.offer.booster_bundle": "Booster bundle",
+    "store.offer.gems_to_coins": "600 coins",
+    "tutorial.associations.l1.start": "Tap a category card, then tap an empty slot to open it.",
+    "tutorial.associations.l1.category": "Now tap a matching word, then tap its category.",
+    "tutorial.associations.l2.start": "Tap the deck to draw a card. Every move counts!",
+    "tutorial.tripeaks.l1.start": "Tap a card one higher or one lower than the open card. Clear the whole board!",
+    "tutorial.tripeaks.l3.start": "Long runs score more. Draw from the deck only when nothing fits."
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "$schema": "../../../schemas/store.schema.json",
+  "schemaVersion": 1,
+  "products": [
+    {
+      "id": "coins_small",
+      "type": "consumable",
+      "storeIds": {},
+      "titleKey": "store.product.coins_small",
+      "contents": {
+        "coins": 1200
+      },
+      "entitlements": [],
+      "referencePriceUsd": 1.99,
+      "tags": [
+        "coins"
+      ]
+    },
+    {
+      "id": "coins_medium",
+      "type": "consumable",
+      "storeIds": {},
+      "titleKey": "store.product.coins_medium",
+      "contents": {
+        "coins": 3500,
+        "gems": 10
+      },
+      "entitlements": [],
+      "referencePriceUsd": 4.99,
+      "tags": [
+        "coins",
+        "best_value"
+      ]
+    },
+    {
+      "id": "coins_large",
+      "type": "consumable",
+      "storeIds": {},
+      "titleKey": "store.product.coins_large",
+      "contents": {
+        "coins": 8000,
+        "gems": 30
+      },
+      "entitlements": [],
+      "referencePriceUsd": 9.99,
+      "tags": [
+        "coins"
+      ]
+    },
+    {
+      "id": "starter_pack",
+      "type": "consumable",
+      "storeIds": {},
+      "titleKey": "store.product.starter_pack",
+      "contents": {
+        "coins": 2000,
+        "hint": 3,
+        "undo": 3,
+        "joker": 2
+      },
+      "entitlements": [],
+      "referencePriceUsd": 2.99,
+      "tags": [
+        "starter"
+      ]
+    },
+    {
+      "id": "no_ads",
+      "type": "non_consumable",
+      "storeIds": {},
+      "titleKey": "store.product.no_ads",
+      "contents": {},
+      "entitlements": [
+        "no_ads"
+      ],
+      "referencePriceUsd": 4.99,
+      "tags": [
+        "no_ads"
+      ]
+    }
+  ],
+  "offers": [
+    {
+      "id": "hint_pack",
+      "titleKey": "store.offer.hint_pack",
+      "cost": {
+        "coins": 400
+      },
+      "contents": {
+        "hint": 3
+      }
+    },
+    {
+      "id": "undo_pack",
+      "titleKey": "store.offer.undo_pack",
+      "cost": {
+        "coins": 250
+      },
+      "contents": {
+        "undo": 3
+      }
+    },
+    {
+      "id": "joker_pack",
+      "titleKey": "store.offer.joker_pack",
+      "cost": {
+        "coins": 650
+      },
+      "contents": {
+        "joker": 3
+      }
+    },
+    {
+      "id": "booster_bundle",
+      "titleKey": "store.offer.booster_bundle",
+      "cost": {
+        "gems": 15
+      },
+      "contents": {
+        "hint": 2,
+        "undo": 2,
+        "joker": 2
+      }
+    },
+    {
+      "id": "gems_to_coins",
+      "titleKey": "store.offer.gems_to_coins",
+      "cost": {
+        "gems": 10
+      },
+      "contents": {
+        "coins": 600
+      },
+      "limitPerDay": 3
+    }
+  ],
+  "sections": [
+    {
+      "id": "special",
+      "titleKey": "store.section.special",
+      "entries": [
+        {
+          "product": "starter_pack"
+        },
+        {
+          "product": "no_ads"
+        }
+      ]
+    },
+    {
+      "id": "boosters",
+      "titleKey": "store.section.boosters",
+      "entries": [
+        {
+          "offer": "hint_pack"
+        },
+        {
+          "offer": "undo_pack"
+        },
+        {
+          "offer": "joker_pack"
+        },
+        {
+          "offer": "booster_bundle"
+        }
+      ]
+    },
+    {
+      "id": "coins",
+      "titleKey": "store.section.coins",
+      "entries": [
+        {
+          "product": "coins_small"
+        },
+        {
+          "product": "coins_medium"
+        },
+        {
+          "product": "coins_large"
+        },
+        {
+          "offer": "gems_to_coins"
+        }
+      ]
+    }
+  ],
+  "specialOffers": [
+    {
+      "id": "starter_offer",
+      "product": "starter_pack",
+      "trigger": {
+        "type": "level_reached",
+        "level": 4
+      },
+      "durationHours": 48,
+      "oncePerPlayer": true
+    }
+  ]
+}

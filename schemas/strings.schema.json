@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schemaVersion": {
+      "type": "number",
+      "const": 1,
+      "description": "Schema version of this file"
+    },
+    "locale": {
+      "type": "string",
+      "minLength": 2
+    },
+    "strings": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9_.-]*$",
+        "description": "Localization string key"
+      },
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "locale",
+    "strings"
+  ],
+  "additionalProperties": false,
+  "title": "StringTable",
+  "description": "localization/LOCALE.json: key to text, {param} placeholders"
+}

@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schemaVersion": {
+      "type": "number",
+      "const": 1,
+      "description": "Schema version of this file"
+    },
+    "locale": {
+      "type": "string",
+      "minLength": 2
+    },
+    "title": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 30
+    },
+    "subtitle": {
+      "type": "string",
+      "maxLength": 30,
+      "description": "App Store subtitle"
+    },
+    "shortDescription": {
+      "type": "string",
+      "maxLength": 80,
+      "description": "Google Play short description"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 4000
+    },
+    "keywords": {
+      "default": [],
+      "description": "App Store keywords; joined with commas they must fit in 100 characters",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "promotionalText": {
+      "default": "",
+      "type": "string",
+      "maxLength": 170
+    },
+    "releaseNotes": {
+      "default": "",
+      "description": "500 characters fits both stores",
+      "type": "string",
+      "maxLength": 500
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "locale",
+    "title",
+    "subtitle",
+    "shortDescription",
+    "description"
+  ],
+  "additionalProperties": false,
+  "title": "StoreListing",
+  "description": "games/ID/store/LOCALE.json: store listing text for one locale"
+}

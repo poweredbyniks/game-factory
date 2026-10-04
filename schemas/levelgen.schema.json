@@ -1,0 +1,181 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schemaVersion": {
+      "type": "number",
+      "const": 1,
+      "description": "Schema version of this file"
+    },
+    "mechanic": {
+      "type": "string",
+      "maxLength": 80,
+      "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+      "description": "Lowercase stable identifier"
+    },
+    "seed": {
+      "type": "string",
+      "minLength": 1
+    },
+    "count": {
+      "type": "integer",
+      "exclusiveMinimum": 0,
+      "maximum": 9007199254740991
+    },
+    "defaults": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string"
+      },
+      "additionalProperties": {},
+      "description": "Generator parameters shared by every level"
+    },
+    "curve": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "from": {
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991
+          },
+          "to": {
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991
+          },
+          "tier": {
+            "type": "string",
+            "enum": [
+              "tutorial",
+              "easy",
+              "medium",
+              "hard",
+              "expert"
+            ]
+          },
+          "params": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string"
+            },
+            "additionalProperties": {},
+            "description": "Generator parameters for this range; merged over defaults"
+          },
+          "target": {
+            "description": "Rebalance the budget so this bot profile wins at this rate",
+            "type": "object",
+            "properties": {
+              "profile": {
+                "type": "string",
+                "enum": [
+                  "casual",
+                  "average",
+                  "expert"
+                ]
+              },
+              "winRate": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1,
+                "description": "Win rate the move budget is tuned to, measured with bot players"
+              }
+            },
+            "required": [
+              "profile",
+              "winRate"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "from",
+          "to",
+          "tier",
+          "params"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "keystones": {
+      "default": [],
+      "description": "Level numbers that get the keystone tag",
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "exclusiveMinimum": 0,
+        "maximum": 9007199254740991
+      }
+    },
+    "boosters": {
+      "type": "object",
+      "properties": {
+        "allowed": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 80,
+            "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+            "description": "Lowercase stable identifier"
+          }
+        }
+      },
+      "required": [
+        "allowed"
+      ],
+      "additionalProperties": false
+    },
+    "tutorials": {
+      "default": {},
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "pattern": "^\\d+$"
+      },
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "trigger": {
+              "type": "string",
+              "enum": [
+                "start",
+                "first_move",
+                "first_category",
+                "first_mismatch"
+              ]
+            },
+            "textKey": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9_.-]*$",
+              "description": "Localization string key"
+            }
+          },
+          "required": [
+            "trigger",
+            "textKey"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "mechanic",
+    "seed",
+    "count",
+    "defaults",
+    "curve",
+    "boosters"
+  ],
+  "additionalProperties": false,
+  "title": "LevelGenConfig",
+  "description": "games/ID/levelgen.json: difficulty curve for the generator"
+}

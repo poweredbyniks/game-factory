@@ -1,0 +1,125 @@
+{
+  "$schema": "../../../schemas/levelgen.schema.json",
+  "schemaVersion": 1,
+  "mechanic": "tripeaks",
+  "seed": "TEMPLATE",
+  "count": 20,
+  "defaults": {
+    "layout": "tri",
+    "stock": [
+      12,
+      24
+    ],
+    "wrap": true,
+    "reserve": 15,
+    "starFractions": {
+      "two": 0.25,
+      "three": 0.5
+    },
+    "maxAttempts": 60,
+    "maxSolverNodes": 200000
+  },
+  "curve": [
+    {
+      "from": 1,
+      "to": 2,
+      "tier": "tutorial",
+      "params": {
+        "layout": "hill",
+        "stock": [
+          22,
+          32
+        ]
+      },
+      "target": {
+        "profile": "casual",
+        "winRate": 0.9
+      }
+    },
+    {
+      "from": 3,
+      "to": 5,
+      "tier": "easy",
+      "params": {
+        "layout": "twin"
+      },
+      "target": {
+        "profile": "average",
+        "winRate": 0.92
+      }
+    },
+    {
+      "from": 6,
+      "to": 10,
+      "tier": "medium",
+      "params": {
+        "layout": "tri"
+      },
+      "target": {
+        "profile": "average",
+        "winRate": 0.8
+      }
+    },
+    {
+      "from": 11,
+      "to": 15,
+      "tier": "medium",
+      "params": {
+        "layout": "tri"
+      },
+      "target": {
+        "profile": "average",
+        "winRate": 0.72
+      }
+    },
+    {
+      "from": 16,
+      "to": 19,
+      "tier": "hard",
+      "params": {
+        "layout": "tri"
+      },
+      "target": {
+        "profile": "average",
+        "winRate": 0.62
+      }
+    },
+    {
+      "from": 20,
+      "to": 20,
+      "tier": "expert",
+      "params": {
+        "layout": "tri"
+      },
+      "target": {
+        "profile": "average",
+        "winRate": 0.5
+      }
+    }
+  ],
+  "keystones": [
+    10,
+    20
+  ],
+  "boosters": {
+    "allowed": [
+      "hint",
+      "undo",
+      "joker"
+    ]
+  },
+  "tutorials": {
+    "1": [
+      {
+        "trigger": "start",
+        "textKey": "tutorial.tripeaks.l1.start"
+      }
+    ],
+    "3": [
+      {
+        "trigger": "start",
+        "textKey": "tutorial.tripeaks.l3.start"
+      }
+    ]
+  }
+}

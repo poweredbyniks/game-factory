@@ -1,0 +1,31 @@
+{
+  "$schema": "../../../schemas/strings.schema.json",
+  "schemaVersion": 1,
+  "locale": "en",
+  "strings": {
+    "chapter.spring_fair.title": "The Spring Fair",
+    "chapter.spring_fair.subtitle": "Sort the labels for every stall",
+    "chapter.harvest_market.title": "The Harvest Market",
+    "chapter.harvest_market.subtitle": "Untangle the harvest crates",
+    "character.wren.name": "Wren",
+    "character.odette.name": "Odette",
+    "character.pim.name": "Pim",
+    "story.spring_fair_intro.1": "Maplebrook wakes up to the first warm morning of spring.",
+    "story.spring_fair_intro.2": "Wren! Wren! The wind blew through the post office and every label for the Spring Fair got jumbled!",
+    "story.spring_fair_intro.3": "Jumbled labels? Then let's sort them. Every word belongs with one category card.",
+    "story.spring_fair_intro.4": "Open a category in an empty slot first, dear. The words will follow.",
+    "story.spring_fair_outro.1": "Every stall is labelled and the pies are cooling. The Spring Fair is ready!",
+    "story.spring_fair_outro.2": "Most fun I've had since I built the bandstand. And that was a real plank-buster.",
+    "story.spring_fair_outro.3": "Oh no. I think I left the harvest crates down by the river…",
+    "story.harvest_market_intro.1": "Summer slips by, and the orchards turn gold.",
+    "story.harvest_market_intro.2": "The harvest crates! The river mixed them all up and the market opens tomorrow!",
+    "story.harvest_market_intro.3": "Same trick as spring, just bigger piles. Watch the slots: there are fewer slots than categories.",
+    "story.harvest_market_outro.1": "Look at that. The whole market is sorted. Maplebrook hasn't looked this cheerful in years.",
+    "story.harvest_market_outro.2": "Next up, the winter lantern walk. I'd better start building lanterns.",
+    "story.harvest_market_outro.3": "To be continued…",
+    "tutorial.l1.start": "Tap a category card, then tap an empty slot to open that category.",
+    "tutorial.l1.category": "Now tap a word that belongs to it, then tap the category to sort it.",
+    "tutorial.l2.start": "Need more cards? Tap the deck to draw. Every move counts!",
+    "tutorial.mismatch": "Wrong group costs a move. Take a second look before you tap."
+  }
+}

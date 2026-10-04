@@ -1,0 +1,102 @@
+{
+  "$schema": "../../schemas/story.schema.json",
+  "schemaVersion": 1,
+  "beats": [
+    {
+      "id": "spring_fair_intro",
+      "trigger": {
+        "type": "chapter_start",
+        "chapter": "spring_fair"
+      },
+      "lines": [
+        {
+          "speaker": "narrator",
+          "textKey": "story.spring_fair_intro.1"
+        },
+        {
+          "speaker": "pim",
+          "textKey": "story.spring_fair_intro.2",
+          "emotion": "worried"
+        },
+        {
+          "speaker": "wren",
+          "textKey": "story.spring_fair_intro.3",
+          "emotion": "happy"
+        },
+        {
+          "speaker": "odette",
+          "textKey": "story.spring_fair_intro.4"
+        }
+      ]
+    },
+    {
+      "id": "spring_fair_outro",
+      "trigger": {
+        "type": "chapter_complete",
+        "chapter": "spring_fair"
+      },
+      "lines": [
+        {
+          "speaker": "odette",
+          "textKey": "story.spring_fair_outro.1",
+          "emotion": "proud"
+        },
+        {
+          "speaker": "wren",
+          "textKey": "story.spring_fair_outro.2",
+          "emotion": "happy"
+        },
+        {
+          "speaker": "pim",
+          "textKey": "story.spring_fair_outro.3",
+          "emotion": "worried"
+        }
+      ]
+    },
+    {
+      "id": "harvest_market_intro",
+      "trigger": {
+        "type": "chapter_start",
+        "chapter": "harvest_market"
+      },
+      "lines": [
+        {
+          "speaker": "narrator",
+          "textKey": "story.harvest_market_intro.1"
+        },
+        {
+          "speaker": "pim",
+          "textKey": "story.harvest_market_intro.2",
+          "emotion": "worried"
+        },
+        {
+          "speaker": "wren",
+          "textKey": "story.harvest_market_intro.3"
+        }
+      ]
+    },
+    {
+      "id": "harvest_market_outro",
+      "trigger": {
+        "type": "chapter_complete",
+        "chapter": "harvest_market"
+      },
+      "lines": [
+        {
+          "speaker": "odette",
+          "textKey": "story.harvest_market_outro.1",
+          "emotion": "proud"
+        },
+        {
+          "speaker": "wren",
+          "textKey": "story.harvest_market_outro.2",
+          "emotion": "happy"
+        },
+        {
+          "speaker": "narrator",
+          "textKey": "story.harvest_market_outro.3"
+        }
+      ]
+    }
+  ]
+}

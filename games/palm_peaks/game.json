@@ -1,0 +1,32 @@
+{
+  "$schema": "../../schemas/game.schema.json",
+  "schemaVersion": 2,
+  "gameId": "palm_peaks",
+  "name": "Palm Peaks Solitaire",
+  "version": "0.1.0",
+  "template": "solitaire_adventure",
+  "theme": "tropical_resort",
+  "mechanic": {
+    "id": "tripeaks"
+  },
+  "modules": {
+    "story": false
+  },
+  "content": {
+    "locales": [
+      "en"
+    ],
+    "defaultLocale": "en",
+    "packs": []
+  },
+  "meta": {
+    "pitch": "Clear sunny card peaks to reopen the abandoned Palm Peaks island resort, one beach at a time.",
+    "tags": [
+      "solitaire",
+      "tripeaks",
+      "tropical",
+      "relaxing"
+    ],
+    "audience": "Casual card players, 30 to 65"
+  }
+}

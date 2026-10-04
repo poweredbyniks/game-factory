@@ -1,0 +1,406 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schemaVersion": {
+      "type": "number",
+      "const": 1,
+      "description": "Schema version of this file"
+    },
+    "items": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "maxLength": 80,
+            "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+            "description": "Lowercase stable identifier"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "soft_currency",
+              "premium_currency",
+              "energy",
+              "booster",
+              "ticket",
+              "collectible"
+            ]
+          },
+          "nameKey": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9_.-]*$",
+            "description": "Localization string key"
+          },
+          "icon": {
+            "type": "string",
+            "enum": [
+              "coin",
+              "gem",
+              "life",
+              "star",
+              "hint",
+              "undo",
+              "joker",
+              "moves",
+              "stock",
+              "lock",
+              "shop",
+              "settings",
+              "play",
+              "close",
+              "back",
+              "sound",
+              "music",
+              "haptics",
+              "chest",
+              "ad",
+              "check",
+              "info"
+            ]
+          },
+          "initial": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991,
+            "description": "Balance of a brand-new player"
+          },
+          "cap": {
+            "description": "Hard cap; grants above it are clipped",
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "nameKey",
+          "icon",
+          "initial"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "energy": {
+      "type": "object",
+      "properties": {
+        "item": {
+          "type": "string",
+          "maxLength": 80,
+          "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+          "description": "Lowercase stable identifier"
+        },
+        "max": {
+          "type": "integer",
+          "exclusiveMinimum": 0,
+          "maximum": 9007199254740991
+        },
+        "regenSeconds": {
+          "type": "integer",
+          "exclusiveMinimum": 0,
+          "maximum": 9007199254740991
+        },
+        "chargeOn": {
+          "type": "string",
+          "enum": [
+            "start",
+            "loss"
+          ],
+          "description": "When a life is consumed"
+        },
+        "refillCost": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "maxLength": 80,
+            "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+            "description": "Lowercase stable identifier"
+          },
+          "additionalProperties": {
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991
+          },
+          "description": "Item id to positive amount"
+        }
+      },
+      "required": [
+        "item",
+        "max",
+        "regenSeconds",
+        "chargeOn",
+        "refillCost"
+      ],
+      "additionalProperties": false
+    },
+    "boosters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "maxLength": 80,
+            "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+            "description": "Item id of the booster"
+          },
+          "effect": {
+            "type": "string",
+            "enum": [
+              "hint",
+              "undo",
+              "auto_place",
+              "add_moves",
+              "shuffle"
+            ]
+          },
+          "amount": {
+            "description": "Effect strength, e.g. moves added",
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991
+          },
+          "price": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "maxLength": 80,
+              "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+              "description": "Lowercase stable identifier"
+            },
+            "additionalProperties": {
+              "type": "integer",
+              "exclusiveMinimum": 0,
+              "maximum": 9007199254740991
+            },
+            "description": "Price to buy one when the player has none"
+          },
+          "maxPerLevel": {
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991
+          }
+        },
+        "required": [
+          "id",
+          "effect",
+          "price"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "levelRewards": {
+      "type": "object",
+      "properties": {
+        "byStars": {
+          "type": "object",
+          "properties": {
+            "1": {
+              "type": "object",
+              "propertyNames": {
+                "type": "string",
+                "maxLength": 80,
+                "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+                "description": "Lowercase stable identifier"
+              },
+              "additionalProperties": {
+                "type": "integer",
+                "exclusiveMinimum": 0,
+                "maximum": 9007199254740991
+              },
+              "description": "Item id to positive amount"
+            },
+            "2": {
+              "type": "object",
+              "propertyNames": {
+                "type": "string",
+                "maxLength": 80,
+                "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+                "description": "Lowercase stable identifier"
+              },
+              "additionalProperties": {
+                "type": "integer",
+                "exclusiveMinimum": 0,
+                "maximum": 9007199254740991
+              },
+              "description": "Item id to positive amount"
+            },
+            "3": {
+              "type": "object",
+              "propertyNames": {
+                "type": "string",
+                "maxLength": 80,
+                "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+                "description": "Lowercase stable identifier"
+              },
+              "additionalProperties": {
+                "type": "integer",
+                "exclusiveMinimum": 0,
+                "maximum": 9007199254740991
+              },
+              "description": "Item id to positive amount"
+            }
+          },
+          "required": [
+            "1",
+            "2",
+            "3"
+          ],
+          "additionalProperties": false
+        },
+        "tierMultiplier": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "enum": [
+              "tutorial",
+              "easy",
+              "medium",
+              "hard",
+              "expert"
+            ]
+          },
+          "additionalProperties": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          }
+        },
+        "keystoneMultiplier": {
+          "default": 1,
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      },
+      "required": [
+        "byStars"
+      ],
+      "additionalProperties": false
+    },
+    "continue": {
+      "type": "object",
+      "properties": {
+        "extraMoves": {
+          "type": "integer",
+          "exclusiveMinimum": 0,
+          "maximum": 9007199254740991
+        },
+        "cost": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "maxLength": 80,
+            "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+            "description": "Lowercase stable identifier"
+          },
+          "additionalProperties": {
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991
+          },
+          "description": "Item id to positive amount"
+        },
+        "costEscalation": {
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "description": "Cost multiplier for the 1st, 2nd, ... continue"
+        },
+        "maxContinues": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "rewardedAd": {
+          "type": "boolean",
+          "description": "First continue of an attempt may be paid with a rewarded ad"
+        }
+      },
+      "required": [
+        "extraMoves",
+        "cost",
+        "costEscalation",
+        "maxContinues",
+        "rewardedAd"
+      ],
+      "additionalProperties": false
+    },
+    "rewardTables": {
+      "default": {},
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "maxLength": 80,
+        "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+        "description": "Lowercase stable identifier"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "propertyNames": {
+          "type": "string",
+          "maxLength": 80,
+          "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+          "description": "Lowercase stable identifier"
+        },
+        "additionalProperties": {
+          "type": "integer",
+          "exclusiveMinimum": 0,
+          "maximum": 9007199254740991
+        },
+        "description": "Item id to positive amount"
+      }
+    },
+    "dailyReward": {
+      "type": "object",
+      "properties": {
+        "days": {
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "maxLength": 80,
+              "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+              "description": "Lowercase stable identifier"
+            },
+            "additionalProperties": {
+              "type": "integer",
+              "exclusiveMinimum": 0,
+              "maximum": 9007199254740991
+            },
+            "description": "Item id to positive amount"
+          }
+        },
+        "resetOnMiss": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "days",
+        "resetOnMiss"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "items",
+    "boosters",
+    "levelRewards",
+    "continue"
+  ],
+  "additionalProperties": false,
+  "title": "EconomyDefinition",
+  "description": "economy.json: items, energy, boosters, rewards, continues"
+}

@@ -1,0 +1,9 @@
+{
+  "$comment": "Which platform services have real store or SDK implementations in src/platform. gf build refuses production builds that would ship a development stand-in. Flip a flag only together with the adapter that makes it true.",
+  "iap": false,
+  "ads": false,
+  "consent": false,
+  "analytics": false,
+  "notifications": false,
+  "backend": false
+}

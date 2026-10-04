@@ -1,0 +1,237 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schemaVersion": {
+      "type": "number",
+      "const": 1,
+      "description": "Schema version of this file"
+    },
+    "templateId": {
+      "type": "string",
+      "maxLength": 80,
+      "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+      "description": "Lowercase stable identifier"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "coreLoop": {
+      "minItems": 2,
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Ordered steps of the core loop"
+    },
+    "mechanics": {
+      "type": "object",
+      "properties": {
+        "default": {
+          "type": "string",
+          "maxLength": 80,
+          "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+          "description": "Lowercase stable identifier"
+        },
+        "supported": {
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 80,
+            "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+            "description": "Lowercase stable identifier"
+          }
+        }
+      },
+      "required": [
+        "default",
+        "supported"
+      ],
+      "additionalProperties": false
+    },
+    "modules": {
+      "type": "object",
+      "properties": {
+        "map": {
+          "type": "boolean"
+        },
+        "story": {
+          "type": "boolean"
+        },
+        "lives": {
+          "type": "boolean"
+        },
+        "boosters": {
+          "type": "boolean"
+        },
+        "shop": {
+          "type": "boolean"
+        },
+        "ads": {
+          "type": "boolean"
+        },
+        "iap": {
+          "type": "boolean"
+        },
+        "quests": {
+          "type": "boolean"
+        },
+        "collections": {
+          "type": "boolean"
+        },
+        "buildings": {
+          "type": "boolean"
+        },
+        "dailyReward": {
+          "type": "boolean"
+        },
+        "events": {
+          "type": "boolean"
+        },
+        "notifications": {
+          "type": "boolean"
+        },
+        "leaderboards": {
+          "type": "boolean",
+          "description": "Server-side leaderboards from verified attempts (needs a backend)"
+        }
+      },
+      "required": [
+        "map",
+        "story",
+        "lives",
+        "boosters",
+        "shop",
+        "ads",
+        "iap",
+        "quests",
+        "collections",
+        "buildings",
+        "dailyReward",
+        "events",
+        "notifications",
+        "leaderboards"
+      ],
+      "additionalProperties": false,
+      "description": "Default module switches; games override individual modules"
+    },
+    "ui": {
+      "type": "object",
+      "properties": {
+        "screens": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 80,
+            "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+            "description": "Lowercase stable identifier"
+          }
+        },
+        "mapHud": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 80,
+            "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+            "description": "Lowercase stable identifier"
+          }
+        },
+        "levelHud": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 80,
+            "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+            "description": "Lowercase stable identifier"
+          }
+        }
+      },
+      "required": [
+        "screens",
+        "mapHud",
+        "levelHud"
+      ],
+      "additionalProperties": false
+    },
+    "requiredIcons": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "coin",
+          "gem",
+          "life",
+          "star",
+          "hint",
+          "undo",
+          "joker",
+          "moves",
+          "stock",
+          "lock",
+          "shop",
+          "settings",
+          "play",
+          "close",
+          "back",
+          "sound",
+          "music",
+          "haptics",
+          "chest",
+          "ad",
+          "check",
+          "info"
+        ]
+      }
+    },
+    "requiredSounds": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "tap",
+          "select",
+          "place",
+          "mismatch",
+          "draw",
+          "flip",
+          "complete",
+          "win",
+          "lose",
+          "coin",
+          "button",
+          "popup"
+        ]
+      }
+    },
+    "requiredGameFiles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Files every game package of this template must contain"
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "templateId",
+    "name",
+    "description",
+    "coreLoop",
+    "mechanics",
+    "modules",
+    "ui",
+    "requiredIcons",
+    "requiredGameFiles"
+  ],
+  "additionalProperties": false,
+  "title": "TemplateDefinition",
+  "description": "templates/ID/template.json"
+}

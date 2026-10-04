@@ -1,0 +1,36 @@
+{
+  "$schema": "../../../schemas/progression.schema.json",
+  "schemaVersion": 1,
+  "unlockRule": "linear",
+  "replayCompleted": false,
+  "chapters": [
+    {
+      "id": "chapter_1",
+      "titleKey": "chapter.chapter_1.title",
+      "subtitleKey": "chapter.chapter_1.subtitle",
+      "levels": {
+        "from": 1,
+        "to": 10
+      },
+      "unlock": {
+        "type": "previous_chapter"
+      },
+      "completionReward": "chest_medium",
+      "storyIntro": "chapter_1_intro"
+    },
+    {
+      "id": "chapter_2",
+      "titleKey": "chapter.chapter_2.title",
+      "subtitleKey": "chapter.chapter_2.subtitle",
+      "levels": {
+        "from": 11,
+        "to": 20
+      },
+      "unlock": {
+        "type": "previous_chapter"
+      },
+      "completionReward": "chest_large",
+      "storyIntro": "chapter_2_intro"
+    }
+  ]
+}

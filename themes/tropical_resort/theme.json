@@ -1,0 +1,346 @@
+{
+  "$schema": "../../schemas/theme.schema.json",
+  "schemaVersion": 1,
+  "themeId": "tropical_resort",
+  "name": "Tropical Resort",
+  "description": "Sunny island resort: lagoon turquoise, coral, sand and palm greens, crisp shadows.",
+  "palette": {
+    "primary": "#FF6B57",
+    "primaryDark": "#D94A38",
+    "secondary": "#0FA3B1",
+    "accent": "#FFC93C",
+    "background": "#E8FBF8",
+    "backgroundAlt": "#C9F2EE",
+    "surface": "#FFFFFF",
+    "surfaceAlt": "#F2FBFA",
+    "text": "#11343A",
+    "textMuted": "#5E8186",
+    "textOnPrimary": "#FFFFFF",
+    "success": "#2BB673",
+    "danger": "#E63946",
+    "warning": "#FFB703",
+    "overlay": "#06262B99",
+    "cardFace": "#FFFFFF",
+    "cardFaceText": "#11343A",
+    "cardBack": "#0FA3B1",
+    "cardBackAlt": "#0B7C87",
+    "cardBorder": "#BDE7E3",
+    "categoryCard": "#FF6B57",
+    "categoryCardText": "#FFFFFF",
+    "slotEmpty": "#CDEFEA",
+    "suitRed": "#E63946",
+    "suitBlack": "#11343A",
+    "mapPath": "#F6D9A8",
+    "nodeLocked": "#A9C9C7",
+    "nodeAvailable": "#FFC93C",
+    "nodeCompleted": "#2BB673"
+  },
+  "typography": {
+    "display": {
+      "asset": "font.display"
+    },
+    "body": {
+      "asset": "font.body"
+    },
+    "scale": 1
+  },
+  "shape": {
+    "radiusSm": 10,
+    "radiusMd": 16,
+    "radiusLg": 26,
+    "cardRadius": 12,
+    "buttonRadius": 28,
+    "borderWidth": 3
+  },
+  "cards": {
+    "aspectRatio": 1.4,
+    "backPattern": "dots",
+    "backAsset": "card.back",
+    "categoryStyle": "solid",
+    "shadow": "hard",
+    "wordCase": "upper"
+  },
+  "backgrounds": {
+    "map": {
+      "type": "gradient",
+      "colors": [
+        "#7FDBDA",
+        "#BDF0E8",
+        "#F9E4B7"
+      ],
+      "decor": [
+        {
+          "emoji": "🌴"
+        },
+        {
+          "emoji": "🐚"
+        },
+        {
+          "emoji": "🌺"
+        },
+        {
+          "emoji": "🐠"
+        }
+      ],
+      "decorOpacity": 0.35
+    },
+    "level": {
+      "type": "gradient",
+      "colors": [
+        "#DFF7F4",
+        "#BDEDE7"
+      ],
+      "decor": [
+        {
+          "emoji": "🌴"
+        },
+        {
+          "emoji": "🌊"
+        }
+      ],
+      "decorOpacity": 0.12
+    }
+  },
+  "map": {
+    "pathStyle": "dashed",
+    "nodeShape": "rounded",
+    "decor": [
+      {
+        "emoji": "🌴"
+      },
+      {
+        "emoji": "🏝️"
+      },
+      {
+        "emoji": "🐚"
+      },
+      {
+        "emoji": "🌺"
+      },
+      {
+        "emoji": "🦜"
+      },
+      {
+        "emoji": "🐢"
+      },
+      {
+        "emoji": "⛱️"
+      },
+      {
+        "emoji": "🍍"
+      }
+    ]
+  },
+  "icons": {
+    "coin": {
+      "emoji": "🐚"
+    },
+    "gem": {
+      "emoji": "💎"
+    },
+    "undo": {
+      "emoji": "↩️"
+    },
+    "joker": {
+      "emoji": "🃏"
+    },
+    "moves": {
+      "emoji": "👣"
+    },
+    "stock": {
+      "emoji": "🗂️"
+    },
+    "lock": {
+      "emoji": "🔒"
+    },
+    "shop": {
+      "emoji": "🛍️"
+    },
+    "settings": {
+      "emoji": "⚙️"
+    },
+    "play": {
+      "emoji": "▶️"
+    },
+    "close": {
+      "emoji": "✖️"
+    },
+    "back": {
+      "emoji": "◀️"
+    },
+    "sound": {
+      "emoji": "🔊"
+    },
+    "music": {
+      "emoji": "🎵"
+    },
+    "haptics": {
+      "emoji": "📳"
+    },
+    "ad": {
+      "emoji": "📺"
+    },
+    "check": {
+      "emoji": "✔️"
+    },
+    "info": {
+      "emoji": "ℹ️"
+    },
+    "life": {
+      "emoji": "🧡"
+    },
+    "star": {
+      "emoji": "🌟"
+    },
+    "hint": {
+      "emoji": "🔦"
+    },
+    "chest": {
+      "emoji": "🧳"
+    }
+  },
+  "animation": {
+    "cardMoveMs": 180,
+    "cardFlipMs": 160,
+    "popupMs": 220,
+    "mismatchShake": true,
+    "celebration": "bubbles"
+  },
+  "vfx": {
+    "particleColors": [
+      "#FFC93C",
+      "#FF6B57",
+      "#0FA3B1",
+      "#2BB673"
+    ],
+    "particleGlyphs": [
+      "🫧",
+      "🌺",
+      "✨"
+    ]
+  },
+  "sounds": {
+    "tap": "sfx.tap",
+    "select": "sfx.select",
+    "place": "sfx.place",
+    "mismatch": "sfx.mismatch",
+    "draw": "sfx.draw",
+    "flip": "sfx.flip",
+    "complete": "sfx.complete",
+    "win": "sfx.win",
+    "lose": "sfx.lose",
+    "coin": "sfx.coin",
+    "button": "sfx.button",
+    "popup": "sfx.popup"
+  },
+  "assets": {
+    "font.display": {
+      "type": "font",
+      "file": "fonts/Baloo2_800ExtraBold.ttf",
+      "family": "TropicalDisplay"
+    },
+    "font.body": {
+      "type": "font",
+      "file": "fonts/Quicksand_700Bold.ttf",
+      "family": "TropicalBody"
+    },
+    "card.back": {
+      "type": "svg",
+      "file": "assets/card-back.svg"
+    },
+    "sfx.tap": {
+      "type": "audio",
+      "file": "sfx/tap.wav",
+      "volume": 0.6
+    },
+    "sfx.select": {
+      "type": "audio",
+      "file": "sfx/select.wav",
+      "volume": 0.6
+    },
+    "sfx.place": {
+      "type": "audio",
+      "file": "sfx/place.wav",
+      "volume": 0.6
+    },
+    "sfx.mismatch": {
+      "type": "audio",
+      "file": "sfx/mismatch.wav",
+      "volume": 0.6
+    },
+    "sfx.draw": {
+      "type": "audio",
+      "file": "sfx/draw.wav",
+      "volume": 0.6
+    },
+    "sfx.flip": {
+      "type": "audio",
+      "file": "sfx/flip.wav",
+      "volume": 0.6
+    },
+    "sfx.complete": {
+      "type": "audio",
+      "file": "sfx/complete.wav",
+      "volume": 0.8
+    },
+    "sfx.win": {
+      "type": "audio",
+      "file": "sfx/win.wav",
+      "volume": 0.8
+    },
+    "sfx.lose": {
+      "type": "audio",
+      "file": "sfx/lose.wav",
+      "volume": 0.8
+    },
+    "sfx.coin": {
+      "type": "audio",
+      "file": "sfx/coin.wav",
+      "volume": 0.6
+    },
+    "sfx.button": {
+      "type": "audio",
+      "file": "sfx/button.wav",
+      "volume": 0.6
+    },
+    "sfx.popup": {
+      "type": "audio",
+      "file": "sfx/popup.wav",
+      "volume": 0.6
+    }
+  },
+  "artDirection": {
+    "styleKeywords": [
+      "bright tropical resort",
+      "clean vector illustration",
+      "sunny",
+      "playful"
+    ],
+    "rendering": "flat vector with crisp cel shading",
+    "lineWork": "no outlines, shapes defined by color",
+    "lighting": "high noon sun from the top right, short crisp shadows",
+    "texture": "none, clean surfaces",
+    "perspective": "3/4 top-down for the island map, front-facing for UI and portraits",
+    "mood": [
+      "sunny",
+      "relaxed",
+      "adventurous",
+      "a little mysterious"
+    ],
+    "colorNotes": "lagoon teal dominates, coral for actions, sun yellow for rewards, sand for paths",
+    "characterStyle": "friendly humans in resort wear, simple geometric faces, expressive poses",
+    "negative": [
+      "photorealism",
+      "text",
+      "logos",
+      "watermarks",
+      "dark gloomy palettes",
+      "existing franchises or characters"
+    ],
+    "referenceDescriptors": [
+      "mid-century travel posters",
+      "beach resort signage",
+      "coral reef color studies"
+    ]
+  }
+}

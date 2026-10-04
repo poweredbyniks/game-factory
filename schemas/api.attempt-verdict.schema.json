@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "attemptId": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "accepted",
+        "rejected",
+        "unverifiable"
+      ]
+    },
+    "reason": {
+      "type": "string",
+      "enum": [
+        "malformed",
+        "wrong_game",
+        "unknown_level",
+        "mechanic_mismatch",
+        "seed_mismatch",
+        "move_bonus_mismatch",
+        "illegal_action",
+        "action_after_end",
+        "budget_tampered",
+        "continue_not_allowed",
+        "booster_not_allowed",
+        "booster_limit",
+        "outcome_mismatch",
+        "content_unknown",
+        "mechanic_unavailable",
+        "mechanic_version"
+      ]
+    },
+    "detail": {
+      "type": "string"
+    },
+    "result": {
+      "type": "object",
+      "properties": {
+        "won": {
+          "type": "boolean"
+        },
+        "stars": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3
+        },
+        "score": {
+          "type": "number"
+        },
+        "movesUsed": {
+          "type": "integer",
+          "minimum": -9007199254740991,
+          "maximum": 9007199254740991
+        },
+        "continues": {
+          "type": "integer",
+          "minimum": -9007199254740991,
+          "maximum": 9007199254740991
+        },
+        "boosters": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string"
+          },
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "description": "Booster uses by effect, counted from the move log"
+        }
+      },
+      "required": [
+        "won",
+        "stars",
+        "score",
+        "movesUsed",
+        "continues",
+        "boosters"
+      ],
+      "additionalProperties": false
+    },
+    "flags": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "claimed_stars_mismatch",
+          "claimed_usage_mismatch",
+          "too_fast"
+        ]
+      }
+    }
+  },
+  "required": [
+    "attemptId",
+    "status"
+  ],
+  "additionalProperties": false,
+  "title": "AttemptVerdict",
+  "description": "The server's judgement of one AttemptRecord"
+}

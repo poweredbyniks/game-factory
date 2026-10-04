@@ -1,0 +1,255 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schemaVersion": {
+      "type": "number",
+      "const": 1,
+      "description": "Schema version of this file"
+    },
+    "ios": {
+      "type": "object",
+      "properties": {
+        "bundleId": {
+          "type": "string",
+          "maxLength": 155,
+          "pattern": "^[A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)+$"
+        },
+        "ascAppId": {
+          "description": "App Store Connect app id, used by store submission",
+          "type": "string",
+          "pattern": "^\\d+$"
+        },
+        "supportsTablet": {
+          "default": false,
+          "description": "true also requires iPad screenshots for every store locale",
+          "type": "boolean"
+        },
+        "usesNonExemptEncryption": {
+          "default": false,
+          "description": "Export compliance answer written into Info.plist",
+          "type": "boolean"
+        },
+        "ads": {
+          "type": "object",
+          "properties": {
+            "appId": {
+              "description": "Ad network app id for this platform",
+              "type": "string",
+              "minLength": 1
+            },
+            "placements": {
+              "default": {},
+              "description": "monetization.json placement id -> ad unit id",
+              "type": "object",
+              "propertyNames": {
+                "type": "string",
+                "maxLength": 80,
+                "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+                "description": "Lowercase stable identifier"
+              },
+              "additionalProperties": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        "store": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "primaryCategory": {
+              "default": "GAMES",
+              "type": "string"
+            },
+            "subcategories": {
+              "default": [],
+              "description": "e.g. GAMES_CARD, GAMES_PUZZLE, GAMES_WORD",
+              "maxItems": 2,
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "bundleId"
+      ],
+      "additionalProperties": false
+    },
+    "android": {
+      "type": "object",
+      "properties": {
+        "package": {
+          "type": "string",
+          "maxLength": 150,
+          "pattern": "^[a-z][a-z0-9_]*(\\.[a-z][a-z0-9_]*)+$"
+        },
+        "blockedPermissions": {
+          "default": [],
+          "description": "Removed from the merged manifest even when a library adds them",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_.]+$"
+          }
+        },
+        "ads": {
+          "type": "object",
+          "properties": {
+            "appId": {
+              "description": "Ad network app id for this platform",
+              "type": "string",
+              "minLength": 1
+            },
+            "placements": {
+              "default": {},
+              "description": "monetization.json placement id -> ad unit id",
+              "type": "object",
+              "propertyNames": {
+                "type": "string",
+                "maxLength": 80,
+                "pattern": "^[a-z0-9][a-z0-9_.:-]*$",
+                "description": "Lowercase stable identifier"
+              },
+              "additionalProperties": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        "store": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "category": {
+              "default": "GAME_CARD",
+              "description": "Google Play category, e.g. GAME_CARD, GAME_PUZZLE, GAME_WORD",
+              "type": "string"
+            },
+            "defaultTrack": {
+              "default": "internal",
+              "type": "string",
+              "enum": [
+                "internal",
+                "alpha",
+                "beta",
+                "production"
+              ]
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "package"
+      ],
+      "additionalProperties": false
+    },
+    "eas": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "owner": {
+          "type": "string"
+        },
+        "projectId": {
+          "description": "EAS project of this store app; required for staging and production builds",
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "iap": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "skuPattern": {
+          "default": "{appId}.{productId}",
+          "description": "Store product id of each store.json product. {appId} is the bundle id or package",
+          "type": "string",
+          "pattern": "\\{productId\\}"
+        }
+      },
+      "additionalProperties": false
+    },
+    "environments": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "development": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "backendUrl": {
+              "description": "Game backend: identity, sync, attempt verification, leaderboards, purchase verification",
+              "type": "string",
+              "format": "uri"
+            },
+            "remoteConfigUrl": {
+              "description": "HTTPS URL of this environment's remote-config payload",
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "additionalProperties": false
+        },
+        "staging": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "backendUrl": {
+              "description": "Game backend: identity, sync, attempt verification, leaderboards, purchase verification",
+              "type": "string",
+              "format": "uri"
+            },
+            "remoteConfigUrl": {
+              "description": "HTTPS URL of this environment's remote-config payload",
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "additionalProperties": false
+        },
+        "production": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "backendUrl": {
+              "description": "Game backend: identity, sync, attempt verification, leaderboards, purchase verification",
+              "type": "string",
+              "format": "uri"
+            },
+            "remoteConfigUrl": {
+              "description": "HTTPS URL of this environment's remote-config payload",
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "ios",
+    "android"
+  ],
+  "additionalProperties": false,
+  "title": "ReleaseDefinition",
+  "description": "games/ID/release.json: store identity, native settings and endpoints, merged over deploy/PLATFORM/defaults.json"
+}

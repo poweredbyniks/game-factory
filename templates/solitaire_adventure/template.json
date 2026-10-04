@@ -1,0 +1,92 @@
+{
+  "$schema": "../../schemas/template.schema.json",
+  "schemaVersion": 1,
+  "templateId": "solitaire_adventure",
+  "name": "Solitaire Adventure",
+  "description": "Play a solitaire level, earn rewards, advance along a themed journey map, unlock story beats.",
+  "coreLoop": [
+    "play_level",
+    "earn_rewards",
+    "advance_map",
+    "unlock_story",
+    "upgrade_meta"
+  ],
+  "mechanics": {
+    "default": "associations",
+    "supported": [
+      "associations",
+      "tripeaks"
+    ]
+  },
+  "modules": {
+    "map": true,
+    "story": true,
+    "lives": true,
+    "boosters": true,
+    "shop": true,
+    "ads": true,
+    "iap": true,
+    "quests": false,
+    "collections": false,
+    "buildings": false,
+    "dailyReward": false,
+    "events": false,
+    "notifications": false,
+    "leaderboards": false
+  },
+  "ui": {
+    "screens": [
+      "map",
+      "level",
+      "shop",
+      "settings"
+    ],
+    "mapHud": [
+      "lives",
+      "coins",
+      "shop",
+      "settings"
+    ],
+    "levelHud": [
+      "back",
+      "level",
+      "budget",
+      "boosters"
+    ]
+  },
+  "requiredIcons": [
+    "coin",
+    "gem",
+    "life",
+    "star",
+    "hint",
+    "undo",
+    "joker",
+    "moves",
+    "stock",
+    "lock",
+    "shop",
+    "settings",
+    "play",
+    "close",
+    "chest",
+    "ad"
+  ],
+  "requiredSounds": [
+    "tap",
+    "place",
+    "mismatch",
+    "draw",
+    "complete",
+    "win",
+    "lose",
+    "coin"
+  ],
+  "requiredGameFiles": [
+    "game.json",
+    "release.json",
+    "progression.json",
+    "levelgen.json",
+    "levels.json"
+  ]
+}
